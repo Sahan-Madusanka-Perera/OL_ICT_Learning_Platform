@@ -1,0 +1,587 @@
+[
+ {
+  "year": 2025,
+  "q": 1,
+  "stem": "Which of the following is generally an advantage of a desktop computer over a laptop?",
+  "options": [
+   "Built-in battery",
+   "Easy portability",
+   "Larger display screen",
+   "Lightweight design"
+  ],
+  "imageOptions": false,
+  "stimulus": null,
+  "transcription": "text_layer",
+  "topic": "2.1"
+ },
+ {
+  "year": 2025,
+  "q": 2,
+  "stem": "In which of the following are the instructions of the operating system of a computer executed?",
+  "options": [
+   "caches",
+   "main memory",
+   "processor",
+   "registers"
+  ],
+  "imageOptions": false,
+  "stimulus": null,
+  "transcription": "text_layer",
+  "topic": "2.4"
+ },
+ {
+  "year": 2025,
+  "q": 3,
+  "stem": "What is the most suitable replacement for the blank in the following statement? \"Even when my computer is off, its operating system, application software and all my data exist in its ________________\"",
+  "options": [
+   "caches",
+   "hard disk",
+   "main memory",
+   "processor"
+  ],
+  "imageOptions": false,
+  "stimulus": null,
+  "transcription": "text_layer",
+  "topic": "2.4"
+ },
+ {
+  "year": 2025,
+  "q": 4,
+  "stem": "Which of the following uses 'half duplex' mode data transmission?",
+  "options": [
+   "radio broadcasts",
+   "telephone communications",
+   "television broadcasts",
+   "walkie-talkie communications"
+  ],
+  "imageOptions": false,
+  "stimulus": null,
+  "transcription": "text_layer",
+  "topic": "2.5"
+ },
+ {
+  "year": 2025,
+  "q": 5,
+  "stem": "In which of the following network topologies does every computer connect to a central device such as a switch?",
+  "options": [
+   "Bus",
+   "Ring",
+   "Star",
+   "Mesh"
+  ],
+  "imageOptions": false,
+  "stimulus": null,
+  "transcription": "text_layer",
+  "topic": "2.5"
+ },
+ {
+  "year": 2025,
+  "q": 6,
+  "stem": "Which of the following is the hexadecimal equivalent of binary 1110 1110₂?",
+  "options": [
+   "1F₁₆",
+   "EE₁₆",
+   "F0₁₆",
+   "FF₁₆"
+  ],
+  "imageOptions": false,
+  "stimulus": null,
+  "transcription": "text_layer",
+  "topic": "3.3"
+ },
+ {
+  "year": 2025,
+  "q": 7,
+  "stem": "A USB flash drive has 256 MB of free space. A video file of 0.3 GB, an image file of 300 KB, and a document file of 400 bytes need to be copied to this drive. Which of the following statements is correct?",
+  "options": [
+   "Only the document file can be copied",
+   "Only the image file and the document file can be copied",
+   "Only the video file can be copied",
+   "All the indicated files can be copied"
+  ],
+  "imageOptions": false,
+  "stimulus": null,
+  "transcription": "text_layer",
+  "topic": "3.4"
+ },
+ {
+  "year": 2025,
+  "q": 8,
+  "stem": "In the ASCII code, the character A is represented by 65₁₀. In that code, which character is represented by 0100 0011₂?",
+  "options": [
+   "A",
+   "B",
+   "C",
+   "D"
+  ],
+  "imageOptions": false,
+  "stimulus": null,
+  "transcription": "text_layer",
+  "topic": "3.5"
+ },
+ {
+  "year": 2025,
+  "q": 9,
+  "stem": "Which of the following is not a task of an operating system?",
+  "options": [
+   "Giving each user process the chance to run on the processor",
+   "Managing the memory of the computer",
+   "Managing the user files in a computer",
+   "Right-justifying the text of a word processor's document"
+  ],
+  "imageOptions": false,
+  "stimulus": null,
+  "transcription": "text_layer",
+  "topic": "5.1"
+ },
+ {
+  "year": 2025,
+  "q": 10,
+  "stem": "Which of the following statements are true regarding word processor software? A – They allow users to save the opened documents with passwords. B – They allow users to save the opened documents in pdf format. C – One can use the 'Save As...' option in the 'File' menu to save a document with a different name",
+  "options": [
+   "A and B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "stimulus": null,
+  "transcription": "text_layer",
+  "topic": "6.5"
+ },
+ {
+  "year": 2025,
+  "q": 11,
+  "stem": "Which of the following word processor software icons can be used to center align a piece of text?",
+  "options": null,
+  "imageOptions": true,
+  "stimulus": null,
+  "transcription": "text_layer",
+  "topic": "6.3"
+ },
+ {
+  "year": 2025,
+  "q": 12,
+  "stem": "Which of the following word processor software icons can be used to help obtain X²?",
+  "options": null,
+  "imageOptions": true,
+  "stimulus": null,
+  "transcription": "text_layer",
+  "topic": "6.3"
+ },
+ {
+  "year": 2025,
+  "q": 13,
+  "stem": "Which of the following word processor software icons can be used to strike-through a piece of text?",
+  "options": null,
+  "imageOptions": true,
+  "stimulus": null,
+  "transcription": "text_layer",
+  "topic": "6.3"
+ },
+ {
+  "year": 2025,
+  "q": 14,
+  "stem": "Which of the following statements are true regarding word processor software? P – One can easily send the same letter to multiple recipients using their 'mail merge' features. Q – A document in the .docx format cannot be edited using LibreOffice Writer. R – When a wide table does not fit in the 'portrait' orientation, one should test the 'landscape' orientation available in the software",
+  "options": [
+   "P and Q only",
+   "P and R only",
+   "Q and R only",
+   "All P, Q and R"
+  ],
+  "imageOptions": false,
+  "stimulus": null,
+  "transcription": "text_layer",
+  "topic": "6.1"
+ },
+ {
+  "year": 2025,
+  "q": 15,
+  "stem": "Which of the following only contains examples of spreadsheet software?",
+  "options": [
+   "Google Docs, LibreOffice Writer, Microsoft Excel",
+   "Google Sheets, Microsoft Excel, OpenOffice Calc",
+   "LibreOffice Calc, Microsoft Excel, OpenOffice Writer",
+   "Microsoft PowerPoint, Google Sheets, LibreOffice Calc"
+  ],
+  "imageOptions": false,
+  "stimulus": null,
+  "transcription": "text_layer",
+  "topic": "7.1"
+ },
+ {
+  "year": 2025,
+  "q": 16,
+  "stem": "On a worksheet, how many cells are included in the range B2:D4?",
+  "options": [
+   "6",
+   "8",
+   "9",
+   "12"
+  ],
+  "imageOptions": false,
+  "stimulus": null,
+  "transcription": "text_layer",
+  "topic": "7.1"
+ },
+ {
+  "year": 2025,
+  "q": 17,
+  "stem": "Which of the following spreadsheet software formulae correctly calculates the average of B1:B4 and D1:D4?",
+  "options": [
+   "=AVERAGE(B1:D4)",
+   "=AVERAGE(B1:B4, D1:D4)",
+   "=AVERAGE(B1:B4:D1:D4)",
+   "=AVERAGE(B1:B4 + D1:D4)"
+  ],
+  "imageOptions": false,
+  "stimulus": null,
+  "transcription": "text_layer",
+  "topic": "7.4"
+ },
+ {
+  "year": 2025,
+  "q": 18,
+  "stem": "Which of the following only contains examples of presentation software?",
+  "options": [
+   "Apple Keynote, LibreOffice Impress, Microsoft PowerPoint",
+   "Audacity, Google Slides, Microsoft PowerPoint",
+   "Audacity, LibreOffice Calc, LibreOffice Impress",
+   "Google Sheets, LibreOffice Calc, Ubuntu"
+  ],
+  "imageOptions": false,
+  "stimulus": null,
+  "transcription": "text_layer",
+  "topic": "8.1"
+ },
+ {
+  "year": 2025,
+  "q": 19,
+  "stem": "What is most suitable for the primary key for the SUBJECT_TEACHER table?",
+  "options": [
+   "Subject_ID",
+   "Teacher_ID",
+   "Subject_ID + Hours_per_week",
+   "Subject_ID + Teacher_ID"
+  ],
+  "imageOptions": false,
+  "stimulus": " Questions 19 to 21 are based on the following partly shown database tables that are used to store data about school subjects, teachers and their subject allocations. Note: A subject can be taught by many teachers and a teacher can teach many subjects. The Hours _per_week field stores the weekly teaching hours allocated to a particular teacher to teach the relevant subject. SUBJECT Subject_ID Subject_name SU01 Mathematics SU02 Science SU03 English SU04 ICT TEACHER Teacher_ID Teacher_name T001 Ms. Perera T002 Mr. Silva T003 Ms. Fernando T004 Mr. Khan SUBJECT_TEACHER Subject_ID Teacher_ID Hours_per_week SU01 T002 SU02 T001 SU04 T003 SU02 T004",
+  "transcription": "text_layer",
+  "topic": "9.4"
+ },
+ {
+  "year": 2025,
+  "q": 20,
+  "stem": "What is a foreign key in this database?",
+  "options": [
+   "Hours_per_week in the SUBJECT_TEACHER table",
+   "Teacher_ID in the SUBJECT_TEACHER table",
+   "Teacher_name in the TEACHER table",
+   "Subject_name in the SUBJECT table"
+  ],
+  "imageOptions": false,
+  "stimulus": " Questions 19 to 21 are based on the following partly shown database tables that are used to store data about school subjects, teachers and their subject allocations. Note: A subject can be taught by many teachers and a teacher can teach many subjects. The Hours _per_week field stores the weekly teaching hours allocated to a particular teacher to teach the relevant subject. SUBJECT Subject_ID Subject_name SU01 Mathematics SU02 Science SU03 English SU04 ICT TEACHER Teacher_ID Teacher_name T001 Ms. Perera T002 Mr. Silva T003 Ms. Fernando T004 Mr. Khan SUBJECT_TEACHER Subject_ID Teacher_ID Hours_per_week SU01 T002 SU02 T001 SU04 T003 SU02 T004",
+  "transcription": "text_layer",
+  "topic": "9.4"
+ },
+ {
+  "year": 2025,
+  "q": 21,
+  "stem": "A new teacher (Mr. Sivarajah, T005) joins the school and starts teaching Science (SU02). Which tables are to be updated for this purpose?",
+  "options": [
+   "TEACHER only",
+   "SUBJECT_TEACHER only",
+   "SUBJECT and SUBJECT_TEACHER only",
+   "TEACHER and SUBJECT_TEACHER only"
+  ],
+  "imageOptions": false,
+  "stimulus": " Questions 19 to 21 are based on the following partly shown database tables that are used to store data about school subjects, teachers and their subject allocations. Note: A subject can be taught by many teachers and a teacher can teach many subjects. The Hours _per_week field stores the weekly teaching hours allocated to a particular teacher to teach the relevant subject. SUBJECT Subject_ID Subject_name SU01 Mathematics SU02 Science SU03 English SU04 ICT TEACHER Teacher_ID Teacher_name T001 Ms. Perera T002 Mr. Silva T003 Ms. Fernando T004 Mr. Khan SUBJECT_TEACHER Subject_ID Teacher_ID Hours_per_week SU01 T002 SU02 T001 SU04 T003 SU02 T004",
+  "transcription": "text_layer",
+  "topic": "9.4"
+ },
+ {
+  "year": 2025,
+  "q": 22,
+  "stem": "Which of the following statements are correct regarding databases? A – Compared to manual databases, electronic databases are more efficient in retrieving information. B – Updating data is easier in a manual database than in an electronic database. C – Electronic databases can be protected through passwords and data encryption",
+  "options": [
+   "A and B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "stimulus": null,
+  "transcription": "text_layer",
+  "topic": "9.3"
+ },
+ {
+  "year": 2025,
+  "q": 23,
+  "stem": "Which of the following statements is correct regarding databases?",
+  "options": [
+   "A record in a table that has a composite primary key can be uniquely identified by just one field of its composite primary key",
+   "There could be a maximum of only one foreign key in a table",
+   "The primary key field of a record can be kept blank",
+   "When a table in a database is being created using a software, one should indicate the data type of each of its fields"
+  ],
+  "imageOptions": false,
+  "stimulus": null,
+  "transcription": "text_layer",
+  "topic": "9.2"
+ },
+ {
+  "year": 2025,
+  "q": 24,
+  "stem": "A program is required to compute the shortest route between cities P and Q. A route is made up of small road segments that could be collectively used to go from P to Q. The program will require a collection of road segments to be given as its input. Which of the following contains the data that has to be input for each road segment? Note: traffic indicator is a number indicating the traffic congestion on a particular segment and length contains the length of that road segment",
+  "options": [
+   "Ending city, length, traffic indicator",
+   "Starting city, length, traffic indicator",
+   "Starting city, ending city, length",
+   "Starting city, ending city, traffic indicator"
+  ],
+  "imageOptions": false,
+  "stimulus": null,
+  "transcription": "text_layer",
+  "topic": "10.1"
+ },
+ {
+  "year": 2025,
+  "q": 25,
+  "stem": "What will be the output if the input N is 4?",
+  "options": [
+   "0",
+   "15",
+   "64",
+   "325"
+  ],
+  "imageOptions": false,
+  "stimulus": " Questions 25, 26, 27 and 28 are based on the following flow-chart",
+  "transcription": "text_layer",
+  "topic": "10.3"
+ },
+ {
+  "year": 2025,
+  "q": 26,
+  "stem": "What will be the output if the input N is 1?",
+  "options": [
+   "0",
+   "1",
+   "2",
+   "3"
+  ],
+  "imageOptions": false,
+  "stimulus": " Questions 25, 26, 27 and 28 are based on the following flow-chart",
+  "transcription": "text_layer",
+  "topic": "10.3"
+ },
+ {
+  "year": 2025,
+  "q": 27,
+  "stem": "When the condition 'I <= N?' is changed to 'I < N?' and the input N is given as 5, what will be the output?",
+  "options": [
+   "0",
+   "15",
+   "64",
+   "325"
+  ],
+  "imageOptions": false,
+  "stimulus": " Questions 25, 26, 27 and 28 are based on the following flow-chart",
+  "transcription": "text_layer",
+  "topic": "10.3"
+ },
+ {
+  "year": 2025,
+  "q": 28,
+  "stem": "Which of the following Pascal constructs is most suited to implement the control structure shown in the flow-chart?",
+  "options": [
+   "case",
+   "if-then-endif",
+   "if-then-else-endif",
+   "while-do"
+  ],
+  "imageOptions": false,
+  "stimulus": " Questions 25, 26, 27 and 28 are based on the following flow-chart",
+  "transcription": "text_layer",
+  "topic": "10.4"
+ },
+ {
+  "year": 2025,
+  "q": 29,
+  "stem": "What is SIZE in the above code?",
+  "options": [
+   "A constant",
+   "A Pascal reserved word",
+   "A variable name initialized to 0",
+   "An array"
+  ],
+  "imageOptions": false,
+  "stimulus": " Questions 29, 30, 31, 32 and 33 are based on the following labelled fragment taken from a Pascal code to print the average of the values in the 'numbers' array. sum := A; B i := 1 to SIZE do begin sum := sum + numbers[C]; end; D := E / F ; writeln('The average is: ', average:5:2)",
+  "transcription": "text_layer",
+  "topic": "10.4"
+ },
+ {
+  "year": 2025,
+  "q": 30,
+  "stem": "What should be the replacement for A?",
+  "options": [
+   "0",
+   "1",
+   "SIZE",
+   "numbers"
+  ],
+  "imageOptions": false,
+  "stimulus": " Questions 29, 30, 31, 32 and 33 are based on the following labelled fragment taken from a Pascal code to print the average of the values in the 'numbers' array. sum := A; B i := 1 to SIZE do begin sum := sum + numbers[C]; end; D := E / F ; writeln('The average is: ', average:5:2)",
+  "transcription": "text_layer",
+  "topic": "10.4"
+ },
+ {
+  "year": 2025,
+  "q": 31,
+  "stem": "What should be the replacement for B?",
+  "options": [
+   "case",
+   "for",
+   "repeat",
+   "while"
+  ],
+  "imageOptions": false,
+  "stimulus": " Questions 29, 30, 31, 32 and 33 are based on the following labelled fragment taken from a Pascal code to print the average of the values in the 'numbers' array. sum := A; B i := 1 to SIZE do begin sum := sum + numbers[C]; end; D := E / F ; writeln('The average is: ', average:5:2)",
+  "transcription": "text_layer",
+  "topic": "10.4"
+ },
+ {
+  "year": 2025,
+  "q": 32,
+  "stem": "What should be the replacement for C?",
+  "options": [
+   "0",
+   "i",
+   "sum",
+   "SIZE"
+  ],
+  "imageOptions": false,
+  "stimulus": " Questions 29, 30, 31, 32 and 33 are based on the following labelled fragment taken from a Pascal code to print the average of the values in the 'numbers' array. sum := A; B i := 1 to SIZE do begin sum := sum + numbers[C]; end; D := E / F ; writeln('The average is: ', average:5:2)",
+  "transcription": "text_layer",
+  "topic": "10.4"
+ },
+ {
+  "year": 2025,
+  "q": 33,
+  "stem": "What should be the replacements for D, E and F respectively?",
+  "options": [
+   "average, sum, SIZE",
+   "SIZE, average, sum",
+   "sum, average, SIZE",
+   "sum, SIZE, average"
+  ],
+  "imageOptions": false,
+  "stimulus": " Questions 29, 30, 31, 32 and 33 are based on the following labelled fragment taken from a Pascal code to print the average of the values in the 'numbers' array. sum := A; B i := 1 to SIZE do begin sum := sum + numbers[C]; end; D := E / F ; writeln('The average is: ', average:5:2)",
+  "transcription": "text_layer",
+  "topic": "10.4"
+ },
+ {
+  "year": 2025,
+  "q": 34,
+  "stem": "When developing an information system, what is the main advantage of using the iterative incremental model instead of the waterfall model?",
+  "options": [
+   "skipping of some stages to save time",
+   "allowing improvements after each small cycle",
+   "completing all work in only one stage",
+   "not requiring any testing"
+  ],
+  "imageOptions": false,
+  "stimulus": null,
+  "transcription": "text_layer",
+  "topic": "11.2"
+ },
+ {
+  "year": 2025,
+  "q": 35,
+  "stem": "Which of the following best describes acceptance testing?",
+  "options": [
+   "It is done by programmers to check whether the requirements of the users are acceptable",
+   "It is done by programmers to check for coding errors",
+   "It is done by users to check if the system meets their requirements",
+   "It is done by users after deployment to add new features"
+  ],
+  "imageOptions": false,
+  "stimulus": null,
+  "transcription": "text_layer",
+  "topic": "11.2"
+ },
+ {
+  "year": 2025,
+  "q": 36,
+  "stem": "Which of the following is a correct example for an Internet Protocol (IP) address?",
+  "options": [
+   "172.215.8.4.2",
+   "172.256.128.11",
+   "192.247.8",
+   "192.246.11.254"
+  ],
+  "imageOptions": false,
+  "stimulus": null,
+  "transcription": "text_layer",
+  "topic": "12.1"
+ },
+ {
+  "year": 2025,
+  "q": 37,
+  "stem": "If this image is not compressed, then its approximate size in bytes is",
+  "options": [
+   "1920 × 1080",
+   "1920 × 1080 × 8",
+   "(1920 × 1080 x 2) / 8",
+   "(1920 × 1080 × 3) / 8"
+  ],
+  "imageOptions": false,
+  "stimulus": " To answer questions 37 and 38, consider a raster image of resolution 1920 × 1080 using 8 bits for a pixel",
+  "transcription": "text_layer",
+  "topic": "13.1"
+ },
+ {
+  "year": 2025,
+  "q": 38,
+  "stem": "What is the maximum number of colours that the above image can contain?",
+  "options": [
+   "3",
+   "8",
+   "2⁸",
+   "2⁸ × 1920 × 1080"
+  ],
+  "imageOptions": false,
+  "stimulus": " To answer questions 37 and 38, consider a raster image of resolution 1920 × 1080 using 8 bits for a pixel",
+  "transcription": "text_layer",
+  "topic": "13.1"
+ },
+ {
+  "year": 2025,
+  "q": 39,
+  "stem": "Which of the following only contains examples of graphics file formats?",
+  "options": [
+   "avi, docx, pdf",
+   "bmp, jpg, png",
+   "docx, mp3, pdf",
+   "mp4, png, ppt"
+  ],
+  "imageOptions": false,
+  "stimulus": null,
+  "transcription": "text_layer",
+  "topic": "13.1"
+ },
+ {
+  "year": 2025,
+  "q": 40,
+  "stem": "Which of the following statements are correct? A – The <img> tag is used to insert an image to a web page. B – The src attribute of <img> indicates the image file. C – An <img> tag must have a closing </img> tag",
+  "options": [
+   "A and B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "stimulus": null,
+  "transcription": "text_layer",
+  "topic": "14.2"
+ }
+]

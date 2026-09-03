@@ -1,0 +1,122 @@
+[
+ {
+  "year": 2025,
+  "q": 11,
+  "option": 1,
+  "path": "/past-papers/2025/options/q11-opt1.png",
+  "alt": "A toolbar icon showing four horizontal lines of differing length, all ending flush at the right edge and ragged on the left.",
+  "width": 150,
+  "height": 149,
+  "byteSize": 11033
+ },
+ {
+  "year": 2025,
+  "q": 11,
+  "option": 2,
+  "path": "/past-papers/2025/options/q11-opt2.png",
+  "alt": "A toolbar icon showing four horizontal lines all of the same length, flush at both the left and the right edge.",
+  "width": 151,
+  "height": 148,
+  "byteSize": 11190
+ },
+ {
+  "year": 2025,
+  "q": 11,
+  "option": 3,
+  "path": "/past-papers/2025/options/q11-opt3.png",
+  "alt": "A toolbar icon showing four horizontal lines of differing length, each centred about a common vertical middle so both edges are ragged.",
+  "width": 151,
+  "height": 149,
+  "byteSize": 11696
+ },
+ {
+  "year": 2025,
+  "q": 11,
+  "option": 4,
+  "path": "/past-papers/2025/options/q11-opt4.png",
+  "alt": "A toolbar icon showing four horizontal lines of differing length, all starting flush at the left edge and ragged on the right.",
+  "width": 151,
+  "height": 148,
+  "byteSize": 11369
+ },
+ {
+  "year": 2025,
+  "q": 12,
+  "option": 1,
+  "path": "/past-papers/2025/options/q12-opt1.png",
+  "alt": "A toolbar icon showing a capital A with a small capital B set low, below the baseline and to the right of it.",
+  "width": 154,
+  "height": 150,
+  "byteSize": 11032
+ },
+ {
+  "year": 2025,
+  "q": 12,
+  "option": 2,
+  "path": "/past-papers/2025/options/q12-opt2.png",
+  "alt": "A toolbar icon showing a capital A with a small capital B set high, above the line and to the right of it.",
+  "width": 153,
+  "height": 150,
+  "byteSize": 11507
+ },
+ {
+  "year": 2025,
+  "q": 12,
+  "option": 3,
+  "path": "/past-papers/2025/options/q12-opt3.png",
+  "alt": "A toolbar icon showing a capital A with a tick mark across its foot.",
+  "width": 154,
+  "height": 150,
+  "byteSize": 11327
+ },
+ {
+  "year": 2025,
+  "q": 12,
+  "option": 4,
+  "path": "/past-papers/2025/options/q12-opt4.png",
+  "alt": "A toolbar icon showing two overlapping pages, one behind the other.",
+  "width": 154,
+  "height": 150,
+  "byteSize": 12470
+ },
+ {
+  "year": 2025,
+  "q": 13,
+  "option": 1,
+  "path": "/past-papers/2025/options/q13-opt1.png",
+  "alt": "A toolbar icon showing a paint brush held at an angle.",
+  "width": 150,
+  "height": 146,
+  "byteSize": 10983
+ },
+ {
+  "year": 2025,
+  "q": 13,
+  "option": 2,
+  "path": "/past-papers/2025/options/q13-opt2.png",
+  "alt": "A toolbar icon showing a capital A with a thick line drawn beneath it.",
+  "width": 150,
+  "height": 146,
+  "byteSize": 11668
+ },
+ {
+  "year": 2025,
+  "q": 13,
+  "option": 3,
+  "path": "/past-papers/2025/options/q13-opt3.png",
+  "alt": "A toolbar icon showing a capital S with a horizontal line drawn straight through its middle.",
+  "width": 150,
+  "height": 146,
+  "byteSize": 10316
+ },
+ {
+  "year": 2025,
+  "q": 13,
+  "option": 4,
+  "path": "/past-papers/2025/options/q13-opt4.png",
+  "alt": "A toolbar icon showing a capital U with a line drawn beneath it.",
+  "width": 150,
+  "height": 146,
+  "byteSize": 8815
+ }
+]

@@ -1,0 +1,409 @@
+@import 'tailwindcss';
+
+/* ==========================================================================
+   TWO STATE — the one-bit design system
+   See DESIGN.md. Unit 3 of this syllabus is two-state data representation;
+   the interface is the curriculum, not a costume.
+
+   There are two colours: #000000 and #FFFFFF. Every apparent grey is an
+   ordered dither — real black pixels on white, at 1:1 scale, never scaled.
+   Emphasis is inversion, and it is rationed to one element per viewport.
+   ========================================================================== */
+
+@theme {
+  /* --- there are two colours ------------------------------------------
+     The whole default palette is dropped, so no utility can reintroduce a
+     colour by accident. What is not here cannot be typed. */
+  --color-*: initial;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+  --color-ink: #000000;
+  --color-paper: #ffffff;
+
+  /* --- no radius, no shadow -------------------------------------------
+     A one-bit raster has no rounded corner and no soft edge to cast a
+     shadow onto. Dropping both namespaces makes that structural. */
+  --radius-*: initial;
+  --shadow-*: initial;
+  --inset-shadow-*: initial;
+  --drop-shadow-*: initial;
+
+  /* --- two voices ------------------------------------------------------ */
+  --font-pixel: var(--font-silkscreen), ui-monospace, 'Courier New', monospace;
+  --font-sans: var(--font-source-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-silkscreen), ui-monospace, 'Courier New', monospace;
+
+  /* Reading sizes. Question text never goes below 17px. */
+  --text-question: 17px;
+  --text-question--line-height: 1.6;
+  --text-option: 16px;
+  --text-option--line-height: 1.5;
+
+  /* The floor for anything a thumb has to hit on a phone. */
+  --spacing-touch: 56px;
+}
+
+/* ==========================================================================
+   The dithers
+
+   Four densities, each a 4×4 tile of real black pixels drawn at integer
+   coordinates and painted at 4px — 1:1, always. Same tile size for all four
+   so density can be animated without the pattern resizing.
+   ========================================================================== */
+
+:root {
+  /* 12.5% — 2 of 16 on. The finest texture; disabled chrome. */
+  --dither-12: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='4'%20height='4'%20shape-rendering='crispEdges'%3E%3Crect%20width='1'%20height='1'%20fill='%23000'/%3E%3Crect%20x='2'%20y='2'%20width='1'%20height='1'%20fill='%23000'/%3E%3C/svg%3E");
+
+  /* 25% — 4 of 16 on. Disabled fill, secondary ground, a wrong answer. */
+  --dither-25: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='4'%20height='4'%20shape-rendering='crispEdges'%3E%3Crect%20width='1'%20height='1'%20fill='%23000'/%3E%3Crect%20x='2'%20width='1'%20height='1'%20fill='%23000'/%3E%3Crect%20y='2'%20width='1'%20height='1'%20fill='%23000'/%3E%3Crect%20x='2'%20y='2'%20width='1'%20height='1'%20fill='%23000'/%3E%3C/svg%3E");
+
+  /* 50% — the checker. The desktop ground everything sits on. */
+  --dither-50: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='4'%20height='4'%20shape-rendering='crispEdges'%3E%3Crect%20width='1'%20height='1'%20fill='%23000'/%3E%3Crect%20x='2'%20width='1'%20height='1'%20fill='%23000'/%3E%3Crect%20x='1'%20y='1'%20width='1'%20height='1'%20fill='%23000'/%3E%3Crect%20x='3'%20y='1'%20width='1'%20height='1'%20fill='%23000'/%3E%3Crect%20y='2'%20width='1'%20height='1'%20fill='%23000'/%3E%3Crect%20x='2'%20y='2'%20width='1'%20height='1'%20fill='%23000'/%3E%3Crect%20x='1'%20y='3'%20width='1'%20height='1'%20fill='%23000'/%3E%3Crect%20x='3'%20y='3'%20width='1'%20height='1'%20fill='%23000'/%3E%3C/svg%3E");
+
+  /* 75% — 12 of 16 on. Heavy fill; emphasis short of solid. */
+  --dither-75: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='4'%20height='4'%20shape-rendering='crispEdges'%3E%3Crect%20width='4'%20height='4'%20fill='%23000'/%3E%3Crect%20x='1'%20y='1'%20width='1'%20height='1'%20fill='%23fff'/%3E%3Crect%20x='3'%20y='1'%20width='1'%20height='1'%20fill='%23fff'/%3E%3Crect%20x='1'%20y='3'%20width='1'%20height='1'%20fill='%23fff'/%3E%3Crect%20x='3'%20y='3'%20width='1'%20height='1'%20fill='%23fff'/%3E%3C/svg%3E");
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    /* The desktop: 50% dither, edge to edge. Windows sit on top of it. */
+    background-color: var(--color-paper);
+    background-image: var(--dither-50);
+    background-size: 4px 4px;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* The pixel voice never gets synthesised bold or italic — a bitmap face
+     smeared into a faux-bold is the one way to make it look cheap. */
+  .font-pixel,
+  :where(.font-pixel) * {
+    font-synthesis: none;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+
+  /* Digits that line up in columns. Tabular everywhere, per DESIGN.md §3. */
+  body {
+    font-variant-numeric: tabular-nums;
+  }
+  .tabular { font-variant-numeric: tabular-nums; }
+
+  /* Code and binary strings are data, so they take the pixel voice. */
+  :where(code) {
+    font-family: var(--font-pixel);
+    font-size: 0.9em;
+  }
+
+  /* ---------------------------------------------------------------------
+     Browser surfaces. In a world with two colours these are trivially
+     correct — and skipping them is what makes a page look assembled.
+     --------------------------------------------------------------------- */
+
+  /* Selection is inversion, which is what selection has always been here. */
+  ::selection {
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
+
+  :where(input, textarea, [contenteditable]) {
+    caret-color: var(--color-ink);
+  }
+
+  /*
+   * A placeholder cannot be "grey text" here, and grey text was always the
+   * weakest way to say it: it fails contrast and it reads as a real value.
+   * So the placeholder speaks in the chrome voice — Silkscreen, uppercase —
+   * and the value speaks in the reading voice. You can tell them apart at a
+   * glance, and the distinction survives at any contrast setting.
+   */
+  ::placeholder {
+    font-family: var(--font-pixel);
+    text-transform: uppercase;
+    font-size: 14px;
+    color: var(--color-ink);
+    opacity: 1;
+  }
+
+  :where(input[type='radio'], input[type='checkbox'], progress) {
+    accent-color: var(--color-ink);
+  }
+
+  a {
+    text-underline-offset: 0.18em;
+    text-decoration-thickness: 1px;
+  }
+
+  /* Scrollbars: a solid black thumb on a 25% dither track. */
+  * {
+    scrollbar-color: var(--color-ink) var(--color-paper);
+    scrollbar-width: thin;
+  }
+  ::-webkit-scrollbar { width: 12px; height: 12px; }
+  ::-webkit-scrollbar-track {
+    background-color: var(--color-paper);
+    background-image: var(--dither-25);
+    background-size: 4px 4px;
+    border-left: 1px solid var(--color-ink);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-ink);
+    border: 2px solid var(--color-paper);
+  }
+
+  /* The fallback focus ring, for replaced elements that cannot carry ants.
+     currentColor means it is black on white grounds and white on inverted
+     ones — visible on every surface the system owns. */
+  :where(input, select, textarea):focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+
+  [hidden] { display: none !important; }
+}
+
+/* ==========================================================================
+   Dither utilities
+   ========================================================================== */
+
+/* Registered as utilities, not component classes, so they take variants:
+   `disabled:dither-25` is how a disabled control states itself here, and a
+   component-layer class cannot carry that. */
+@utility dither-12 {
+  background-color: var(--color-paper);
+  background-image: var(--dither-12);
+  background-size: 4px 4px;
+  background-repeat: repeat;
+}
+@utility dither-25 {
+  background-color: var(--color-paper);
+  background-image: var(--dither-25);
+  background-size: 4px 4px;
+  background-repeat: repeat;
+}
+@utility dither-50 {
+  background-color: var(--color-paper);
+  background-image: var(--dither-50);
+  background-size: 4px 4px;
+  background-repeat: repeat;
+}
+@utility dither-75 {
+  background-color: var(--color-paper);
+  background-image: var(--dither-75);
+  background-size: 4px 4px;
+  background-repeat: repeat;
+}
+
+/* ==========================================================================
+   Marching ants
+
+   The one device that carries both selection and focus. Drawn as an overlay
+   so it can sit over a dithered or inverted ground without disturbing it,
+   and in currentColor so it inverts with its host.
+
+   `.ants`      — always marching (the selected thing)
+   `.ant-focus` — marching only while focus is visible
+   ========================================================================== */
+
+@layer components {
+  .ants,
+  .ant-focus {
+    position: relative;
+  }
+
+  .ants::after,
+  .ant-focus:focus-visible::after {
+    content: '';
+    position: absolute;
+    inset: var(--ant-inset, 0px);
+    pointer-events: none;
+    background-image:
+      repeating-linear-gradient(90deg, currentColor 0 4px, transparent 4px 8px),
+      repeating-linear-gradient(90deg, currentColor 0 4px, transparent 4px 8px),
+      repeating-linear-gradient(0deg, currentColor 0 4px, transparent 4px 8px),
+      repeating-linear-gradient(0deg, currentColor 0 4px, transparent 4px 8px);
+    background-size: 8px 2px, 8px 2px, 2px 8px, 2px 8px;
+    background-position: 0 0, 0 100%, 0 0, 100% 0;
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    animation: ants 480ms steps(4) infinite;
+  }
+
+  /* Focus sits 2px clear of the element it marks, per DESIGN.md §4. */
+  .ant-focus:focus-visible::after {
+    --ant-inset: -3px;
+  }
+
+  @keyframes ants {
+    to {
+      background-position: 8px 0, -8px 100%, 0 -8px, 100% 8px;
+    }
+  }
+}
+
+/* ==========================================================================
+   Motion
+
+   Everything is `steps()`. Nothing in a one-bit world eases smoothly — a
+   pixel is on or it is off, and an interface built from them should move
+   the same way.
+
+   There is exactly one authored moment: the explanation window opening
+   after an answer. Marching ants run only on the focused or selected
+   element. Both stop entirely under prefers-reduced-motion.
+   ========================================================================== */
+
+@keyframes window-open {
+  from { clip-path: inset(0 0 100% 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes verdict-land {
+  from { transform: scale(0.25); }
+  to   { transform: scale(1); }
+}
+
+@keyframes dither-cycle {
+  0%   { background-image: var(--dither-12); }
+  25%  { background-image: var(--dither-25); }
+  50%  { background-image: var(--dither-50); }
+  75%  { background-image: var(--dither-25); }
+  100% { background-image: var(--dither-12); }
+}
+
+/* BIT's blink.
+   The only unprompted motion in the product, and it is four frames of a 5.2s
+   cycle — under 3% of the time — so it registers as "alive" in peripheral
+   vision without ever competing with the one authored moment. Two static
+   groups swap; no geometry is interpolated, so the face is on whole cells at
+   every frame the way everything else here is. */
+@keyframes bit-blink-open {
+  0%, 95%   { opacity: 1; }
+  95.1%, 99% { opacity: 0; }
+  99.1%, 100% { opacity: 1; }
+}
+
+@keyframes bit-blink-shut {
+  0%, 95%   { opacity: 0; }
+  95.1%, 99% { opacity: 1; }
+  99.1%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bit .bit-open {
+    animation: bit-blink-open 5200ms steps(1, end) infinite;
+  }
+  .bit .bit-shut {
+    animation: bit-blink-shut 5200ms steps(1, end) infinite;
+  }
+
+  /* The window opens as a shutter in six frames — the way a raster machine
+     draws a rectangle, not the way a modal fades in. */
+  .reveal {
+    animation: window-open 240ms steps(6) both;
+  }
+
+  /* The verdict mark lands inside the opened window a beat later. One
+     gesture in two parts, not two effects. */
+  .verdict-mark {
+    animation: verdict-land 160ms steps(4) 200ms both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ants::after,
+  .ant-focus:focus-visible::after,
+  .dither-loading {
+    animation: none;
+  }
+}
+
+/* Eyes open is the resting state, so a reduced-motion student gets the face
+   the design intends rather than a blank one. Outside the motion query so it
+   also holds before the animation's first frame. */
+.bit .bit-shut {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bit .bit-open,
+  .bit .bit-shut {
+    animation: none;
+  }
+}
+
+@layer components {
+  /* Loading is density cycling 12 → 25 → 50 → 25. The pattern is doing the
+     work a spinner would, and it costs no request and no layout. */
+  .dither-loading {
+    background-color: var(--color-paper);
+    background-size: 4px 4px;
+    background-image: var(--dither-12);
+    animation: dither-cycle 1200ms steps(1, end) infinite;
+  }
+
+  /* Visually hidden, still announced. Used by the runner's live region. */
+  .sr-only-live {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* Screen-reader-only, but focusable (the skip link). */
+  .sr-only-focusable {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .sr-only-focusable:focus {
+    position: fixed;
+    top: 8px; left: 8px;
+    width: auto; height: auto;
+    padding: 8px 16px;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    z-index: 100;
+    background: var(--color-ink);
+    color: var(--color-paper);
+    font-family: var(--font-pixel);
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+
+  /*
+   * A disabled control's label keeps its paper.
+   *
+   * The dither is over the control, which is what DESIGN.md §4 asks for, and
+   * the words are not on it, which is what §1 asks for. Without this the
+   * pattern and a 2px bitmap stem compete for the same pixel rows and the
+   * label reads as broken rather than as unavailable — at every density.
+   */
+  button:disabled > .btn-label {
+    background: var(--color-paper);
+    padding-inline: 6px;
+  }
+
+  /* Prose inside a window: reading always happens on solid white. */
+  .prose-tight :where(p + p) { margin-top: 0.75em; }
+  .prose-tight :where(strong) { font-weight: 600; }
+}
