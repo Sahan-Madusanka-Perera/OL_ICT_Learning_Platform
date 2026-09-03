@@ -1,0 +1,122 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+# Placeholder values: the build only needs these to be present and well-formed,
+# never to resolve. Real secrets are supplied at deploy time.
+env:
+  DATABASE_URL: postgresql://postgres:postgres@localhost:5432/olict_ci
+  NEXT_PUBLIC_SUPABASE_URL: https://placeholder.supabase.co
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: placeholder-anon-key
+  SUPABASE_SERVICE_ROLE_KEY: placeholder-service-role-key
+  NEXT_PUBLIC_APP_URL: http://localhost:3000
+
+jobs:
+  # ---------------------------------------------------------------------
+  # Static analysis. No database, so it fails fast and cheaply.
+  # ---------------------------------------------------------------------
+  static:
+    name: Typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      # No lint step: `npm run lint` still calls the deprecated `next lint`,
+      # which prompts for an ESLint config interactively and would hang CI.
+      # Re-add once the project migrates to the ESLint CLI.
+
+  # ---------------------------------------------------------------------
+  # The suite runs against a real Postgres: migrations are applied by the
+  # same drizzle script used locally, then the database is seeded, so CI
+  # exercises the migration path on every push rather than only the code.
+  # ---------------------------------------------------------------------
+  test:
+    name: Migrations + test suite
+    runs-on: ubuntu-latest
+    needs: static
+
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: olict_ci
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d olict_ci"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Wait for Postgres
+        run: |
+          for i in $(seq 1 30); do
+            if pg_isready -h localhost -p 5432 -U postgres -d olict_ci; then
+              echo "database is ready"
+              exit 0
+            fi
+            echo "waiting for postgres ($i/30)..."
+            sleep 2
+          done
+          echo "::error::database never became ready"
+          exit 1
+
+      - name: Apply migrations
+        run: npm run db:migrate
+
+      - name: Verify migrations are idempotent
+        run: npm run db:migrate
+
+      - name: Seed reference data
+        run: npm run db:seed
+
+      - name: Run the test suite
+        run: npm test
+
+  # ---------------------------------------------------------------------
+  # Production build. Gated behind the tests so a broken suite does not
+  # burn a full Next.js compile.
+  # ---------------------------------------------------------------------
+  build:
+    name: Production build
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build
+        run: npm run build
