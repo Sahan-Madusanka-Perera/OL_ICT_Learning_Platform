@@ -4,6 +4,9 @@ import { join } from 'node:path';
 import { describe, it, expect } from 'vitest';
 
 import {
+  TRANSCRIBED_QUESTIONS,
+  TRANSCRIBED_STATS,
+  TEXT_LAYER_YEARS,
   VERIFIED_QUESTIONS,
   VERIFIED_STATS,
   VERIFIED_YEARS,
@@ -202,10 +205,41 @@ describe('the official key against the transcription', () => {
 });
 
 describe('picture-only options', () => {
-  it('covers questions 11, 12 and 13 with four icons each', () => {
-    expect(OPTION_ICON_STATS.questions).toBe(3);
-    expect(OPTION_ICON_STATS.total).toBe(12);
-    for (const n of [11, 12, 13]) expect(iconsFor(2025, n), `Q${n}`).toHaveLength(4);
+  it('gives every picture question in every born-digital paper four pictures', () => {
+    expect(OPTION_ICON_STATS.questions).toBe(10);
+    expect(OPTION_ICON_STATS.total).toBe(40);
+    expect([...OPTION_ICON_STATS.years]).toEqual([2020, 2021, 2022, 2023, 2024, 2025]);
+
+    const expected: [number, number][] = [
+      [2020, 35],
+      [2021, 23],
+      [2022, 13],
+      [2022, 39],
+      [2023, 13],
+      [2023, 15],
+      [2024, 11],
+      [2025, 11],
+      [2025, 12],
+      [2025, 13],
+    ];
+    for (const [year, n] of expected) {
+      expect(iconsFor(year, n), `${year} Q${n}`).toHaveLength(4);
+    }
+  });
+
+  /*
+   * The one that matters most. A question whose options are pictures and whose
+   * pictures never arrived is four blank choices — worse than absent, because
+   * it looks answerable. The seeder refuses to insert one, and this says the
+   * extractor has in fact found them all.
+   */
+  it('leaves no transcribed icon question without its pictures', () => {
+    for (const q of TRANSCRIBED_QUESTIONS) {
+      if (!q.imageOptions) continue;
+      expect(iconsFor(q.year, q.questionNumber), `${q.year} Q${q.questionNumber}`).toHaveLength(
+        4,
+      );
+    }
   });
 
   it('points at a file that is on disk, at the size it claims', () => {
@@ -221,11 +255,35 @@ describe('picture-only options', () => {
    * not an enhancement — without it there is literally nothing to choose
    * between. A placeholder here would be worse than useless.
    */
-  it('describes every icon, because there is no text to fall back on', () => {
+  it('describes every picture, because there is no text to fall back on', () => {
     for (const icon of OPTION_ICONS) {
       expect(icon.alt.length, icon.path).toBeGreaterThan(40);
       expect(icon.alt, icon.path).not.toMatch(/not yet described|placeholder|TODO/i);
-      expect(icon.alt, icon.path).toMatch(/icon/i);
+      /*
+       * The description has to be of a drawing. Not every option is a toolbar
+       * icon — 2020 Q35's are logic circuits, 2021 Q23's are rendered tables,
+       * and two of 2022 Q39's are pictures of the words "To" and "Subject" —
+       * so this asks for the vocabulary of something seen rather than for the
+       * literal word "icon".
+       */
+      expect(icon.alt, icon.path).toMatch(
+        /\b(icons?|circuit|table|drawn|shown|printed|showing|as it appears)\b/i,
+      );
+    }
+  });
+
+  /*
+   * Alt text that gives the answer away is worse than none: it turns the
+   * question into a free mark for exactly the readers it exists to serve, while
+   * a sighted candidate still has to work the circuit out. Describing a NAND
+   * gate as "a flat-backed, D-shaped gate with a bubble on its output" is a
+   * description; calling it a NAND gate is the answer.
+   */
+  it('describes what is drawn without naming the gate or the command', () => {
+    for (const icon of OPTION_ICONS) {
+      expect(icon.alt, icon.path).not.toMatch(
+        /\b(NAND|NOR|XOR|AND gate|OR gate|subscript|superscript|undo|redo|justif|strike-?through|rowspan|colspan)\b/i,
+      );
     }
   });
 
@@ -243,5 +301,94 @@ describe('what verification does and does not cover', () => {
     expect(isVerified(2025)).toBe(true);
     expect(isVerified(2024)).toBe(false);
     expect(isVerified(2019)).toBe(false);
+  });
+
+  /*
+   * The whole point of the second tier. An exact stem with a keyword topic is
+   * a better draft than OCR and a worse claim than 2025, and if a year ever
+   * slides from one bucket to the other without someone doing the reading,
+   * this is what notices.
+   */
+  it('marks a text-layer year as keyword-topiced, not hand-topiced', () => {
+    for (const year of TEXT_LAYER_YEARS) {
+      const qs = TRANSCRIBED_QUESTIONS.filter((q) => q.year === year);
+      expect(qs, String(year)).toHaveLength(40);
+      for (const q of qs) {
+        expect(q.tier, `${year} Q${q.questionNumber}`).toBe('text_layer');
+        expect(q.topicSource, `${year} Q${q.questionNumber}`).toBe('keyword');
+      }
+    }
+  });
+
+  it('counts the two tiers separately and does not double-count', () => {
+    expect(TRANSCRIBED_STATS.total).toBe(240);
+    expect(TRANSCRIBED_STATS.verified).toBe(40);
+    expect(TRANSCRIBED_STATS.textLayerOnly).toBe(200);
+    expect(TRANSCRIBED_STATS.verified + TRANSCRIBED_STATS.textLayerOnly).toBe(
+      TRANSCRIBED_STATS.total,
+    );
+    expect(TRANSCRIBED_STATS.handAssignedTopics).toBe(40);
+  });
+});
+
+/*
+ * Every born-digital paper, not just the verified one. These are the guarantees
+ * that make "the paper is in the platform" a true sentence rather than a hope:
+ * forty questions, no gaps, and four answerable options on each.
+ */
+describe('all six born-digital papers', () => {
+  const years = [2020, 2021, 2022, 2023, 2024, 2025];
+
+  it('transcribes forty questions per paper, numbered 1 to 40', () => {
+    for (const year of years) {
+      const ns = TRANSCRIBED_QUESTIONS.filter((q) => q.year === year)
+        .map((q) => q.questionNumber)
+        .sort((a, b) => a - b);
+      expect(ns, String(year)).toEqual(Array.from({ length: 40 }, (_, i) => i + 1));
+    }
+  });
+
+  it('gives every question four text options or four pictures', () => {
+    for (const q of TRANSCRIBED_QUESTIONS) {
+      const where = `${q.year} Q${q.questionNumber}`;
+      if (q.imageOptions) {
+        expect(q.options, where).toBeNull();
+        continue;
+      }
+      expect(q.options, where).toHaveLength(4);
+      for (const o of q.options!) expect(o.length, where).toBeGreaterThan(0);
+    }
+  });
+
+  it('never leaves a stem empty', () => {
+    for (const q of TRANSCRIBED_QUESTIONS) {
+      expect(q.stem.length, `${q.year} Q${q.questionNumber}`).toBeGreaterThan(10);
+    }
+  });
+
+  /*
+   * Two papers misnumber an option marker — 2020 Q4 prints its third option as
+   * "(2)", 2021 Q8 prints its third as "(5)". The extractor transcribes them in
+   * printed order and says so. The danger is the opposite of a missing note: a
+   * silent repair, where a reviewer is shown tidy options and never learns the
+   * paper disagreed with them.
+   */
+  it('names the paper when the paper is the one that is wrong', () => {
+    const flagged = TRANSCRIBED_QUESTIONS.filter((q) => q.sourceDefect !== null);
+    expect(flagged.map((q) => `${q.year} Q${q.questionNumber}`)).toEqual([
+      '2020 Q4',
+      '2021 Q8',
+    ]);
+    for (const q of flagged) {
+      expect(q.sourceDefect).toMatch(/paper/i);
+      expect(q.options, `${q.year} Q${q.questionNumber}`).toHaveLength(4);
+    }
+  });
+
+  it('assigns a topic that exists in the syllabus, in either tier', () => {
+    const codes = new Set(OL_ICT_SYLLABUS.flatMap((u) => u.topics.map((t) => t.code)));
+    for (const q of TRANSCRIBED_QUESTIONS) {
+      expect(codes.has(q.topic), `${q.year} Q${q.questionNumber} -> ${q.topic}`).toBe(true);
+    }
   });
 });

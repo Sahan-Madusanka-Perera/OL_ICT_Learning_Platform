@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Label } from '@/components/ui/window';
 
 export const metadata: Metadata = { title: 'Privacy' };
 
@@ -9,9 +8,9 @@ export const metadata: Metadata = { title: 'Privacy' };
  */
 export default function PrivacyPage() {
   return (
-    <article className="mx-auto max-w-[42rem] px-3 py-12 sm:px-5 sm:py-14">
-      <h1 className="font-pixel text-[24px] uppercase leading-tight sm:text-[32px]">Privacy</h1>
-      <p className="mt-5 text-[17px] leading-relaxed">
+    <article className="mx-auto max-w-[46rem] px-3 pb-16 pt-6 sm:px-5 sm:pb-24 sm:pt-10">
+      <h1 className="page-title">Privacy</h1>
+      <p className="mb-10 mt-5 text-[17px] leading-relaxed text-muted">
         This site is used by school students, so we collect as little as we can and
         explain all of it here. No lawyer-speak.
       </p>
@@ -89,9 +88,9 @@ export default function PrivacyPage() {
 
 function S({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section className="mt-9 border-t border-ink pt-7">
-      <Label as="h2">{title}</Label>
-      <div className="mt-4 flex flex-col gap-4 text-[15px] leading-relaxed">{children}</div>
+    <section className="glass mt-4 rounded-[24px] p-6 sm:rounded-xl sm:p-9">
+      <h2 className="text-[22px] leading-tight tracking-[-0.03em]">{title}</h2>
+      <div className="mt-4 flex flex-col gap-4 text-[15px] leading-relaxed text-muted [&_strong]:text-ink">{children}</div>
     </section>
   );
 }

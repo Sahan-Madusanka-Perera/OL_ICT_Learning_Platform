@@ -31,6 +31,20 @@ describe('inline markdown renderer', () => {
     expect(out).not.toContain('<em>');
   });
 
+  it('never lets an italic run start inside one code span and end in another', () => {
+    // Two multiplications on one line used to italicise everything between them.
+    const out = renderInline('`= (B2 * G$1/100) + (C2 * G$2/100)`');
+    expect(out).toBe('<p><code>= (B2 * G$1/100) + (C2 * G$2/100)</code></p>');
+    const split = renderInline('`A2*A3` first, then `=(A1-A2)*A3`');
+    expect(split).not.toContain('<em>');
+  });
+
+  it('still lets bold wrap a code span', () => {
+    expect(renderInline('The **`<body>`** holds the page')).toContain(
+      '<strong><code>&lt;body&gt;</code></strong>',
+    );
+  });
+
   it('turns blank lines into paragraphs and single newlines into breaks', () => {
     const out = renderInline('One\n\nTwo\nThree');
     expect(out).toBe('<p>One</p><p>Two<br />Three</p>');

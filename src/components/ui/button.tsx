@@ -4,51 +4,59 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils/cn';
 
 /**
- * Controls, in a world with two states.
+ * Controls.
  *
- * `primary` IS the inversion — solid black ground, white ink. It is the
- * loudest thing the system owns, so a viewport gets one. Pressing any
- * control inverts it for the duration of the press, which means the primary
- * flips back to white: the press is always a state change you can see.
+ * `primary` is the ink pill — solid black by day, chalk white at night — and a
+ * viewport gets one of them. The ink means "this is the live thing", so the
+ * rest are quieter; a second primary makes the first one a decoration.
  *
- * Disabled is carried by pattern, not by opacity: a 25% dither ground and
- * chrome dropped to a dashed line. Opacity would manufacture a grey, and
- * there are no greys here.
+ * `secondary` is a white pill with a hairline, the reference's "Weekly ⌄"
+ * control. `ghost` is text with a hover ground. `danger` fills on hover.
  *
- * The label keeps its own paper inside that ground — DESIGN.md §4 puts the
- * dither over the control and §1 says content never sits on a dither, and
- * both hold at once only if the ground is dithered and the words are not.
- * Neither density alone survives a 2px Silkscreen stem; a knocked-out plate
- * does, at any density.
+ * Three details make them objects rather than rectangles: a press that moves
+ * (`active:scale-[0.98]` on the settle curve), a shadow that changes with
+ * state, and the trailing affordance disc on a primary call to action.
+ *
+ * Disabled drops to the sunken ground and keeps a hairline, so it reads as an
+ * inert control rather than as a hole in the layout.
  */
 const button = cva(
-  'font-pixel ant-focus inline-flex select-none items-center justify-center gap-2 ' +
-    'border border-ink text-center uppercase leading-tight transition-none ' +
-    'disabled:pointer-events-none',
+  'group relative inline-flex select-none items-center justify-center gap-2 whitespace-nowrap ' +
+    'rounded-full text-center font-medium leading-none tracking-[-0.01em] ' +
+    'transition-[transform,box-shadow,background-color,color] duration-200 ease-[var(--ease-settle)] ' +
+    'active:scale-[0.98] disabled:pointer-events-none disabled:active:scale-100',
   {
     variants: {
       variant: {
         primary:
-          'bg-ink text-paper active:bg-paper active:text-ink ' +
-          'disabled:dither-25 disabled:border-dashed disabled:text-ink',
+          'bg-accent text-accent-ink ' +
+          'shadow-[0_1px_0_0_rgba(255,255,255,0.14)_inset,0_10px_24px_-10px_var(--shade-strong)] ' +
+          'hover:bg-accent-hover hover:shadow-[0_1px_0_0_rgba(255,255,255,0.14)_inset,0_14px_30px_-10px_var(--shade-strong)] ' +
+          'disabled:bg-sunken disabled:text-faint ' +
+          'disabled:shadow-[inset_0_0_0_1px_var(--color-line)]',
         secondary:
-          'bg-paper text-ink hover:bg-ink hover:text-paper active:bg-paper active:text-ink ' +
-          'disabled:dither-25 disabled:border-dashed disabled:text-ink disabled:hover:text-ink',
+          'bg-raised text-ink ' +
+          'shadow-[inset_0_0_0_1px_var(--color-line),var(--shadow-raised)] ' +
+          'hover:shadow-[inset_0_0_0_1px_var(--color-accent-line),var(--shadow-float)] ' +
+          'disabled:bg-sunken disabled:text-faint ' +
+          'disabled:shadow-[inset_0_0_0_1px_var(--color-line)]',
         ghost:
-          'border-transparent bg-transparent text-ink hover:bg-ink hover:text-paper ' +
-          'active:bg-paper active:text-ink disabled:border-dashed disabled:border-ink',
+          'bg-transparent text-muted hover:bg-sunken hover:text-ink disabled:text-faint',
+        danger:
+          'bg-wrong-soft text-wrong shadow-[inset_0_0_0_1px_var(--color-wrong)] ' +
+          'hover:bg-wrong hover:text-raised disabled:bg-sunken disabled:text-faint ' +
+          'disabled:shadow-[inset_0_0_0_1px_var(--color-line)]',
       },
       size: {
         /*
-         * Whole-pixel heights so the Silkscreen inside stays on its grid,
-         * and PRODUCT.md's 56px touch floor is the default rather than the
-         * exception: `md` and `lg` both clear it, and `sm` exists only for
-         * the mouse-driven admin chrome, never on a student surface.
+         * `md` and `lg` clear the 48px touch floor from PRODUCT.md. `sm`
+         * exists only for mouse-driven admin chrome and never appears on a
+         * student surface.
          */
-        sm: 'min-h-11 px-3 py-1.5 text-[16px]',
-        md: 'min-h-14 px-4 py-2 text-[16px]',
-        lg: 'min-h-16 px-6 py-3 text-[16px]',
-        icon: 'h-14 w-14 shrink-0 px-0',
+        sm: 'min-h-9 px-4 py-2 text-[13px]',
+        md: 'min-h-12 px-6 py-3 text-[15px]',
+        lg: 'min-h-14 px-7 py-4 text-[16px]',
+        icon: 'h-12 w-12 shrink-0 rounded-tile px-0',
       },
       full: { true: 'w-full' },
     },
@@ -62,13 +70,34 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, full, asChild = false, children, ...props }, ref) => {
     const Comp = asChild ? Slot : 'button';
-
-    /* Slot forwards to a single child, so only a real button gets the plate. */
     return (
       <Comp ref={ref} className={cn(button({ variant, size, full }), className)} {...props}>
-        {asChild ? children : <span className="btn-label">{children}</span>}
+        {children}
       </Comp>
     );
   },
 );
 Button.displayName = 'Button';
+
+/**
+ * The trailing affordance on a primary call to action.
+ *
+ * The arrow is never left naked beside the label — it sits in its own disc,
+ * flush with the button's inner padding, and shifts a pixel or two on hover.
+ * That tiny internal movement is what makes the button feel like it has parts
+ * that move rather than a glyph printed on it.
+ */
+export function ButtonAffordance({ children }: { children: React.ReactNode }) {
+  return (
+    <span
+      aria-hidden="true"
+      className={cn(
+        '-mr-3 ml-1.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full',
+        'bg-current/15 transition-transform duration-300 ease-[var(--ease-settle)]',
+        'group-hover:translate-x-0.5 motion-reduce:transform-none',
+      )}
+    >
+      {children}
+    </span>
+  );
+}

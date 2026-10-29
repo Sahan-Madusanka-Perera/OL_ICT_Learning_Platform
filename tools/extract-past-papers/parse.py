@@ -1,4 +1,16 @@
-"""Parse OCR'd O/L ICT Paper I text into structured MCQs."""
+"""Parse OCR'd O/L ICT Paper I text into structured MCQs.
+
+Runs over one OCR pass at a time. `ocr_all.py` writes two — a primary psm 6
+pass and an alternate psm 4 pass that keeps column structure — and this is
+pointed at whichever one is wanted:
+
+    python3 parse.py              # -> .extract/parsed.json       (psm 6)
+    python3 parse.py --psm4       # -> .extract/parsed.psm4.json  (psm 4)
+
+`repair.py` then merges the second into the first, which is where the missing
+questions actually come back. Nothing here knows about that merge; this file's
+only job is to turn one pass into blocks as faithfully as it can.
+"""
 import re, json, glob, os, sys
 
 OUT = os.environ.get('WORKDIR', os.path.join(
@@ -40,8 +52,32 @@ def _damaged(n, expected):
     if sn == se[1]: return True                       # leading digit lost
     return len(sn) == len(se) and sum(x != y for x, y in zip(se, sn)) == 1
 
+# Where Paper I stops and Paper II begins.
+#
+# These files are `E-I,II`: both papers bound into one PDF. Without a cutoff the
+# fortieth question's last option runs to the end of the document — the 2011
+# paper produced a 5,000-character option 4 containing the whole of Paper II,
+# its flowcharts, its worksheets and the scanner operator's watermark. The
+# instruction block between the two papers is the reliable seam; it is printed
+# on every year and it never appears inside Paper I.
+PAPER_TWO = re.compile(
+    r'Answer\s+five\s+questions\s+only'
+    r'|First\s+question\s+carries\s+20\s+marks'
+    r'|each\s+of\s+the\s+other\s+questions\s+carries\s+10\s+marks',
+    re.I,
+)
+
+
+def cut_paper_two(lines):
+    """Drop everything from the Paper II instructions onward."""
+    for i, line in enumerate(lines):
+        if PAPER_TWO.search(line):
+            return lines[:i]
+    return lines
+
+
 def parse(text):
-    lines = strip_junk(clean(text).split('\n'))
+    lines = cut_paper_two(strip_junk(clean(text).split('\n')))
     cand = [(i, int(m.group(1)), m.group(2))
             for i, ln in enumerate(lines) if (m := QNUM.match(ln))]
 
@@ -101,9 +137,13 @@ def _tidy(t):
 DIAGRAM=re.compile(r'\b(figure|flowchart|logic circuit|circuit|diagram|shown below|given below|following table|'
                    r'spreadsheet segment|truth table|image|icon|toolbar|screenshot|the right|below\.)\b', re.I)
 
-def run():
+def run(suffix=''):
     res={}
-    for f in sorted(glob.glob(f'{OUT}/txt/paper*.txt')):
+    # An explicit pattern per pass. A bare `paper*.txt` glob also matches
+    # `paper2010.psm4.txt`, which would quietly parse every paper twice and let
+    # whichever sorted last win.
+    pattern = f'{OUT}/txt/paper????{suffix}.txt'
+    for f in sorted(glob.glob(pattern)):
         yr=re.search(r'paper(\d{4})',f).group(1)
         blocks=parse(open(f).read())
         qs={}
@@ -116,6 +156,9 @@ def run():
         res[yr]=qs
         full=sum(1 for q in qs.values() if q['options'])
         print(f'{yr}: {len(qs)}/40 blocks, {full} with 4 clean options')
-    json.dump(res,open(f'{OUT}/parsed.json','w'),indent=1)
+    dest = f'{OUT}/parsed{suffix}.json'
+    json.dump(res,open(dest,'w'),indent=1)
+    print(f'-> {dest}')
 
-if __name__=='__main__': run()
+if __name__=='__main__':
+    run('.psm4' if '--psm4' in sys.argv else '')

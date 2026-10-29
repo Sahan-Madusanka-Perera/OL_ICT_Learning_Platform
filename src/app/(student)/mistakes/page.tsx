@@ -2,8 +2,10 @@ import type { Metadata } from 'next';
 import { requireUserPage } from '@/lib/auth/guards';
 import { getMistakeBook } from '@/lib/services/recommendations';
 import { startMistakePractice } from '@/lib/actions/practice';
-import { Window, Label } from '@/components/ui/window';
-import { Button } from '@/components/ui/button';
+import { Window, ROW } from '@/components/ui/window';
+import { Button, ButtonAffordance } from '@/components/ui/button';
+import { ArrowRightIcon } from '@/components/ui/icon';
+import { cn } from '@/lib/utils/cn';
 import { BitStrip, Numeral } from '@/components/ui/bits';
 import { renderInline } from '@/lib/utils/markdown';
 import { BOX_INTERVALS_DAYS, GRADUATION_BOX } from '@/lib/domain/scheduling';
@@ -17,9 +19,8 @@ export const metadata: Metadata = { title: 'My mistakes' };
  * problem from five spread across the syllabus — and the grouping is what
  * makes that visible.
  *
- * Each question shows its history beside its state: the box strip is the
- * record of how many times in a row it has come back correct, which in a
- * one-bit world is literally the data rather than a picture of it.
+ * Each question shows its history beside its state: the step meter is the
+ * record of how many times in a row it has come back correct.
  */
 export default async function MistakesPage() {
   const user = await requireUserPage('/mistakes');
@@ -27,12 +28,12 @@ export default async function MistakesPage() {
 
   if (mistakes.length === 0) {
     return (
-      <div className="flex flex-col gap-3">
-        <header className="border-y border-ink bg-paper px-3 py-4 sm:border-x sm:px-4">
-          <h1 className="font-pixel text-[24px] uppercase leading-tight">My mistakes</h1>
+      <div className="flex flex-col gap-6 sm:gap-8">
+        <header className="px-1 pt-2 sm:pt-4">
+          <h1 className="page-title">My mistakes</h1>
         </header>
-        <Window title="Nothing to fix right now">
-          <p className="text-[15px] leading-relaxed">
+        <Window tone="raised" title="Nothing to fix right now" note="Your mistake book is empty">
+          <p className="max-w-prose text-[15px] leading-relaxed text-muted">
             Questions you get wrong land here, and stay until you have answered them
             correctly enough times to be sure it wasn&rsquo;t luck.
           </p>
@@ -54,88 +55,105 @@ export default async function MistakesPage() {
   ).length;
 
   return (
-    <div className="flex flex-col gap-3">
-      <header className="border-y border-ink bg-paper px-3 py-4 sm:border-x sm:px-4">
-        <h1 className="font-pixel text-[24px] uppercase leading-tight">My mistakes</h1>
-        <p className="mt-2 text-[15px]">
+    <div className="flex flex-col gap-6 sm:gap-8">
+      <header className="px-1 pt-2 sm:pt-4">
+        <h1 className="page-title">My mistakes</h1>
+        <p className="mt-3 text-[15px] text-muted">
           {mistakes.length} {mistakes.length === 1 ? 'question' : 'questions'} to fix
           {dueNow > 0 ? ` · ${dueNow} due now` : ''}
         </p>
       </header>
 
-      <Window title="Work through them" note={dueNow > 0 ? `${dueNow} due` : undefined}>
-        <div className="flex items-start gap-4">
-          <div className="shrink-0 text-center">
-            <Numeral value={mistakes.length} slots={3} size="lg" />
-            <Label className="mt-1.5">To fix</Label>
-          </div>
-          <p className="flex-1 text-[15px] leading-relaxed">
-            A question leaves this list once you have answered it correctly{' '}
-            {GRADUATION_BOX} times in a row across widening intervals — up to{' '}
-            {BOX_INTERVALS_DAYS[GRADUATION_BOX]} days apart. That is what makes it stick.
-          </p>
-        </div>
-        <form action={startMistakePractice} className="mt-5">
-          <Button type="submit" size="lg" full>
-            Start review
-          </Button>
-        </form>
-      </Window>
-
-      {groups.map((group) => {
-        const first = group[0]!;
-        return (
-          <Window
-            key={first.nodeId}
-            title={`${first.nodeCode} ${first.nodeTitle}`}
-            note={`${group.length}`}
-            bodyClassName="px-0 py-0 sm:px-0"
-          >
-            <ul>
-              {group.map((m) => (
-                <li
-                  key={m.questionId}
-                  className="border-b border-dashed border-ink px-3 py-3.5 last:border-b-0 sm:px-4"
-                >
-                  <div
-                    className="line-clamp-2 text-[15px] leading-relaxed"
-                    dangerouslySetInnerHTML={{ __html: renderInline(m.stem) }}
-                  />
-
-                  <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
-                    {/* The form carries every crease: the box strip is the record. */}
-                    <span className="flex items-center gap-2">
-                      <Label as="span">Step</Label>
-                      <BitStrip
-                        filled={m.box + 1}
-                        total={GRADUATION_BOX + 1}
-                        size="sm"
-                        className="w-24"
-                        label={`Step ${m.box} of ${GRADUATION_BOX} toward leaving this list`}
-                      />
-                    </span>
-
-                    <span className="font-pixel text-[16px] uppercase leading-none">
-                      {m.correctAttempts}/{m.attempts} correct
-                    </span>
-
-                    {m.nextReviewAt ? (
-                      <span className="font-pixel text-[16px] uppercase leading-none">
-                        {m.nextReviewAt.getTime() <= Date.now()
-                          ? 'Due now'
-                          : `Next ${new Intl.DateTimeFormat('en-GB', {
-                              day: 'numeric',
-                              month: 'short',
-                            }).format(m.nextReviewAt)}`}
-                      </span>
-                    ) : null}
-                  </div>
-                </li>
-              ))}
-            </ul>
+      <div className="stagger grid items-start gap-5 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-6">
+        <div className="lg:sticky lg:top-28">
+          <Window tone="peach" title="Work through them" note={dueNow > 0 ? `${dueNow} due now` : 'None due right now'}>
+            <div>
+              <p className="flex items-baseline gap-2.5">
+                <Numeral value={mistakes.length} slots={0} size="xl" />
+                <span className="text-[18px] tracking-[-0.02em]">to fix</span>
+              </p>
+              <p className="mt-3 text-[15px] leading-relaxed opacity-85">
+                A question leaves this list once you have answered it correctly{' '}
+                {GRADUATION_BOX} times in a row across widening intervals — up to{' '}
+                {BOX_INTERVALS_DAYS[GRADUATION_BOX]} days apart. That is what makes it stick.
+              </p>
+            </div>
+            <form action={startMistakePractice} className="mt-5">
+              <Button type="submit" size="lg" full>
+                Start review
+                <ButtonAffordance>
+                  <ArrowRightIcon size={14} />
+                </ButtonAffordance>
+              </Button>
+            </form>
           </Window>
-        );
-      })}
+        </div>
+
+        <div className="flex flex-col gap-5 lg:gap-6">
+          {groups.map((group) => {
+            const first = group[0]!;
+            return (
+              <Window
+                key={first.nodeId}
+                title={first.nodeTitle}
+                count={group.length}
+                note={`Topic ${first.nodeCode}`}
+                bodyClassName="px-0 pb-2 sm:px-0 sm:pb-2"
+              >
+                <ul>
+                  {group.map((m) => {
+                    const due = m.nextReviewAt && m.nextReviewAt.getTime() <= Date.now();
+                    return (
+                      <li
+                        key={m.questionId}
+                        className={cn('border-t border-line-soft py-4', ROW)}
+                      >
+                        <div
+                          className="line-clamp-2 text-[15px] leading-relaxed"
+                          dangerouslySetInnerHTML={{ __html: renderInline(m.stem) }}
+                        />
+
+                        <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-[13px] text-muted">
+                          <span className="flex items-center gap-2.5">
+                            Step {m.box} of {GRADUATION_BOX}
+                            <BitStrip
+                              filled={m.box + 1}
+                              total={GRADUATION_BOX + 1}
+                              size="sm"
+                              className="w-20"
+                              label={`Step ${m.box} of ${GRADUATION_BOX} toward leaving this list`}
+                            />
+                          </span>
+
+                          <span className="tabular">
+                            {m.correctAttempts}/{m.attempts} correct
+                          </span>
+
+                          {m.nextReviewAt ? (
+                            <span
+                              className={cn(
+                                'rounded-full px-2.5 py-1 text-[12px] font-medium',
+                                due ? 'bg-accent text-accent-ink' : 'bg-sunken',
+                              )}
+                            >
+                              {due
+                                ? 'Due now'
+                                : `Next ${new Intl.DateTimeFormat('en-GB', {
+                                    day: 'numeric',
+                                    month: 'short',
+                                  }).format(m.nextReviewAt)}`}
+                            </span>
+                          ) : null}
+                        </div>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </Window>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }

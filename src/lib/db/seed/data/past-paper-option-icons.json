@@ -1,13 +1,322 @@
 [
  {
+  "year": 2020,
+  "q": 35,
+  "option": 1,
+  "path": "/past-papers/2020/options/q35-opt1.png",
+  "alt": "A logic circuit. Input A runs straight into the upper input of a gate drawn with a curved back and a pointed nose; input B passes through a small triangle with a circle at its tip and then into the lower input. A circle sits on the gate's output, which is labelled Output.",
+  "kind": "diagram",
+  "width": 499,
+  "height": 106,
+  "byteSize": 3813
+ },
+ {
+  "year": 2020,
+  "q": 35,
+  "option": 2,
+  "path": "/past-papers/2020/options/q35-opt2.png",
+  "alt": "A logic circuit. Input A passes through a small triangle with a circle at its tip and then into the upper input of a gate drawn with a curved back and a pointed nose; input B runs straight into the lower input. A circle sits on the gate's output, which is labelled Output.",
+  "kind": "diagram",
+  "width": 499,
+  "height": 100,
+  "byteSize": 3967
+ },
+ {
+  "year": 2020,
+  "q": 35,
+  "option": 3,
+  "path": "/past-papers/2020/options/q35-opt3.png",
+  "alt": "A logic circuit. Input A runs straight into the upper input of a gate drawn with a flat back and a rounded, D-shaped nose; input B passes through a small triangle with a circle at its tip and then into the lower input. A circle sits on the gate's output, which is labelled Output.",
+  "kind": "diagram",
+  "width": 498,
+  "height": 107,
+  "byteSize": 3599
+ },
+ {
+  "year": 2020,
+  "q": 35,
+  "option": 4,
+  "path": "/past-papers/2020/options/q35-opt4.png",
+  "alt": "A logic circuit. Input A passes through a small triangle with a circle at its tip and then into the upper input of a gate drawn with a flat back and a rounded, D-shaped nose; input B runs straight into the lower input. A circle sits on the gate's output, which is labelled Output.",
+  "kind": "diagram",
+  "width": 497,
+  "height": 109,
+  "byteSize": 3550
+ },
+ {
+  "year": 2021,
+  "q": 23,
+  "option": 1,
+  "path": "/past-papers/2021/options/q23-opt1.png",
+  "alt": "A two-column table headed Company Name and Contact Number. ABC Ltd occupies one tall cell spanning two rows, beside 011-2222222 and 011-9999999 stacked in separate rows; XYZ & Sons sits in a single row below, beside 011-7777777.",
+  "kind": "diagram",
+  "width": 447,
+  "height": 154,
+  "byteSize": 6740
+ },
+ {
+  "year": 2021,
+  "q": 23,
+  "option": 2,
+  "path": "/past-papers/2021/options/q23-opt2.png",
+  "alt": "A two-column table headed Company Name and Contact Number. ABC Ltd sits in a single row beside 011-2222222; XYZ & Sons occupies one tall cell spanning two rows, beside 011-9999999 and 011-7777777 stacked in separate rows.",
+  "kind": "diagram",
+  "width": 444,
+  "height": 154,
+  "byteSize": 6189
+ },
+ {
+  "year": 2021,
+  "q": 23,
+  "option": 3,
+  "path": "/past-papers/2021/options/q23-opt3.png",
+  "alt": "A three-column table whose header row reads Company Name, ABC Ltd, XYZ & Sons. The row below is labelled Contact Number and holds 011-2222222 under ABC Ltd, with 011-7777777 and 011-9999999 stacked in two cells under XYZ & Sons.",
+  "kind": "diagram",
+  "width": 585,
+  "height": 120,
+  "byteSize": 7367
+ },
+ {
+  "year": 2021,
+  "q": 23,
+  "option": 4,
+  "path": "/past-papers/2021/options/q23-opt4.png",
+  "alt": "A three-column table whose header row reads Company Name, XYZ & Sons, ABC Ltd. The row below is labelled Contact Number and holds 011-2222222 and 011-9999999 stacked in two cells under XYZ & Sons, with 011-7777777 in a single tall cell under ABC Ltd.",
+  "kind": "diagram",
+  "width": 582,
+  "height": 120,
+  "byteSize": 7103
+ },
+ {
+  "year": 2022,
+  "q": 13,
+  "option": 1,
+  "path": "/past-papers/2022/options/q13-opt1.png",
+  "alt": "A boxed pair of toolbar icons: a lower-case x with a small 2 set below the baseline, and a lower-case x with a small 2 set above it.",
+  "kind": "icons",
+  "width": 274,
+  "height": 139,
+  "byteSize": 1453
+ },
+ {
+  "year": 2022,
+  "q": 13,
+  "option": 2,
+  "path": "/past-papers/2022/options/q13-opt2.png",
+  "alt": "A boxed pair of toolbar icons: three lines each preceded by a square bullet, and three lines each preceded by the numerals 1, 2 and 3. Both carry a small drop-down arrow.",
+  "kind": "icons",
+  "width": 362,
+  "height": 148,
+  "byteSize": 1730
+ },
+ {
+  "year": 2022,
+  "q": 13,
+  "option": 3,
+  "path": "/past-papers/2022/options/q13-opt3.png",
+  "alt": "A boxed pair of toolbar icons: a capital A with a small upward caret beside it, and a capital A with a small downward caret beside it.",
+  "kind": "icons",
+  "width": 273,
+  "height": 130,
+  "byteSize": 1500
+ },
+ {
+  "year": 2022,
+  "q": 13,
+  "option": 4,
+  "path": "/past-papers/2022/options/q13-opt4.png",
+  "alt": "A boxed pair of toolbar icons: four stacked lines with an arrow pointing left into them, and four stacked lines with an arrow pointing right into them.",
+  "kind": "icons",
+  "width": 266,
+  "height": 135,
+  "byteSize": 1238
+ },
+ {
+  "year": 2022,
+  "q": 39,
+  "option": 1,
+  "path": "/past-papers/2022/options/q39-opt1.png",
+  "alt": "The word \"To\" in grey, as it is printed beside a field in an email composing window.",
+  "kind": "icons",
+  "width": 164,
+  "height": 149,
+  "byteSize": 3623
+ },
+ {
+  "year": 2022,
+  "q": 39,
+  "option": 2,
+  "path": "/past-papers/2022/options/q39-opt2.png",
+  "alt": "The word \"Subject\" in grey, as it is printed beside a field in an email composing window.",
+  "kind": "icons",
+  "width": 321,
+  "height": 159,
+  "byteSize": 10106
+ },
+ {
+  "year": 2022,
+  "q": 39,
+  "option": 3,
+  "path": "/past-papers/2022/options/q39-opt3.png",
+  "alt": "A paperclip, drawn upright with its loop at the top, as it appears on a button in an email composing window.",
+  "kind": "icons",
+  "width": 144,
+  "height": 171,
+  "byteSize": 3880
+ },
+ {
+  "year": 2022,
+  "q": 39,
+  "option": 4,
+  "path": "/past-papers/2022/options/q39-opt4.png",
+  "alt": "A circular smiling face with two dot eyes and a wide curved mouth, as it appears on a button in an email composing window.",
+  "kind": "icons",
+  "width": 171,
+  "height": 179,
+  "byteSize": 7171
+ },
+ {
+  "year": 2023,
+  "q": 13,
+  "option": 1,
+  "path": "/past-papers/2023/options/q13-opt1.png",
+  "alt": "A toolbar icon showing four horizontal lines of differing length, all starting flush at the left edge and ragged on the right.",
+  "kind": "icons",
+  "width": 131,
+  "height": 127,
+  "byteSize": 630
+ },
+ {
+  "year": 2023,
+  "q": 13,
+  "option": 2,
+  "path": "/past-papers/2023/options/q13-opt2.png",
+  "alt": "A toolbar icon showing four horizontal lines of differing length, all ending flush at the right edge and ragged on the left.",
+  "kind": "icons",
+  "width": 138,
+  "height": 127,
+  "byteSize": 705
+ },
+ {
+  "year": 2023,
+  "q": 13,
+  "option": 3,
+  "path": "/past-papers/2023/options/q13-opt3.png",
+  "alt": "A toolbar icon showing four horizontal lines of differing length, each centred about a common vertical middle so both edges are ragged.",
+  "kind": "icons",
+  "width": 129,
+  "height": 123,
+  "byteSize": 661
+ },
+ {
+  "year": 2023,
+  "q": 13,
+  "option": 4,
+  "path": "/past-papers/2023/options/q13-opt4.png",
+  "alt": "A toolbar icon showing four horizontal lines all of the same length, flush at both the left and the right edge.",
+  "kind": "icons",
+  "width": 124,
+  "height": 126,
+  "byteSize": 680
+ },
+ {
+  "year": 2023,
+  "q": 15,
+  "option": 1,
+  "path": "/past-papers/2023/options/q15-opt1.png",
+  "alt": "A toolbar icon showing a capital A with a thick horizontal line drawn beneath it.",
+  "kind": "icons",
+  "width": 111,
+  "height": 119,
+  "byteSize": 1191
+ },
+ {
+  "year": 2023,
+  "q": 15,
+  "option": 2,
+  "path": "/past-papers/2023/options/q15-opt2.png",
+  "alt": "A toolbar icon showing a capital A with a small numeral 2 set high, above the line and to the right of it.",
+  "kind": "icons",
+  "width": 106,
+  "height": 104,
+  "byteSize": 1064
+ },
+ {
+  "year": 2023,
+  "q": 15,
+  "option": 3,
+  "path": "/past-papers/2023/options/q15-opt3.png",
+  "alt": "A toolbar icon showing a capital A with a small numeral 2 set low, below the baseline and to the right of it.",
+  "kind": "icons",
+  "width": 106,
+  "height": 102,
+  "byteSize": 1032
+ },
+ {
+  "year": 2023,
+  "q": 15,
+  "option": 4,
+  "path": "/past-papers/2023/options/q15-opt4.png",
+  "alt": "A toolbar icon showing a capital U with a thick horizontal line drawn beneath it.",
+  "kind": "icons",
+  "width": 93,
+  "height": 111,
+  "byteSize": 2960
+ },
+ {
+  "year": 2024,
+  "q": 11,
+  "option": 1,
+  "path": "/past-papers/2024/options/q11-opt1.png",
+  "alt": "A toolbar icon showing a curved arrow that loops round and points to the left.",
+  "kind": "icons",
+  "width": 112,
+  "height": 109,
+  "byteSize": 5718
+ },
+ {
+  "year": 2024,
+  "q": 11,
+  "option": 2,
+  "path": "/past-papers/2024/options/q11-opt2.png",
+  "alt": "A toolbar icon showing a curved arrow that loops round and points to the right.",
+  "kind": "icons",
+  "width": 113,
+  "height": 109,
+  "byteSize": 5527
+ },
+ {
+  "year": 2024,
+  "q": 11,
+  "option": 3,
+  "path": "/past-papers/2024/options/q11-opt3.png",
+  "alt": "A toolbar icon showing a clipboard with a written sheet of paper laid over its lower right corner.",
+  "kind": "icons",
+  "width": 116,
+  "height": 116,
+  "byteSize": 5450
+ },
+ {
+  "year": 2024,
+  "q": 11,
+  "option": 4,
+  "path": "/past-papers/2024/options/q11-opt4.png",
+  "alt": "A toolbar icon showing a capital S with a horizontal line drawn straight through its middle.",
+  "kind": "icons",
+  "width": 90,
+  "height": 98,
+  "byteSize": 2309
+ },
+ {
   "year": 2025,
   "q": 11,
   "option": 1,
   "path": "/past-papers/2025/options/q11-opt1.png",
   "alt": "A toolbar icon showing four horizontal lines of differing length, all ending flush at the right edge and ragged on the left.",
+  "kind": "icons",
   "width": 150,
-  "height": 149,
-  "byteSize": 11033
+  "height": 139,
+  "byteSize": 6979
  },
  {
   "year": 2025,
@@ -15,9 +324,10 @@
   "option": 2,
   "path": "/past-papers/2025/options/q11-opt2.png",
   "alt": "A toolbar icon showing four horizontal lines all of the same length, flush at both the left and the right edge.",
+  "kind": "icons",
   "width": 151,
-  "height": 148,
-  "byteSize": 11190
+  "height": 139,
+  "byteSize": 7000
  },
  {
   "year": 2025,
@@ -25,9 +335,10 @@
   "option": 3,
   "path": "/past-papers/2025/options/q11-opt3.png",
   "alt": "A toolbar icon showing four horizontal lines of differing length, each centred about a common vertical middle so both edges are ragged.",
+  "kind": "icons",
   "width": 151,
-  "height": 149,
-  "byteSize": 11696
+  "height": 139,
+  "byteSize": 7160
  },
  {
   "year": 2025,
@@ -35,9 +346,10 @@
   "option": 4,
   "path": "/past-papers/2025/options/q11-opt4.png",
   "alt": "A toolbar icon showing four horizontal lines of differing length, all starting flush at the left edge and ragged on the right.",
+  "kind": "icons",
   "width": 151,
-  "height": 148,
-  "byteSize": 11369
+  "height": 139,
+  "byteSize": 7260
  },
  {
   "year": 2025,
@@ -45,9 +357,10 @@
   "option": 1,
   "path": "/past-papers/2025/options/q12-opt1.png",
   "alt": "A toolbar icon showing a capital A with a small capital B set low, below the baseline and to the right of it.",
+  "kind": "icons",
   "width": 154,
-  "height": 150,
-  "byteSize": 11032
+  "height": 140,
+  "byteSize": 7891
  },
  {
   "year": 2025,
@@ -55,9 +368,10 @@
   "option": 2,
   "path": "/past-papers/2025/options/q12-opt2.png",
   "alt": "A toolbar icon showing a capital A with a small capital B set high, above the line and to the right of it.",
+  "kind": "icons",
   "width": 153,
-  "height": 150,
-  "byteSize": 11507
+  "height": 140,
+  "byteSize": 8123
  },
  {
   "year": 2025,
@@ -65,9 +379,10 @@
   "option": 3,
   "path": "/past-papers/2025/options/q12-opt3.png",
   "alt": "A toolbar icon showing a capital A with a tick mark across its foot.",
+  "kind": "icons",
   "width": 154,
-  "height": 150,
-  "byteSize": 11327
+  "height": 140,
+  "byteSize": 8750
  },
  {
   "year": 2025,
@@ -75,9 +390,10 @@
   "option": 4,
   "path": "/past-papers/2025/options/q12-opt4.png",
   "alt": "A toolbar icon showing two overlapping pages, one behind the other.",
+  "kind": "icons",
   "width": 154,
-  "height": 150,
-  "byteSize": 12470
+  "height": 140,
+  "byteSize": 7763
  },
  {
   "year": 2025,
@@ -85,9 +401,10 @@
   "option": 1,
   "path": "/past-papers/2025/options/q13-opt1.png",
   "alt": "A toolbar icon showing a paint brush held at an angle.",
+  "kind": "icons",
   "width": 150,
-  "height": 146,
-  "byteSize": 10983
+  "height": 139,
+  "byteSize": 7253
  },
  {
   "year": 2025,
@@ -95,9 +412,10 @@
   "option": 2,
   "path": "/past-papers/2025/options/q13-opt2.png",
   "alt": "A toolbar icon showing a capital A with a thick line drawn beneath it.",
+  "kind": "icons",
   "width": 150,
-  "height": 146,
-  "byteSize": 11668
+  "height": 139,
+  "byteSize": 8720
  },
  {
   "year": 2025,
@@ -105,9 +423,10 @@
   "option": 3,
   "path": "/past-papers/2025/options/q13-opt3.png",
   "alt": "A toolbar icon showing a capital S with a horizontal line drawn straight through its middle.",
+  "kind": "icons",
   "width": 150,
-  "height": 146,
-  "byteSize": 10316
+  "height": 139,
+  "byteSize": 7540
  },
  {
   "year": 2025,
@@ -115,8 +434,9 @@
   "option": 4,
   "path": "/past-papers/2025/options/q13-opt4.png",
   "alt": "A toolbar icon showing a capital U with a line drawn beneath it.",
+  "kind": "icons",
   "width": 150,
-  "height": 146,
-  "byteSize": 8815
+  "height": 139,
+  "byteSize": 6035
  }
 ]

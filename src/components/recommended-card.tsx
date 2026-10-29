@@ -1,31 +1,39 @@
-import { Window, Label } from '@/components/ui/window';
-import { Button } from '@/components/ui/button';
+import { Window, IconTile } from '@/components/ui/window';
+import { Button, ButtonAffordance } from '@/components/ui/button';
+import { ArrowRightIcon, ClockIcon } from '@/components/ui/icon';
+import { cn } from '@/lib/utils/cn';
 import { Numeral } from '@/components/ui/bits';
 import { startRecommendedPractice, startQuickPractice } from '@/lib/actions/practice';
 import type { Recommendation } from '@/lib/domain/recommendation';
 
 /**
- * The most important window on the dashboard.
+ * The most important sheet on the dashboard.
  *
  * It shows the composition of the recommended set, not just a button. A
  * student who can see "5 from Logic Gates — your weakest topic, 5 due for
  * review" understands why they are being asked to do this, which is the
  * difference between a study tool and a slot machine.
  *
- * The set's size takes reserved monumental digits: the quantity is the first
- * thing the eye lands on, and it sits in the same place on every visit.
+ * The whole sheet is lilac — the reference's course card — and holds the
+ * page's one ink pill. The set's size is a big light numeral and its length
+ * sits on an ink-tiled chip.
+ *
+ * `quiet` hands the ink pill to something more urgent on the same screen —
+ * an unfinished session — so there is never more than one.
  */
 export function RecommendedCard({
   recommendation,
   isNew,
+  quiet = false,
 }: {
   recommendation: Recommendation;
   isNew: boolean;
+  quiet?: boolean;
 }) {
   if (recommendation.totalQuestions === 0) {
     return (
-      <Window title="Practice">
-        <p className="text-[15px] leading-relaxed">
+      <Window title="Practice" note="Nothing to practise right now">
+        <p className="text-[15px] leading-relaxed text-muted">
           There are no questions available right now. Please check back shortly.
         </p>
       </Window>
@@ -34,38 +42,47 @@ export function RecommendedCard({
 
   return (
     <Window
+      tone="lilac"
       title={isNew ? 'Start here' : 'Recommended for you'}
-      note={`About ${recommendation.estimatedMinutes} min`}
+      note={isNew ? 'A first set, to find out where you are' : 'Built from what you need right now'}
     >
-      <div className="flex items-start gap-4">
-        <div className="shrink-0 text-center">
-          <Numeral value={recommendation.totalQuestions} slots={2} size="xl" />
-          <Label className="mt-1.5">Questions</Label>
-        </div>
+      <div>
+        <p className="flex items-baseline gap-2.5">
+          <Numeral value={recommendation.totalQuestions} slots={0} size="xl" />
+          <span className="text-[18px] tracking-[-0.02em]">questions</span>
+        </p>
 
-        <div className="min-w-0 flex-1">
-          {isNew ? (
-            <p className="text-[15px] leading-relaxed">
-              A spread across the syllabus, so we can find out where you are. After this,
-              these sets get targeted at what you actually need.
-            </p>
-          ) : (
-            <ul className="flex flex-col gap-2">
-              {recommendation.breakdown.map((slot) => (
-                <li key={slot.kind} className="flex items-start gap-2.5 text-[15px] leading-snug">
-                  <SlotMark kind={slot.kind} />
-                  <span>{slot.description}</span>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
+        {isNew ? (
+          <p className="mt-3 max-w-[40ch] text-[15px] leading-relaxed opacity-85">
+            A spread across the syllabus. After this, every set is aimed at what you
+            actually need.
+          </p>
+        ) : (
+          <ul className="mt-4 flex flex-col gap-2.5">
+            {recommendation.breakdown.map((slot) => (
+              <li key={slot.kind} className="flex items-start gap-3 text-[15px] leading-snug">
+                <SlotMark kind={slot.kind} />
+                <span>{slot.description}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        <p className="mt-5 inline-flex items-center gap-2.5 text-[14px]">
+          <IconTile size="sm">
+            <ClockIcon size={16} />
+          </IconTile>
+          About {recommendation.estimatedMinutes} min
+        </p>
       </div>
 
-      <div className="mt-5 flex flex-col gap-2 sm:flex-row">
+      <div className="mt-6 flex flex-col gap-2.5 sm:flex-row lg:flex-col 2xl:flex-row">
         <form action={startRecommendedPractice} className="sm:flex-1">
-          <Button type="submit" size="lg" full>
+          <Button type="submit" size="lg" variant={quiet ? 'secondary' : 'primary'} full>
             Start this set
+            <ButtonAffordance>
+              <ArrowRightIcon size={14} />
+            </ButtonAffordance>
           </Button>
         </form>
         <form action={startQuickPractice}>
@@ -79,52 +96,63 @@ export function RecommendedCard({
 }
 
 /**
- * Why a slot is in the set, as a 8×8 pixel mark.
+ * Why a slot is in the set.
  *
- * Four reasons, four distinguishable patterns — the same job the coloured
- * dots did, without asking a colour-blind reader to take it on trust.
+ * Four reasons, four shapes — drawn in the same line language as the rest of
+ * the icons rather than as coloured dots, so a colour-blind reader gets the
+ * distinction from the geometry. The tint is a second signal on top, never the
+ * only one.
  */
-const SLOT_CELLS: Record<string, Array<[number, number, number, number]>> = {
-  /* weak topic — a hollow cell: the gap itself */
-  weak_topic: [
-    [0, 0, 8, 2],
-    [0, 6, 8, 2],
-    [0, 0, 2, 8],
-    [6, 0, 2, 8],
-  ],
-  /* due for review — a solid cell: it is time */
-  due_review: [[1, 1, 6, 6]],
-  /* recent mistake — the ╳ */
-  recent_mistake: [
-    [0, 0, 2, 2],
-    [2, 2, 2, 2],
-    [4, 4, 2, 2],
-    [6, 6, 2, 2],
-    [6, 0, 2, 2],
-    [0, 6, 2, 2],
-  ],
-  /* coverage — a dispersed pair: ground being filled in */
-  coverage: [
-    [0, 0, 2, 2],
-    [4, 4, 2, 2],
-  ],
+const SLOT_MARKS: Record<string, { path: React.ReactNode; tone: string }> = {
+  /* weak topic — a hollow square: the gap itself */
+  weak_topic: {
+    path: <rect x="4.5" y="4.5" width="11" height="11" rx="2.5" />,
+    tone: 'text-caution',
+  },
+  /* due for review — a clock face: it is time */
+  due_review: {
+    path: (
+      <>
+        <circle cx="10" cy="10" r="6" />
+        <path d="M10 6.5V10l2.5 1.5" />
+      </>
+    ),
+    tone: 'text-ink',
+  },
+  /* recent mistake — a cross */
+  recent_mistake: {
+    path: <path d="M6 6l8 8M14 6l-8 8" />,
+    tone: 'text-wrong',
+  },
+  /* coverage — ground being filled in */
+  coverage: {
+    path: (
+      <>
+        <path d="M4 10h5" />
+        <path d="M11 10h5" />
+        <path d="M10 4v12" strokeDasharray="2 3" />
+      </>
+    ),
+    tone: 'opacity-70',
+  },
 };
 
 function SlotMark({ kind }: { kind: string }) {
-  const cells = SLOT_CELLS[kind] ?? SLOT_CELLS.coverage!;
+  const mark = SLOT_MARKS[kind] ?? SLOT_MARKS.coverage!;
   return (
     <svg
-      width="8"
-      height="8"
-      viewBox="0 0 8 8"
-      shapeRendering="crispEdges"
-      fill="currentColor"
+      width="18"
+      height="18"
+      viewBox="0 0 20 20"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       aria-hidden="true"
-      className="mt-1.5 shrink-0"
+      className={cn('mt-0.5 shrink-0', mark.tone)}
     >
-      {cells.map(([x, y, w, h], i) => (
-        <rect key={i} x={x} y={y} width={w} height={h} />
-      ))}
+      {mark.path}
     </svg>
   );
 }

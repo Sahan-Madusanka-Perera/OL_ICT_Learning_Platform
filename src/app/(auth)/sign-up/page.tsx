@@ -12,21 +12,20 @@ export default async function SignUpPage() {
 
   return (
     <div>
-      <Window title="Create your account" note="Free">
-        <p className="text-[15px] leading-relaxed">No card, no ads.</p>
+      <Window tone="raised" title="Create your account" note="Free — no card, no ads">
         <SignUpForm />
       </Window>
 
-      <p className="mt-5 px-3 text-center text-[15px] sm:px-0">
+      <p className="mt-6 text-center text-[15px] text-muted">
         Already have an account?{' '}
-        <Link href="/sign-in" className="ant-focus font-semibold underline underline-offset-2">
+        <Link href="/sign-in" className="font-medium text-ink underline decoration-accent-line underline-offset-4 transition-colors hover:decoration-accent">
           Sign in
         </Link>
       </p>
 
-      <p className="mt-4 px-3 text-center text-[13px] leading-relaxed sm:px-0">
+      <p className="mt-4 px-3 text-center text-[13px] leading-relaxed text-muted sm:px-0">
         We ask for as little as possible — a name, an email and your grade.{' '}
-        <Link href="/privacy" className="ant-focus underline underline-offset-2">
+        <Link href="/privacy" className="text-ink underline underline-offset-4">
           What we do with it
         </Link>
         .

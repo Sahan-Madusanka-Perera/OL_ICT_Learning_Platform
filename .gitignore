@@ -13,3 +13,8 @@ coverage/
 
 # past-paper extraction intermediates (page images are ~700MB)
 .extract/
+
+__pycache__/
+*.pyc
+
+.impeccable/

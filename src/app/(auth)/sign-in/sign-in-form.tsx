@@ -10,13 +10,13 @@ export function SignInForm({ next }: { next?: string }) {
   const [state, action] = useActionState<FormState, FormData>(signInAction, {});
 
   return (
-    <form action={action} className="mt-5 flex flex-col gap-4">
+    <form action={action} className="flex flex-col gap-5">
       {next ? <input type="hidden" name="next" value={next} /> : null}
 
       {state.error && !state.field ? (
         <p
           role="alert"
-          className="dither-25 border-2 border-ink px-3 py-2.5 text-[15px] font-semibold"
+          className="rounded-tile bg-wrong-soft px-4 py-3 text-[15px] font-medium text-wrong shadow-[inset_0_0_0_1px_var(--color-wrong)]"
         >
           {state.error}
         </p>

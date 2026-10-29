@@ -1,13 +1,12 @@
 import type { Metadata } from 'next';
-import { Label } from '@/components/ui/window';
 
 export const metadata: Metadata = { title: 'Terms' };
 
 export default function TermsPage() {
   return (
-    <article className="mx-auto max-w-[42rem] px-3 py-12 sm:px-5 sm:py-14">
-      <h1 className="font-pixel text-[24px] uppercase leading-tight sm:text-[32px]">Terms of use</h1>
-      <p className="mt-5 text-[17px] leading-relaxed">
+    <article className="mx-auto max-w-[46rem] px-3 pb-16 pt-6 sm:px-5 sm:pb-24 sm:pt-10">
+      <h1 className="page-title">Terms of use</h1>
+      <p className="mb-10 mt-5 text-[17px] leading-relaxed text-muted">
         The short version: use it to study, do not try to break it, and understand what we
         do and do not promise.
       </p>
@@ -64,9 +63,9 @@ export default function TermsPage() {
 
 function S({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section className="mt-9 border-t border-ink pt-7">
-      <Label as="h2">{title}</Label>
-      <div className="mt-4 flex flex-col gap-4 text-[15px] leading-relaxed">{children}</div>
+    <section className="glass mt-4 rounded-[24px] p-6 sm:rounded-xl sm:p-9">
+      <h2 className="text-[22px] leading-tight tracking-[-0.03em]">{title}</h2>
+      <div className="mt-4 flex flex-col gap-4 text-[15px] leading-relaxed text-muted [&_strong]:text-ink">{children}</div>
     </section>
   );
 }

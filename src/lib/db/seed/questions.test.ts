@@ -54,6 +54,19 @@ describe('structural integrity of the seed bank', () => {
     }
   });
 
+  /*
+   * The renderer escapes HTML itself, so content is written raw — `<a>`, not
+   * &lt;a&gt;. A pre-escaped entity is escaped a second time and reaches the
+   * student as the literal text "&lt;a&gt;".
+   */
+  it('writes tags raw, never as HTML entities', () => {
+    const entity = /&(?:lt|gt|amp|quot|#\d+);/;
+    for (const q of MODEL_QUESTIONS) {
+      const text = [q.stem, q.explanation, q.examTip ?? '', ...q.options, ...q.misconceptions];
+      for (const t of text) expect(t, q.stem.slice(0, 50)).not.toMatch(entity);
+    }
+  });
+
   it('has no duplicate question stems', () => {
     const stems = MODEL_QUESTIONS.map((q) => q.stem);
     expect(new Set(stems).size).toBe(stems.length);

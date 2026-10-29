@@ -24,8 +24,8 @@ export default function StudentError({
   }, [error]);
 
   return (
-    <Window title="That didn't load" className="mx-auto max-w-md">
-      <p className="text-[15px] leading-relaxed">
+    <Window tone="raised" title="That didn't load" note="Nothing you did is lost" className="mx-auto mt-8 max-w-md">
+      <p className="text-[15px] leading-relaxed text-muted">
         Something went wrong on our side. Your practice is saved — every answer is recorded
         as you make it, so nothing has been lost.
       </p>

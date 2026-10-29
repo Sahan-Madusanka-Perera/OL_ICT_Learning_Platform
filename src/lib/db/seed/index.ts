@@ -22,8 +22,8 @@ import {
   type PastPaperFigure,
 } from './past-paper-figures';
 import {
-  VERIFIED_QUESTIONS,
-  VERIFIED_STATS,
+  TRANSCRIBED_QUESTIONS,
+  TRANSCRIBED_STATS,
   isVerified,
 } from './past-paper-verified';
 import { iconsFor, OPTION_ICON_STATS } from './past-paper-option-icons';
@@ -57,6 +57,37 @@ function publicId(): string {
 }
 
 const pad = (n: string) => n.padStart(2, '0');
+
+/**
+ * What to tell a reviewer about a transcription, which differs by tier.
+ *
+ * The note is the only thing in the queue that says how much of the reviewer's
+ * job is already done, so it must not overstate. A `verified` year has been
+ * read against the marking scheme and topiced by hand; a `text_layer` year has
+ * exact characters and a keyword guess at the topic, and saying so is the
+ * difference between "confirm this" and "decide this".
+ */
+function transcriptionNote(q: {
+  year: number;
+  topic: string;
+  tier: 'text_layer' | 'verified';
+  sourceDefect: string | null;
+}): string {
+  const base =
+    `Replaced the OCR transcription with the exact text from the ${q.year} ` +
+    'PDF text layer: sub- and superscripts restored, reading order corrected. ' +
+    'The stem no longer needs checking character by character against the paper.';
+
+  const topic =
+    q.tier === 'verified'
+      ? ` Topic re-assigned by hand to ${q.topic}.`
+      : ` Topic ${q.topic} is a keyword guess and still needs deciding — the same ` +
+        'classifier was wrong on 22 of 2025\'s 40 questions.';
+
+  const defect = q.sourceDefect ? ` ${q.sourceDefect}` : '';
+
+  return base + topic + defect;
+}
 
 /**
  * Write a verified question's options.
@@ -607,24 +638,30 @@ async function main() {
   );
   log(`${PAST_PAPER_QUESTION_STATS.reviewReady} ready for a reviewer to read and approve`);
 
-  /* ---------------- 5a. Verified transcriptions ----------------
+  /* ---------------- 5a. Text-layer transcriptions ----------------
    *
    * The born-digital papers do not need OCR, and pretending they do costs
    * accuracy. These rows come from the characters the Department typeset —
-   * sub- and superscripts intact, reading order corrected, topics assigned by
-   * hand against the syllabus rather than by keyword.
+   * sub- and superscripts intact, reading order corrected. All six papers
+   * (2020-2025) are covered, and all six give up 40 of 40 questions.
    *
-   * They are still drafts. An exact transcription is not a reviewed question:
-   * the topic is a judgement call and the figures may still be missing. What it
-   * removes is the reviewer's most tedious job, comparing text to PDF.
+   * They do not all carry the same claim, and the review note each one writes
+   * says which it is. 2025 has been read against its marking scheme with every
+   * topic assigned by hand; 2020-2024 have exact text and a keyword topic that
+   * is triage, nothing more. See ./past-paper-verified.ts.
+   *
+   * Both tiers are still drafts. An exact transcription is not a reviewed
+   * question: the topic is a judgement call and the figures may still be
+   * missing. What it removes is the reviewer's most tedious job, comparing
+   * text to PDF.
    */
-  console.log('\nVerified transcriptions');
+  console.log('\nText-layer transcriptions');
 
   let verifiedInserted = 0;
   let verifiedCorrected = 0;
   let iconOptions = 0;
 
-  for (const q of VERIFIED_QUESTIONS) {
+  for (const q of TRANSCRIBED_QUESTIONS) {
     const nodeId = nodeByCode.get(q.topic);
     const paperId = paperByYear.get(q.year);
     if (!nodeId || !paperId) continue;
@@ -669,11 +706,7 @@ async function main() {
         questionId: existing.id,
         reviewerId: adminId,
         action: 'submit',
-        note:
-          `Replaced the OCR transcription with the exact text from the ${q.year} ` +
-          'PDF text layer: sub- and superscripts restored, reading order corrected, ' +
-          `topic re-assigned by hand to ${q.topic}. The stem no longer needs ` +
-          'checking character by character against the paper.',
+        note: transcriptionNote(q),
       });
       verifiedCorrected++;
       if (icons) iconOptions++;
@@ -706,11 +739,22 @@ async function main() {
   }
 
   log(
-    `${VERIFIED_STATS.total} questions read off the text layer for ` +
-      `${VERIFIED_STATS.years.join(', ')} across ${VERIFIED_STATS.topics} topics`,
+    `${TRANSCRIBED_STATS.total} questions read off the text layer for ` +
+      `${TRANSCRIBED_STATS.years.join(', ')} across ${TRANSCRIBED_STATS.topics} topics`,
+  );
+  log(
+    `${TRANSCRIBED_STATS.verified} of them verified against a marking scheme ` +
+      `(${TRANSCRIBED_STATS.verifiedYears.join(', ')}); the other ` +
+      `${TRANSCRIBED_STATS.textLayerOnly} carry an exact stem and a keyword topic`,
   );
   if (verifiedCorrected) log(`${verifiedCorrected} OCR drafts replaced with the exact text`);
-  if (verifiedInserted) log(`${verifiedInserted} inserted`);
+  if (verifiedInserted) log(`${verifiedInserted} inserted — questions OCR never recovered`);
+  if (TRANSCRIBED_STATS.withSourceDefect) {
+    log(
+      `${TRANSCRIBED_STATS.withSourceDefect} transcribed from a paper that misnumbers ` +
+        'an option marker — noted on the question, not silently repaired',
+    );
+  }
   log(
     `${iconOptions} questions have picture-only options ` +
       `(${OPTION_ICON_STATS.total} option icons, each with alt text)`,

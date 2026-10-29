@@ -16,7 +16,6 @@ import { BitStrip, Numeral } from '@/components/ui/bits';
 import { Bit, runFromAnswers } from '@/components/ui/bit';
 import { SoundToggle, useSound } from '@/components/ui/sound-toggle';
 import { bleepForAnswer } from '@/lib/sound/bleeps';
-import { Label } from '@/components/ui/window';
 import { ArrowLeftIcon, ArrowRightIcon } from '@/components/ui/icon';
 
 /**
@@ -195,68 +194,74 @@ export function SessionRunner({ session }: { session: SessionView }) {
 
   return (
     <div className="flex min-h-dvh flex-col">
-      {/* ---- title bar: this session is the window, the viewport is its frame ---- */}
-      <header ref={barRef} className="sticky top-0 z-10 border-b border-ink bg-paper">
-        <div className="mx-auto flex h-16 max-w-3xl items-center gap-3 px-3 sm:px-4">
-          <button
-            type="button"
-            onClick={() => setConfirmSubmit(true)}
-            className="ant-focus font-pixel h-14 shrink-0 border border-ink px-3 text-[16px] uppercase leading-none hover:bg-ink hover:text-paper"
-          >
-            Finish
-          </button>
+      {/* ---- title bar: one floating island, the session's own chrome ---- */}
+      <header ref={barRef} className="sticky top-0 z-10">
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 top-0 h-[115%] backdrop-blur-md [mask-image:linear-gradient(to_bottom,black_60%,transparent)]"
+        />
+        <div className="relative mx-auto max-w-3xl px-3 pt-3 sm:px-5">
+          <div className="island flex h-14 items-center gap-3 rounded-full pl-2 pr-3 sm:pr-4">
+            <button
+              type="button"
+              onClick={() => setConfirmSubmit(true)}
+              className="h-10 shrink-0 rounded-full bg-sunken px-4 text-[13px] font-medium text-ink transition-colors duration-200 hover:bg-accent hover:text-accent-ink"
+            >
+              Finish
+            </button>
 
-          <div
-            className="min-w-0 flex-1"
-            role="progressbar"
-            aria-valuenow={answeredCount}
-            aria-valuemin={0}
-            aria-valuemax={total}
-            aria-label={`${answeredCount} of ${total} answered`}
-          >
-            <BitStrip filled={answeredCount} total={total} size="sm" />
+            <div
+              className="min-w-0 flex-1"
+              role="progressbar"
+              aria-valuenow={answeredCount}
+              aria-valuemin={0}
+              aria-valuemax={total}
+              aria-label={`${answeredCount} of ${total} answered`}
+            >
+              <BitStrip filled={answeredCount} total={total} />
+            </div>
+
+            <p className="flex shrink-0 items-baseline text-[14px] text-muted tabular">
+              <span className="font-medium text-ink">{index + 1}</span>
+              <span aria-hidden="true">&thinsp;/&thinsp;{total}</span>
+            </p>
+
+            {session.secondsRemaining !== null ? (
+              <ExamTimer
+                initialSeconds={session.secondsRemaining}
+                onExpire={() =>
+                  startTransition(async () => {
+                    await submitSessionAction(session.id);
+                  })
+                }
+              />
+            ) : null}
           </div>
 
-          <p className="font-pixel flex shrink-0 items-baseline text-[16px] leading-none">
-            <Numeral value={index + 1} slots={String(total).length} size="sm" />
-            <span aria-hidden="true">/{total}</span>
-          </p>
+          {/*
+            BIT sits in the chrome, not beside the verdict.
 
-          {session.secondsRemaining !== null ? (
-            <ExamTimer
-              initialSeconds={session.secondsRemaining}
-              onExpire={() =>
-                startTransition(async () => {
-                  await submitSessionAction(session.id);
-                })
-              }
-            />
-          ) : null}
-        </div>
+            Putting a face next to "Correct" would make it a reaction, and the
+            feedback panel argues at length against anything there that reads as
+            a game congratulating a child — half the time the verdict is "not
+            quite". Under the title bar it is a status light instead: always
+            present, never triggered, and the only thing that moves is its face.
 
-        {/*
-          BIT sits in the chrome, not beside the verdict.
-
-          Putting a face next to "Correct" would make it a reaction, and the
-          feedback panel argues at length against anything there that reads as
-          a game congratulating a child — half the time the verdict is "not
-          quite". As part of the title bar it is a status light instead: always
-          present, never triggered, and the only thing that moves is its face.
-
-          It is dropped entirely in an exam. Correctness is withheld until
-          submit, so there is no run to report and a companion that cannot
-          speak is just decoration taking up 40px.
-        */}
-        {session.revealAnswers ? (
-          <div className="border-t border-ink">
-            <div className="mx-auto flex h-10 max-w-3xl items-center gap-2 px-3 sm:px-4">
+            It is dropped entirely in an exam. Correctness is withheld until
+            submit, so there is no run to report and a companion that cannot
+            speak is just decoration taking up 40px.
+          */}
+          {session.revealAnswers ? (
+            <div className="flex h-12 items-center gap-2 px-3">
               <Bit run={run} size={32} />
               {/* Beside BIT because they are the same feature to a student:
                   the companion, and whether it is allowed to make a noise. */}
               <SoundToggle className="ml-auto" />
             </div>
-          </div>
-        ) : null}
+          ) : (
+            <div className="h-3" />
+          )}
+        </div>
       </header>
 
       {/*
@@ -276,7 +281,13 @@ export function SessionRunner({ session }: { session: SessionView }) {
       </div>
 
       {/* ---- question ---- */}
-      <main id="main" className="mx-auto w-full max-w-3xl flex-1 px-0 py-4 sm:px-4 sm:py-6">
+      {/*
+        The bottom padding clears the sticky action bar and the palette beneath
+        it. Without it the last option of every question sits permanently under
+        the bar — readable only by scrolling past the end of the page, which
+        there is nothing below to allow.
+      */}
+      <main id="main" className="mx-auto w-full max-w-3xl flex-1 px-3 pb-52 pt-2 sm:px-5 sm:pt-3">
         <QuestionCard
           question={question}
           selected={selected}
@@ -292,22 +303,24 @@ export function SessionRunner({ session }: { session: SessionView }) {
         {error ? (
           <p
             role="alert"
-            className="dither-25 mt-4 border-y-2 border-ink px-3 py-3 text-[15px] font-semibold sm:border-x-2 sm:px-4"
+            className="mt-4 flex items-start gap-2.5 rounded-tile bg-wrong-soft px-4 py-3.5 text-[15px] font-medium text-wrong shadow-[inset_0_0_0_1px_var(--color-wrong)]"
           >
             {error}
           </p>
         ) : null}
 
         {outcome?.feedback ? (
-          <div ref={feedbackRef} className="mt-4 scroll-mt-20">
+          <div ref={feedbackRef} className="mt-5 scroll-mt-20">
             <FeedbackPanel outcome={outcome} question={question} />
           </div>
         ) : null}
       </main>
 
-      {/* ---- action bar ---- */}
-      <div className="sticky bottom-0 border-t border-ink bg-paper pb-[env(safe-area-inset-bottom)]">
-        <div className="mx-auto flex max-w-3xl items-center gap-2 px-3 py-2.5 sm:px-4">
+      {/* ---- action bar: a floating island holding the controls and the palette ---- */}
+      {/* Same column as the question card above, so the two edges line up. */}
+      <div className="sticky bottom-0 mx-auto w-full max-w-3xl px-3 pb-[max(12px,env(safe-area-inset-bottom))] sm:px-5">
+        <div className="island overflow-hidden rounded-[28px]">
+        <div className="flex items-center gap-2.5 p-2.5 sm:p-3">
           <Button
             variant="secondary"
             size="icon"
@@ -315,13 +328,17 @@ export function SessionRunner({ session }: { session: SessionView }) {
             disabled={index === 0}
             aria-label="Previous question"
           >
-            <ArrowLeftIcon size={24} />
+            <ArrowLeftIcon size={20} />
           </Button>
 
           {outcome ? (
-            /* The inversion has moved to the correct option, so the control
-               that advances carries its weight in chrome instead. */
-            <Button size="lg" variant="secondary" full onClick={advance} className="border-2">
+            /*
+             * Still the primary. Once an answer is locked, advancing IS the
+             * live action on the screen — the options are inert and the
+             * explanation is read-only — so the accent follows it rather than
+             * leaving the student to hunt for what to do next.
+             */
+            <Button size="lg" full onClick={advance}>
               {isLast ? 'Finish and see results' : 'Next question'}
             </Button>
           ) : (
@@ -342,7 +359,7 @@ export function SessionRunner({ session }: { session: SessionView }) {
             disabled={isLast}
             aria-label="Next question"
           >
-            <ArrowRightIcon size={24} />
+            <ArrowRightIcon size={20} />
           </Button>
         </div>
 
@@ -353,6 +370,7 @@ export function SessionRunner({ session }: { session: SessionView }) {
           onJump={goTo}
           revealAnswers={session.revealAnswers}
         />
+        </div>
       </div>
 
       {/* ---- submit confirmation ---- */}
@@ -411,35 +429,37 @@ function SubmitDialog({
   }, [onCancel]);
 
   return (
-    <div className="dither-50 fixed inset-0 z-50 flex items-end justify-center p-3 sm:items-center">
+    <div className="fixed inset-0 z-50 flex items-end justify-center bg-canvas/50 p-3 backdrop-blur-md sm:items-center">
       <div
         ref={ref}
         tabIndex={-1}
         role="dialog"
         aria-modal="true"
         aria-labelledby="submit-title"
-        className="w-full max-w-sm border border-ink bg-paper"
+        className="glass-raised reveal w-full max-w-sm overflow-hidden rounded-xl"
       >
-        <div className="border-b border-ink px-4 py-2">
-          <Label as="h2">
-            <span id="submit-title">Finish this session?</span>
-          </Label>
+        <div className="px-6 pt-6">
+          <h2 id="submit-title" className="text-[22px] leading-tight tracking-[-0.025em]">
+            Finish this session?
+          </h2>
         </div>
 
-        <div className="px-4 py-4">
+        <div className="px-6 pb-6 pt-4">
           {unanswered > 0 ? (
-            <div className="flex items-start gap-4">
+            <div className="tint-peach flex items-start gap-4 rounded-[20px] p-4">
               <div className="shrink-0 text-center">
                 <Numeral value={unanswered} slots={2} size="lg" />
-                <Label className="mt-1.5">Unanswered</Label>
+                <p className="mt-1 text-[13px] opacity-80">Unanswered</p>
               </div>
-              <p className="flex-1 text-[15px] leading-relaxed">
+              <p className="flex-1 text-[15px] leading-relaxed opacity-90">
                 They will be marked as not attempted, and each one goes into your mistake
                 book for review.
               </p>
             </div>
           ) : (
-            <p className="text-[15px] leading-relaxed">You have answered every question.</p>
+            <p className="text-[15px] leading-relaxed text-muted">
+              You have answered every question.
+            </p>
           )}
 
           <div className="mt-5 flex flex-col gap-2">

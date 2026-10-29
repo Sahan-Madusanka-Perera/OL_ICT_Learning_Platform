@@ -1,17 +1,19 @@
 import { requireUserPage } from '@/lib/auth/guards';
 import { isStaff } from '@/lib/auth/rbac';
 import { countMistakes, countDueReviews } from '@/lib/services/recommendations';
-import { StudentNav } from '@/components/student-nav';
+import { StudentNav, StudentRail } from '@/components/student-nav';
 import { StudentChrome } from '@/components/student-chrome';
+import { StudentMain } from '@/components/student-main';
 import { signOutAction } from '@/lib/actions/auth';
 
 /**
- * The desktop.
+ * The signed-in shell.
  *
- * Windows tile on a 50% dither ground; the chrome above them is the one
- * persistent frame, and it stands down inside a session. On a phone the
- * windows go edge to edge and the dither shows only in the gaps between
- * them, which is where it belongs — content never sits on a dither.
+ * Glass sheets float over the wash with the header islands above them and
+ * the icon rail beside them. Every part stands down inside a session — the
+ * header, both navs and the content well itself — so the runner gets the
+ * whole screen. See
+ * `StudentMain` for why the well has to be a client component to manage that.
  */
 export default async function StudentLayout({ children }: { children: React.ReactNode }) {
   const user = await requireUserPage();
@@ -30,12 +32,9 @@ export default async function StudentLayout({ children }: { children: React.Reac
         signOut={signOutAction}
       />
 
-      <main
-        id="main"
-        className="mx-auto w-full max-w-5xl flex-1 px-0 pb-28 pt-3 sm:px-4 sm:pb-10 sm:pt-5"
-      >
-        {children}
-      </main>
+      <StudentRail isStaff={isStaff(user.role)} signOut={signOutAction} />
+
+      <StudentMain>{children}</StudentMain>
 
       <StudentNav mistakeCount={mistakes} dueCount={due} />
     </div>

@@ -1,7 +1,3374 @@
 [
  {
+  "year": 2020,
+  "q": 1,
+  "topic": "2.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following contains only input devices?",
+  "options": [
+   "Multimedia projector, Printer, Keyboard, Mouse",
+   "Printer, Keyboard, Touch screen, Joystick",
+   "Monitor, Light pen, Multimedia projector, Keyboard",
+   "Mouse, Keyboard, Light pen, Joystick"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 2,
+  "topic": "10.1",
+  "topicSource": "keyword",
+  "stem": "The three main functions of an information system are",
+  "options": [
+   "input, process and output",
+   "code, compile and execute",
+   "design, develop and test",
+   "select, copy and paste"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 3,
+  "topic": "3.4",
+  "topicSource": "keyword",
+  "stem": "Which of the following represents the units of measurements of data in computer systems in the ascending order of their size?",
+  "options": [
+   "Bit, Byte, Kilobyte, Terabyte",
+   "Byte, Bit, Kilobyte, Terabyte",
+   "Megabyte, Kilobyte, Bit, Byte",
+   "Terabyte, Gigabyte, Megabyte, Kilobyte"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 4,
+  "topic": "3.4",
+  "topicSource": "keyword",
+  "stem": "Which of the following shows the storage devices of a desktop computer in descending order of storage capacity?",
+  "options": [
+   "Register, Cache memory, Hard disk",
+   "Hard disk, RAM, Register",
+   "RAM, Register, Cache memory",
+   "RAM, Cache memory, Hard disk"
+  ],
+  "imageOptions": false,
+  "sourceDefect": "The paper prints option 3 as \"(2)\". Transcribed in printed order; the misnumbering is the paper's.",
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 5,
+  "topic": "2.4",
+  "topicSource": "keyword",
+  "stem": "Which of the following are true about the secondary memory of a computer system? A – Data is not erased even if the computer is switched off B – Solid state devices can be used as secondary memory C – Secondary memory is a part of the CPU memory",
+  "options": [
+   "A and B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 6,
+  "topic": "10.5",
+  "topicSource": "keyword",
+  "stem": "Which of the following statements are correct regarding the generations of computers? A – Transistors were introduced in the first generation computers. B – High-level programming languages were used in the second and third generation computers. C – Operating systems with graphical user interfaces (GUI) have been used in fourth generation eeeecomputers",
+  "options": [
+   "A and B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 7,
+  "topic": "5.2",
+  "topicSource": "keyword",
+  "stem": "Kamalasiri accessed the official web portal of government of Sri Lanka (http://www.gov.lk) to get details about the government web directory. Which of the following service was obtained by Kamalasiri from the Sri Lanka government web portal?",
+  "options": [
+   "G2B",
+   "G2C",
+   "G2E",
+   "G2G"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 8,
+  "topic": "1.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following contains only the examples of operating systems?",
+  "options": [
+   "Android, Ubuntu, Windows 10",
+   "Ubuntu, Windows 10, Windows Explorer",
+   "Android, Windows 10, Windows Explorer",
+   "Android, Ubuntu, Windows Explorer"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 9,
+  "topic": "1.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following statement(s) is/are correct? A – A Graphical User Interface (GUI) provides the facility to use the mouse to execute the commands B – WIMP stands for Windows, Icons, Menus and Pointer C – A Command Line Interface (CLI) is more user-friendly compared to Graphical User Interface eeee(GUI)",
+  "options": [
+   "A only",
+   "B only",
+   "A and B only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 10,
+  "topic": "11.1",
+  "topicSource": "keyword",
+  "stem": "Assume that you are the leader of a team assigned to develop a new information system for your school. Which of the following techniques can be used to identify requirements for this system? A – Observation B – Interviews C – Prototyping",
+  "options": [
+   "A and B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 11,
+  "topic": "11.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following is the correct order of activities in the Software Development Life Cycle (SDLC)? A – Implementation B – Requirement identification C – Design D – Deployment E – Testing F – Maintenance",
+  "options": [
+   "D, B, C, A, E and F",
+   "B, D, C, A, F and E",
+   "B, C, A, E, D and F",
+   "B, C, D, A, E and F"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 12,
+  "topic": "7.7",
+  "topicSource": "keyword",
+  "stem": "In the given spreadsheet segment, cells A1 and B1 display values of 40 and 50 respectively. After entering the formula =A$1+B$1 to the cell C1, it displays the value 90 in C1. If the formula in cell Cl is copied to the cells C2 and D1, what will be the values displayed in cells C2 and D1 respectively?",
+  "options": [
+   "90 and 90",
+   "90 and 140",
+   "90 and 50",
+   "50 and 90"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 13,
+  "topic": "7.1",
+  "topicSource": "keyword",
+  "stem": "Consider the following spreadsheet segment with four components labelled as , , and . P Q R S S R Q P Which of the following represents the , , and labels in the correct order? P Q R S",
+  "options": [
+   "Active cell, Row headings, Insert function, Column headings",
+   "Active cell, Row headings, Column headings, Insert function",
+   "Insert function, Column headings, Active cell, Row headings",
+   "Active cell, Column headings, Row headings, Insert function"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 14,
+  "topic": "7.1",
+  "topicSource": "keyword",
+  "stem": "Which of the following statement(s) is/are correct for a cell range given as C2:E5 in a spreadsheet? A – Total number of rows in this range is three B – Geometrical shape of this cell range is a rectangle C – Total number of cells in this range is 12",
+  "options": [
+   "A only",
+   "C only",
+   "A and B only",
+   "B and C only"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 15,
+  "topic": "8.1",
+  "topicSource": "keyword",
+  "stem": "Which of the following statements are correct regarding the different types of projectors? A – Transparent sheets used in overhead projectors always have to be pre-prepared B – Images can be included in the slides used in a slide projector C – Electronic presentations made using a computer can be displayed through multimedia eeeeprojectors",
+  "options": [
+   "A and B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 16,
+  "topic": "5.2",
+  "topicSource": "keyword",
+  "stem": "Saman has a collection of properly formatted documents prepared using Microsoft Word and Libre Office Writer. He needs to save those documents without any formatting in order to proof read. What would be the most suitable file extension type for this purpose?",
+  "options": [
+   "odt",
+   "txt",
+   "docx",
+   "pdf"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 17,
+  "topic": "8.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following statements are correct regarding the presentation software? A – The animation effects can be applied only to a single object on a given slide B – Audio recordings can be included in a presentation slide C – It is recommended to use less than ten text lines in a single slide",
+  "options": [
+   "A and B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 18,
+  "topic": "9.1",
+  "topicSource": "keyword",
+  "stem": "Which of the following are considered as advantages of electronic databases? A – Smaller physical space is required to store data B – Easy to obtain copies C – More efficient in retrieving information",
+  "options": [
+   "A and B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 19,
+  "topic": "9.1",
+  "topicSource": "keyword",
+  "stem": "What would be the primary key of Author Book table?",
+  "options": [
+   "AuthorID",
+   "BookID",
+   "AuthorID + BookID",
+   "AuthorID + Royalty_Share"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": "• Questions 19 to 21 are based on the following database tables that are used to store data about authors, books, and the books written by authors. Table: Author Table: Book AuthorID FirstName LastName BookID Name Price 1001 Anil Ratnayake B01 Mathematics with Fun 1002 Vijay Sekaram B02 English for Beginners 1003 Indika Serasinghe B03 Science for Everyone 1004 Sharaf Khan B04 Western Music 1005 Lalith Wijenayake B05 Painting Basics Table: Author_Book AuthorID BookID Royalty_Share 1004 B02 15% 1001 B03 20% 1005 B01 10% 1004 B04 15% 1003 B03 10%",
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 20,
+  "topic": "9.4",
+  "topicSource": "keyword",
+  "stem": "Consider the following statements: A – AuthorID in the Author table is a foreign key B – AuthorID in the Author_Book table is a foreign key C – BookID in the Book table is a primary key Which of the above statements are correct?",
+  "options": [
+   "A and B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": "• Questions 19 to 21 are based on the following database tables that are used to store data about authors, books, and the books written by authors. Table: Author Table: Book AuthorID FirstName LastName BookID Name Price 1001 Anil Ratnayake B01 Mathematics with Fun 1002 Vijay Sekaram B02 English for Beginners 1003 Indika Serasinghe B03 Science for Everyone 1004 Sharaf Khan B04 Western Music 1005 Lalith Wijenayake B05 Painting Basics Table: Author_Book AuthorID BookID Royalty_Share 1004 B02 15% 1001 B03 20% 1005 B01 10% 1004 B04 15% 1003 B03 10%",
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 21,
+  "topic": "1.2",
+  "topicSource": "keyword",
+  "stem": "Who is the author of the book titled \"Mathematics with Fun\"?",
+  "options": [
+   "Anil Ratnayake",
+   "Indika Serasinghe",
+   "Sharaf Khan",
+   "Lalith Wijenayake"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": "• Questions 19 to 21 are based on the following database tables that are used to store data about authors, books, and the books written by authors. Table: Author Table: Book AuthorID FirstName LastName BookID Name Price 1001 Anil Ratnayake B01 Mathematics with Fun 1002 Vijay Sekaram B02 English for Beginners 1003 Indika Serasinghe B03 Science for Everyone 1004 Sharaf Khan B04 Western Music 1005 Lalith Wijenayake B05 Painting Basics Table: Author_Book AuthorID BookID Royalty_Share 1004 B02 15% 1001 B03 20% 1005 B01 10% 1004 B04 15% 1003 B03 10%",
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 22,
+  "topic": "12.1",
+  "topicSource": "keyword",
+  "stem": "Which of the following statements is false about HTML?",
+  "options": [
+   "HTML Stands for Hypertext Markup Language",
+   "Web pages can be created using HTML",
+   "HTML tags determine how the web pages are displayed in a web browser",
+   "HTML documents are created by using a web browser"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 23,
+  "topic": "14.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following HTML tag pair can be used to make a numbered list?",
+  "options": [
+   "ul, li",
+   "dl, dd",
+   "nl, li",
+   "ol, li"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 24,
+  "topic": "12.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following statements are correct? A – Search engines are used to find information on the World Wide Web (WWW) when the eeeerelevant URL is unknown B – SMTP is used to transfer messages between mail servers C – Web server translates domain names into IP addresses",
+  "options": [
+   "A and B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 25,
+  "topic": "2.5",
+  "topicSource": "keyword",
+  "stem": "Which of the following statements is false?",
+  "options": [
+   "The Internet is a network of computer networks",
+   "An HTML document which is accessible through the internet is called a web page",
+   "A web page can contain multimedia contents",
+   "The Internet and the WWW are the same"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 26,
+  "topic": "9.1",
+  "topicSource": "keyword",
+  "stem": "Which of the following HTML tags and parameters can be Name Tel. Number used to create the given table? 019-2220001",
+  "options": [
+   "Table, tr, th, and td with rowspan=2 Premachandra 075 - 2233441",
+   "Table, tr, th, and td with colspan=2 018-6722117 Sivaraj",
+   "Table, th, td, and tr with rowspan=2 076-4123789",
+   "Table, td, tr, and th with colspan=2"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 27,
+  "topic": "5.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following is the correct format of an Email address?",
+  "options": [
+   "nuwan.senevi.gmail.com",
+   "nuwan2.senevi@gmail.com",
+   "nuwansenevi@gmail_com",
+   "nuwan@senevi@gmail.com"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 28,
+  "topic": "15.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following statements are true? A – Digital divide separates hardware into two categories, analog and digital B – Software piracy is copying of computer programs illegally C – Digital literacy can reduce the digital divide",
+  "options": [
+   "A and B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 29,
+  "topic": "15.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following statement(s) is/are correct regarding the Malicious software? A – Trojan horse is a form of spyware B – Computer worms can spread by themselves C – Phishing is a technique of displaying unnecessary messages on the computer screen",
+  "options": [
+   "A only",
+   "B only",
+   "A and B only",
+   "B and C only"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 30,
+  "topic": "2.5",
+  "topicSource": "keyword",
+  "stem": "In which of the following network topology, each computer is exactly connected with two other computers?",
+  "options": [
+   "Bus",
+   "Ring",
+   "Mesh",
+   "Star"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 31,
+  "topic": "13.1",
+  "topicSource": "keyword",
+  "stem": "What is the resolution of an image which is 250 pixels wide and 100 pixels high?",
+  "options": [
+   "250 ÷ 100",
+   "250 + 100",
+   "250 × 100",
+   "250 × 100 × 8"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 32,
+  "topic": "3.1",
+  "topicSource": "keyword",
+  "stem": "Which of the following statements are correct regarding pixels? A – Pixels are used to measure the physical dimension of a digital image B – Number of bits per pixel determine the number of colours in a digital image C – Pixels of a digital image are arranged in a three-dimensional array",
+  "options": [
+   "A and B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 33,
+  "topic": "1.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following represents the given four numbers in ascending order?",
+  "options": [
+   "64₁₆, 226₈, 200₁₀, 101011₂",
+   "101011₂, 64₁₆, 226₈, 200₁₀",
+   "101011₂, 64₁₆, 200₁₀, 226₈",
+   "200₁₀, 226₈, 101011₂, 64₁₆"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 34,
+  "topic": "4.1",
+  "topicSource": "keyword",
+  "stem": "Which of the following Boolean expressions is X equivalent to the output of the given logic circuit? Y",
+  "options": [
+   "(𝑥. 𝑦) + (𝑦̅ + 𝑥)",
+   "(𝑥+ 𝑦). (𝑦̅. 𝑥) Output",
+   "(𝑥+ 𝑦). (𝑥. 𝑦̅)",
+   "(𝑥. 𝑦) + (𝑦+ 𝑥̅)"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 35,
+  "topic": "4.1",
+  "topicSource": "keyword",
+  "stem": "Consider the following logic circuit: A Output B Which of the following logic circuits has a truth table equivalent to the above logic circuit? A A",
+  "options": null,
+  "imageOptions": true,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 36,
+  "topic": "10.4",
+  "topicSource": "keyword",
+  "stem": "Which of the following statements are correct regarding programming languages? A – Pascal and C are examples of high-level programming languages B – A program written in machine language can be executed directly on the computer C – Execution speed of the Programs written in assembly language is comparatively higher eeeethan the execution speed of the programs written in machine language",
+  "options": [
+   "A and B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 37,
+  "topic": "10.3",
+  "topicSource": "keyword",
+  "stem": "What would be the output of the following Pseudo-code? BEGIN sum = 0 count = 5 REPEAT sum = sum + count*count count = count - 1 UNTIL count > 0 DISPLAY sum END",
+  "options": [
+   "25",
+   "41",
+   "50",
+   "55"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 38,
+  "topic": "10.4",
+  "topicSource": "keyword",
+  "stem": "Consider the following array M in PASCAL language: M = A – array M has a length of 8 B – M[5] has the value 50 C – value of M[1] + M[3] is 60 Which of the above statements are correct?",
+  "options": [
+   "A and B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 39,
+  "topic": "10.3",
+  "topicSource": "keyword",
+  "stem": "What would be the Output of the given flowchart, Start if 5 is given as the input for num?",
+  "options": [
+   "120 READ num",
+   "60",
+   "24 count = 1",
+   "5 ans = 1 count = count + 1 ans = ans × count"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2020,
+  "q": 40,
+  "topic": "7.4",
+  "topicSource": "keyword",
+  "stem": "What would be the output of the following Pseudo-code? is count < num BEGIN Yes ? number = 12 No WHILE number > 5 PRINT ans IF (number >= 10) number = number / 2 ELSE Stop number = number + 4 ENDWHILE DISPLAY number END",
+  "options": [
+   "5",
+   "6",
+   "10",
+   "16"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 1,
+  "topic": "7.1",
+  "topicSource": "keyword",
+  "stem": "Which of the following is an example for a data processing task of a user?",
+  "options": [
+   "Installing word processing software in a personal computer",
+   "Formatting the hard disk in a personal computer",
+   "Reading an online newspaper using a web browser",
+   "Calculating the average marks obtained by a student using a spreadsheet software"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 2,
+  "topic": "2.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following group consists of only input devices?",
+  "options": [
+   "Barcode Reader, CRT Monitor, Joystick",
+   "Barcode Reader, Plotter, Webcam",
+   "Keyboard, Mouse, Scanner",
+   "Multimedia Projector, Printer, Scanner"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 3,
+  "topic": "2.3",
+  "topicSource": "keyword",
+  "stem": "Which of the following cannot be used to permanently store data?",
+  "options": [
+   "Hard disk",
+   "Magnetic tape",
+   "Random Access Memory (RAM)",
+   "USB Flash Drive"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 4,
+  "topic": "3.4",
+  "topicSource": "keyword",
+  "stem": "Which of the following correctly shows the given storage components of a particular computer system in descending order of their storage capacity?",
+  "options": [
+   "Hard disk, Cache memory, Main memory",
+   "Hard disk, Main memory, Cache memory",
+   "Main memory, Cache memory, Hard disk",
+   "Main memory, Hard disk, Cache memory"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 5,
+  "topic": "2.5",
+  "topicSource": "keyword",
+  "stem": "In a ........................ Network topology, each network component is physically connected to a central node such as a hub or a switch",
+  "options": [
+   "bus",
+   "mesh",
+   "ring",
+   "star"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 6,
+  "topic": "12.1",
+  "topicSource": "keyword",
+  "stem": "Krishna accessed the official web portal of the government of Sri Lanka (http://www.gov.lk) to renew her vehicle revenue licence online. Which of the following services was obtained by her?",
+  "options": [
+   "G2B",
+   "G2C",
+   "G2E",
+   "G2G"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 7,
+  "topic": "3.5",
+  "topicSource": "keyword",
+  "stem": "If the character \"A\" is represented as 1000001₂ in ASCII coding scheme, what character will be represented by 1000100₂?",
+  "options": [
+   "B",
+   "C",
+   "D",
+   "E"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 8,
+  "topic": "1.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following represents the given four numbers in the descending order?",
+  "options": [
+   "10011110₂, 157₁₀, 9C₁₆, 233₈",
+   "157₁₀, 10011110₂, 9C₁₆, 233₈",
+   "233₈, 10011110₂, 157₁₀, 9C₁₆",
+   "9C₁₆, 233₈, 10011110₂, 157₁₀"
+  ],
+  "imageOptions": false,
+  "sourceDefect": "The paper prints option 3 as \"(5)\". Transcribed in printed order; the misnumbering is the paper's.",
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 9,
+  "topic": "5.1",
+  "topicSource": "keyword",
+  "stem": "Which of the following is the first software that must be installed on a computer after formatting its hard disk?",
+  "options": [
+   "Office package",
+   "Operating system",
+   "Antivirus software",
+   "Web browser"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 10,
+  "topic": "5.1",
+  "topicSource": "keyword",
+  "stem": "Which of the following group consists of only language translators?",
+  "options": [
+   "Assembler, Compiler, Interpreter",
+   "Interpreter, Compiler, Web browser",
+   "Assembler, Operating system, Compiler",
+   "Web browser, Operating system, Interpreter"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 11,
+  "topic": "1.2",
+  "topicSource": "keyword",
+  "stem": "What is the shortcut key combination to \"Find and Replace\" words in Microsoft Word or LibreOffice Writer?",
+  "options": [
+   "Ctrl+A",
+   "Ctrl+C",
+   "Ctrl+H",
+   "Ctrl+X"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 12,
+  "topic": "7.1",
+  "topicSource": "keyword",
+  "stem": "Consider the following spreadsheet segment with four components labelled as P, Q, R and S: P Q R S Which of the following represents the P, Q, R and S labels in the correct order?",
+  "options": [
+   "Column Headings, Formula Bar, Name Box, Sheet Tabs",
+   "Name Box, Column Headings, Sheet Tabs, Formula Bar",
+   "Name Box, Formula Bar, Column Headings, Sheet Tabs",
+   "Sheet Tabs, Formula Bar, Column Headings, Name Box • Consider the following segment of a marksheet entered into an electronic spreadsheet to answer questions 13 and 14"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 13,
+  "topic": "1.2",
+  "topicSource": "keyword",
+  "stem": "What is the correct formula to be entered in cell E2 to calculate the total marks obtained by Sahan?",
+  "options": [
+   "=B2+C2+D2",
+   "B2+C2+D2",
+   "E2=B2+C2+D2",
+   "E2 B2+C2+D2"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 14,
+  "topic": "7.4",
+  "topicSource": "keyword",
+  "stem": "What will be the value displayed in cell A7 if the formula =COUNT(A1:D5) is entered into it?",
+  "options": [
+   "10",
+   "12",
+   "16",
+   "20"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 15,
+  "topic": "8.1",
+  "topicSource": "keyword",
+  "stem": "Which of the following actions can be used to move to the next slide in a slide show of an electronic presentation? A – Clicking the \"Left\" button of the mouse device B – Pressing the \"Ctrl\" key of the keyboard C – Pressing the \"Right arrow\" key of the keyboard",
+  "options": [
+   "A and B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 16,
+  "topic": "9.4",
+  "topicSource": "keyword",
+  "stem": "Which of the following statements are correct regarding relational databases? A – A record is a collection of fields. B – A table is a collection of records. C – A relational database is a collection of tables",
+  "options": [
+   "A and B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 17,
+  "topic": "9.1",
+  "topicSource": "keyword",
+  "stem": "What would be the primary key of the Enroll table?",
+  "options": [
+   "Student_ID",
+   "Subject ID",
+   "Subject_ID + Date",
+   "Student_ID + Subject_ID"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": "• Questions 17 to 19 are based on the following partly shown database tables that are used to store data about students, subjects and enrollment details in a school. Students Subject Student_Id Student_Name Subject_Id Subject_Name Teacher_Name 1001 Anil S001 Chemistry Perera 1002 Shane S002 Physics Selvam 1003 Raj S003 Combined Maths Nazwar 1004 Sharaf S004 Geography Silva S005 Political Sciencs Almeida Enroll Student_Id Subject_Id Date 1001 S002 04/01/2022 1005 S001 05/01/2022 1003 S002 09/01/2022 1001 S003 04/01/2022",
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 18,
+  "topic": "9.4",
+  "topicSource": "keyword",
+  "stem": "What would be a foreign key in the database?",
+  "options": [
+   "Subject_ID in the Subject table",
+   "Student_ID in the Student table",
+   "Date in the Enroll table",
+   "Subject_ID in the Enroll table"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": "• Questions 17 to 19 are based on the following partly shown database tables that are used to store data about students, subjects and enrollment details in a school. Students Subject Student_Id Student_Name Subject_Id Subject_Name Teacher_Name 1001 Anil S001 Chemistry Perera 1002 Shane S002 Physics Selvam 1003 Raj S003 Combined Maths Nazwar 1004 Sharaf S004 Geography Silva S005 Political Sciencs Almeida Enroll Student_Id Subject_Id Date 1001 S002 04/01/2022 1005 S001 05/01/2022 1003 S002 09/01/2022 1001 S003 04/01/2022",
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 19,
+  "topic": "9.1",
+  "topicSource": "keyword",
+  "stem": "Shane dropped the \"Geography\" subject and enrolled for the \"Political Science\" Subject. Which table/tables needs/need to be updated for this purpose?",
+  "options": [
+   "Subject table",
+   "Subject table and Enroll table",
+   "Enroll table",
+   "Student table, Subject table and Enroll table"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": "• Questions 17 to 19 are based on the following partly shown database tables that are used to store data about students, subjects and enrollment details in a school. Students Subject Student_Id Student_Name Subject_Id Subject_Name Teacher_Name 1001 Anil S001 Chemistry Perera 1002 Shane S002 Physics Selvam 1003 Raj S003 Combined Maths Nazwar 1004 Sharaf S004 Geography Silva S005 Political Sciencs Almeida Enroll Student_Id Subject_Id Date 1001 S002 04/01/2022 1005 S001 05/01/2022 1003 S002 09/01/2022 1001 S003 04/01/2022",
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 20,
+  "topic": "10.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following is the correct HTML, tag sequence for a web page?",
+  "options": [
+   "HTML, Body, Title, Head",
+   "HTML, Head, Title, Body",
+   "HTML, Title, Head, Body",
+   "Head, Title, HTML, Body"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 21,
+  "topic": "12.1",
+  "topicSource": "keyword",
+  "stem": "Which of the following statements are correct? A – HTML tags determine how the web pages are displayed in a web browser. B – A URL uniquely identifies a web page on the World Wide Web (WWW). C – Hyperlinks allow to link web pages on the World Wide Web",
+  "options": [
+   "A and B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 22,
+  "topic": "12.1",
+  "topicSource": "keyword",
+  "stem": "What is the correct HTML statement for creating a hyperlink to the official web portal of the Government of Sri Lanka (http://www.gov.lk)?",
+  "options": [
+   "<a href=\"http://www.gov.lk> Government of Sri Lanka Web Portal </a>",
+   "<a> \"http://www.gov.lk\" </a> Government of Sri Lanka Web Portal",
+   "<a> src=\"http://www.gov.lk\" </a> Government of Sri Lanka Web Portal",
+   "<a url=\"http://www.gov.lk'> Government of Sri Lanka Web Portal </a>"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 23,
+  "topic": "9.1",
+  "topicSource": "keyword",
+  "stem": "Consider the following HTML Statements for Creating a table: <html> <body> <table border=2> <tr> <th>Company Name </th> <th> Contact Number </th> </tr> <tr> <td rowspan=2> ABC Ltd </td> <td> 011-2222222 </td> <tr/> <tr> <td> 011-9999999 </td> </tr> <tr> <td> XYZ & Sons </td> <td> 011-7777777 </td> </tr> </table> </body> </html> Which of the following is the correct table created by the above statements? Company Name Contact Number Company Name Contact Number 011-2222222 ABC Ltd 011-2222222",
+  "options": null,
+  "imageOptions": true,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 24,
+  "topic": "12.1",
+  "topicSource": "keyword",
+  "stem": "Which of the following is a correct example for an Internet Protocol (IP) address?",
+  "options": [
+   "172.64.85",
+   "172.64.85.24",
+   "192.214.78.80.1",
+   "192.214.78 256"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 25,
+  "topic": "5.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following is the commonly used folder that Stores deleted messages in an email system?",
+  "options": [
+   "Draft",
+   "Inbox",
+   "Spam",
+   "Trash"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 26,
+  "topic": "12.1",
+  "topicSource": "keyword",
+  "stem": "Consider the following URL: C http://www.nie.lk/index.html A B Which of the following correctly identifies the parts A, B and C of the above URL?",
+  "options": [
+   "A-domain name, B-protocol, C-top level domain",
+   "A-domain name, B-top level domain, C-protocol",
+   "A-protocol, B-domain name, C-top level domain",
+   "A-protocol, B-top level domain, C-domain name"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 27,
+  "topic": "5.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following combinations correctly shows an internet service and its corresponding protocol?",
+  "options": [
+   "Email, SMTP",
+   "WWW, FTP",
+   "Email, FTP",
+   "File Transfer, SMTP"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 28,
+  "topic": "1.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following best describes the icon in GIMP image manipulation software?",
+  "options": [
+   "blurs or sharpens an image",
+   "copy one part of a graphic to another part",
+   "lightens or darkens an image's shadows",
+   "removes unnecessary colours and spots in an image"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 29,
+  "topic": "1.2",
+  "topicSource": "keyword",
+  "stem": "Consider the following statement with blanks labelled and : A B The primary colours .................. are used to create images on computer screens with each colour A having .................. colour variations, if represented with 8-bits. B Which of the following is suitable to fill in the blanks labelled and , respectively? A B",
+  "options": [
+   "Red, Green, Blue : 128 A B",
+   "Red, Green, Blue : 256 A B",
+   "Yellow, Blue, Red : 128 A B",
+   "Yellow, Blue, Red : 256 A B"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 30,
+  "topic": "5.2",
+  "topicSource": "keyword",
+  "stem": "A ...................... spreads by inserting copies of itself into executable files in a computer",
+  "options": [
+   "computer worm",
+   "hijacker",
+   "spyware",
+   "trojan horse"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 31,
+  "topic": "15.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following could arise due to the usage of ICT? A – e-waste problem B – security threats C – health hazards",
+  "options": [
+   "A and B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 32,
+  "topic": "11.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following statements are true with regard to the pilot deployment of a new software system? A – The existing system is replaced by the new system as soon as its development is completed. B – Introduce the newly developed system to a selected set of users before making it available to all. C – The new system is deployed in stages and the success of each stage leads to the next stage",
+  "options": [
+   "A only",
+   "B only",
+   "C only",
+   "A and B only"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 33,
+  "topic": "10.3",
+  "topicSource": "keyword",
+  "stem": "Which of the following control structures can be used in an algorithm? A – Sequence B – Repetition C – Selection",
+  "options": [
+   "A and B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C • Consider the given flowchart to answer the questions 34 and 35: Start"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 34,
+  "topic": "10.3",
+  "topicSource": "keyword",
+  "stem": "What will be displayed as the output of the given flowchart?",
+  "options": [
+   "1 is displayed. a = 1",
+   "3 is displayed. b = 1",
+   "15 is displayed",
+   "Nothing is displayed. b = b*a"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 35,
+  "topic": "10.3",
+  "topicSource": "keyword",
+  "stem": "If the labels 'Yes? and 'No' are interchanged in the Is given flowchart, what Will be displayed as its output? a = a + 2 a > 2? No",
+  "options": [
+   "1 is displayed. Yes",
+   "3 is displayed",
+   "15 is displayed. Output b",
+   "Nothing is displayed. End"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 36,
+  "topic": "10.4",
+  "topicSource": "keyword",
+  "stem": "How many times will the statement \"count = count - 3\" execute in the following code segment? count=12 WHILE count >= 3 count = count – 3 END WHILE",
+  "options": [
+   "3",
+   "4",
+   "5",
+   "6 • Consider the following \"Books\" array which is used to store prices of 8 books to answer questions 37 and 38. Books"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 37,
+  "topic": "10.4",
+  "topicSource": "keyword",
+  "stem": "Which of the following correctly defines the \"Books\" array in a PASCAL program?",
+  "options": [
+   "var Books = array[7]",
+   "var Books : array[0-7]",
+   "var Books = array[0..7] of integer",
+   "var Books : array[0 to 7] of integer"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 38,
+  "topic": "1.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following represents the most expensive book?",
+  "options": [
+   "Book[3]",
+   "Books[3]",
+   "Book[4]",
+   "Books[4]"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 39,
+  "topic": "4.1",
+  "topicSource": "keyword",
+  "stem": "Consider the following logic gate: A Q B When B = 1, then what would definitely be the output at Q?",
+  "options": [
+   "A",
+   "𝐴̅",
+   "A + B",
+   "𝐴̅ + 𝐵"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2021,
+  "q": 40,
+  "topic": "4.1",
+  "topicSource": "keyword",
+  "stem": "Which of the following represents the most expensive book? A B Q What is the logic gate indicated by the above truth table?",
+  "options": [
+   "AND",
+   "NAND",
+   "NOR",
+   "OR"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 1,
+  "topic": "2.2",
+  "topicSource": "keyword",
+  "stem": "An association is willing to donate computer equipment to a school. If the school is planning to build its library management system, which of the following hardware are suitable for the school to request from the association?",
+  "options": [
+   "Desktop computer, barcode reader",
+   "Desktop computer, plotter",
+   "Laptop computer, joystick",
+   "Laptop computer, light pen"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 2,
+  "topic": "2.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following lists only output devices?",
+  "options": [
+   "Barcode reader, magnetic ink character reader, scanner",
+   "Joystick, microphone, webcam",
+   "Keyboard, light pen, mouse",
+   "Plotter, projector, speaker"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 3,
+  "topic": "2.2",
+  "topicSource": "keyword",
+  "stem": "The device similar to the one shown is usually used by Architects who design buildings. What is it?",
+  "options": [
+   "Dotmatrix printer",
+   "Inkjet printer",
+   "Multimedia projector",
+   "Plotter"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 4,
+  "topic": "2.4",
+  "topicSource": "keyword",
+  "stem": "Which of the following lists the correct order of instruction flow when the user executes a computer program?",
+  "options": [
+   "Hard disk cache memory main memory registers",
+   "Hard disk main memory cache memory registers",
+   "Main memory hard disk registers cache memory",
+   "Registers hard disk cache memory main memory"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 5,
+  "topic": "2.5",
+  "topicSource": "keyword",
+  "stem": "The following diagram shows a computer network connected to the Internet: Which of the following gives a correct listing of the Computer 1 devices A-D? Computer 2",
+  "options": [
+   "A – firewall, B – switch, C – printer, D – router",
+   "A – firewall, B – printer, C – router, D – switch",
+   "A – router, B – firewall, C – switch, D – printer Internet A B C D",
+   "A – router, B – switch, C – printer, D – firewall"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 6,
+  "topic": "1.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following is the largest?",
+  "options": [
+   "1000 0100₂",
+   "15₈",
+   "85₁₀",
+   "C2₁₆"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 7,
+  "topic": "3.3",
+  "topicSource": "keyword",
+  "stem": "Which of the following is the decimal equivalent of binary 1000 0101₂?",
+  "options": [
+   "85₁₀",
+   "133₁₀",
+   "161₁₀",
+   "266₁₀"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 8,
+  "topic": "3.3",
+  "topicSource": "keyword",
+  "stem": "Which of the following is the hexadecimal equivalent of octal 1156₈?",
+  "options": [
+   "26E₁₆",
+   "484₁₆",
+   "109C₁₆",
+   "2204₁₆"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 9,
+  "topic": "3.4",
+  "topicSource": "keyword",
+  "stem": "Amara wants to copy the following four files (with the given file sizes) to a USB drive: invitation.doc (15kB), yesterday.mp3 (26MB), concert.mp4 (150MB), tajmahal.jpg (28kB) From the following four empty USB drives with the given capacities, which is the most economical drive that can be used to store the above files? (Ignore the space in the USB drive that is required for file management.)",
+  "options": [
+   "1GB",
+   "2GB",
+   "128MB",
+   "256MB"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 10,
+  "topic": "3.5",
+  "topicSource": "keyword",
+  "stem": "Consider the character – value mappings from the ASCII table given below: O - 79 / - 47 L - 76 o - 111 l - 108 Which of the following will be the ASCII representation of O/L in binary?",
+  "options": [
+   "1001111 1001100",
+   "1101111 1101100",
+   "1001111 0101111 1001100",
+   "1101111 0101111 1101100"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 11,
+  "topic": "4.1",
+  "topicSource": "keyword",
+  "stem": "Consider the following logic gate: When A=1, what would definitely be the output at Q? A",
+  "options": [
+   "0",
+   "1 Q",
+   "B",
+   "𝐵̅ B"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 12,
+  "topic": "1.2",
+  "topicSource": "keyword",
+  "stem": "What is the shortcut key combination to undo your last action or actions, in a word processing application?",
+  "options": [
+   "Ctrl+H",
+   "Ctrl+N",
+   "Ctrl+Y",
+   "Ctrl+Z"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 13,
+  "topic": "3.3",
+  "topicSource": "keyword",
+  "stem": "Which pair of icons can be used to convert a selected text into two different types of lists?",
+  "options": null,
+  "imageOptions": true,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 14,
+  "topic": "5.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following are true regarding a word processing software? A – Any two cells in a table of a document can be merged. B – A word in a document can be selected by double clicking the mouse on that word. C – An already saved document can be saved using a different name by using the aaaa\"File Save as\" option",
+  "options": [
+   "A and B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 15,
+  "topic": "7.1",
+  "topicSource": "keyword",
+  "stem": "What is the shortcut key combination to select the entire document in a word processing software?",
+  "options": [
+   "Ctrl+A",
+   "Ctrl+C",
+   "Ctrl+N",
+   "Ctrl+X • Consider the following spreadsheet segment to answer questions 16 and 17. A B C D"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 16,
+  "topic": "7.4",
+  "topicSource": "keyword",
+  "stem": "What will be displayed in cell D1, if the formula =<COUNT(A1:C1: B2) is entered to it?",
+  "options": [
+   "3",
+   "4",
+   "7",
+   "9"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 17,
+  "topic": "1.2",
+  "topicSource": "keyword",
+  "stem": "What will be displayed in cell D3, if the formula =A1^C3*(C1-B1) is entered to it?",
+  "options": [
+   "6",
+   "9",
+   "10",
+   "79"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 18,
+  "topic": "7.7",
+  "topicSource": "keyword",
+  "stem": "Which of the following (I, II, III, IV) are valid cell addresses? I - K2 II - $K$2 III - K2$ IV - K$2$",
+  "options": [
+   "I and II only",
+   "I and IV only",
+   "II and III only",
+   "III and IV only • Consider the following partially shown database tables to answer questions 19 to 22. The tables are taken from a database of an electricity billing system. Customer Meter Usage Meter_ Cus_Id Name Address Meter_Id Cus_Id Meter_Id Date Reading C001 Anil Rajagiriya C003 28/02/2023 1000 C002 Shane Borella C004 28/02/2023 1000 C003 Raj Nugegoda C001 28/02/2023 1500 C004 Sharaf Dehiwala C004 28/02/2023 2500 C002 31/03/2023 4000"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 19,
+  "topic": "9.1",
+  "topicSource": "keyword",
+  "stem": "What is the primary key of the Usage table?",
+  "options": [
+   "Date",
+   "Meter_Id",
+   "Meter_ID + Date",
+   "Meter_Reading"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 20,
+  "topic": "4.1",
+  "topicSource": "keyword",
+  "stem": "What is the most suitable data type for Cus_ID field?",
+  "options": [
+   "Boolean",
+   "Currency",
+   "Number",
+   "Text"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 21,
+  "topic": "9.1",
+  "topicSource": "keyword",
+  "stem": "The monthly electricity bills are generated using the meter readings to compute the units used. Which tables are to be used to generate the monthly electricity bill of April?",
+  "options": [
+   "Usage only",
+   "Customer and Meter only",
+   "Customer and Usage only",
+   "Meter and Usage only"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 22,
+  "topic": "9.1",
+  "topicSource": "keyword",
+  "stem": "Which table/tables needs/need to be updated when entering next month's meter readings? (Assume that new customers/meters are not added during a month.)",
+  "options": [
+   "Customer only",
+   "Meter only",
+   "Usage only",
+   "Meter and Usage only"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 23,
+  "topic": "5.2",
+  "topicSource": "keyword",
+  "stem": "A student is developing the school website. One of the requirements of the school is that the pages of the website to open quickly. Which of the following file types should the student use for the graphics of the site to suit the above requirement?",
+  "options": [
+   "JPEG",
+   "MP3",
+   "RAW",
+   "WAV"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 24,
+  "topic": "10.3",
+  "topicSource": "keyword",
+  "stem": "A raster image of resolution 2400 x 3000 uses 24 bits to keep the information of each pixel. What is the maximum number of colours that the image can use?",
+  "options": [
+   "24",
+   "24 x 2400 x 3000",
+   "2²⁴",
+   "2⁷²⁰⁰⁰⁰⁰ • Answer the questions 25 to 27 using the given flowchart. Start"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 25,
+  "topic": "10.3",
+  "topicSource": "keyword",
+  "stem": "What would be the output of the flowchart if 3 is given as the input? Input N",
+  "options": [
+   "1",
+   "3",
+   "6",
+   "24 X = 1"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 26,
+  "topic": "10.3",
+  "topicSource": "keyword",
+  "stem": "Which of the following constructs are best suited to be included in a computer program based on this flowchart? A – if then N = N-1 B – if then else C – while-endwhile X = X*N",
+  "options": [
+   "A only",
+   "B only No",
+   "C only",
+   "B and C only N = 1? Yes"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 27,
+  "topic": "10.3",
+  "topicSource": "keyword",
+  "stem": "In this algorithm, N always has to be a positive integer. Which of the following is recommended for the flowchart to fulfill the Print X above condition?",
+  "options": [
+   "Keeping the flowchart as it is Stop",
+   "Changing the N=1? condition to N= 0?",
+   "Changing the N=1? condition to N=-1?",
+   "Checking the, value of N immediately after it is input and aaaastopping the flow if N is negative"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 28,
+  "topic": "1.2",
+  "topicSource": "keyword",
+  "stem": "The array named A holds the average price of an egg for each month of last year: A: Which array element contains the highest average price?",
+  "options": [
+   "A[0]",
+   "A[4]",
+   "A[10]",
+   "A[11]"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 29,
+  "topic": "10.4",
+  "topicSource": "keyword",
+  "stem": "What will be the output if the following Pascal code is executed? Program testPrint(input, output)",
+  "options": [
+   "1 Var count: integer",
+   "4 Begin For count:=1 to 4 do",
+   "123 Write(count); End",
+   "1234"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 30,
+  "topic": "10.3",
+  "topicSource": "keyword",
+  "stem": "The following pseudocode is to find the sum of the numbers from 1 to 10. Begin What is the suitable replacement for label A? sum = 1",
+  "options": [
+   "number = number + 1 number = 1 repeat",
+   "number + 1 A sum = sum + number",
+   "number = 0 until number < 10",
+   "sum = 2 display sum End"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 31,
+  "topic": "10.3",
+  "topicSource": "keyword",
+  "stem": "Consider the following pseudocode: How many times will * be printed according to it? Begin P = 0",
+  "options": [
+   "1 while P<6",
+   "2 display '*' P = P + 3",
+   "3 endwhile",
+   "4 End"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 32,
+  "topic": "10.3",
+  "topicSource": "keyword",
+  "stem": "Consider the following pseudocode fragment: if weakness < 40 if character > 70 suitability = \"Good\" endif endif Which of the following is true?",
+  "options": [
+   "If weakness < 40 then suitability = \"Good\"",
+   "If character > 70 then suitability = \"Good\"",
+   "If weakness < 40 and character > 70 then suitability = \"Good\"",
+   "If weakness < 40 or character > 70 then suitability = \"Good\""
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 33,
+  "topic": "3.3",
+  "topicSource": "keyword",
+  "stem": "Consider the following statements: A – A machine language code consists of 0s and 1s. B – A Pascal program is easier to understand than its machine language equivalent. C – A Pascal code needs to be compiled to convert into its equivalent machine language code. From the above which statement/statements is/are correct?",
+  "options": [
+   "A only",
+   "A and B only",
+   "A and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 34,
+  "topic": "11.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following lists the selected activities of the System Development Life Cycle in the correct order?",
+  "options": [
+   "Coding Solution design Requirement identification Testing Deployment",
+   "Requirement identification Solution design Coding Testing Deployment",
+   "Solution design Coding Requirement identification Deployment Testing",
+   "Solution design Requirement identification Coding Deployment Testing"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 35,
+  "topic": "11.2",
+  "topicSource": "keyword",
+  "stem": "Assume a complex software system consisting of many units is being developed. Which of the following lists the types of testing involved in this development in their correct order?",
+  "options": [
+   "Acceptance testing by the users system testing unit testing integration testing",
+   "Integration testing acceptance testing by the users system testing unit testing",
+   "Unit testing integration testing acceptance testing by the users system testing",
+   "Unit testing integration testing system testing acceptance testing by the users"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 36,
+  "topic": "12.1",
+  "topicSource": "keyword",
+  "stem": "Which of the following is a correct example for an IP address?",
+  "options": [
+   "255.64.80",
+   "170.63.80.23",
+   "170.248.16.31.56",
+   "192.248.16.300"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 37,
+  "topic": "12.1",
+  "topicSource": "keyword",
+  "stem": "Which of the following does the translation of domain names to IP addresses?",
+  "options": [
+   "DNS Server",
+   "Mail Server",
+   "Media Server",
+   "Web Server"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 38,
+  "topic": "2.3",
+  "topicSource": "keyword",
+  "stem": "Which of the following is not essential for an officer in Sri Lanka to join a video conference involving officers in USA and Japan?",
+  "options": [
+   "A computer or an equivalent device with a camera, microphone and a speaker",
+   "An internet connection",
+   "Relevant video conferencing software",
+   "USB drive"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 39,
+  "topic": "12.2",
+  "topicSource": "keyword",
+  "stem": "Raja wants to send a job application email with his resume as an attachment to abcCompany@gmail.com. Which of the following options in the email application should Raja use to attach the resume?",
+  "options": null,
+  "imageOptions": true,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2022,
+  "q": 40,
+  "topic": "6.3",
+  "topicSource": "keyword",
+  "stem": "Which of the following HTML statements has incorrect syntax?",
+  "options": [
+   "<a href=\"http://www.railway.gov.lk\">Sri Lanka Railways</a>",
+   "<h2><center><font face= \"Arial\" color=\"blue\">WORK</font></center></h2>",
+   "<img http://www.w3schools.com/images/picture.jpg border = \"3\">",
+   "<p align=\"right\"> Sri Lanka </p>"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 1,
+  "topic": "3.4",
+  "topicSource": "keyword",
+  "stem": "Following four computers of the same brand are available at four different shops for the same price. Each of them has a 1 TB hard disk, 1 VGA port and consumes the same amount of electricity. Which one is most suitable to buy?",
+  "options": [
+   "Processor: 2.9 GHz, Cache: 6MB, RAM: 4GB, 4 USB ports",
+   "Processor: 3.1 GHz, Cache: 6MB, RAM: 4GB, 4 USB ports",
+   "Processor: 3.6 GHz, Cache: 12MB, RAM: 8GB, 8 USB ports",
+   "Processor: 3.6 GHz, Cache: 16MB, RAM: 8GB, 8 USB ports"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 2,
+  "topic": "2.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following devices could be used to capture English text from printed documents?",
+  "options": [
+   "Bar Code Reader",
+   "Magnetic Ink Character Reader (MICR)",
+   "Optical Character Recognition (OCR) device",
+   "Optical Mark Recognition (OMR) device"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 3,
+  "topic": "2.3",
+  "topicSource": "keyword",
+  "stem": "Which of the following is a solid state device?",
+  "options": [
+   "Compact Disk",
+   "Hard Disk Drive",
+   "Magnetic Tape Drive",
+   "USB Flash Drive"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 4,
+  "topic": "2.4",
+  "topicSource": "keyword",
+  "stem": "Which of the following executes the instructions of computer programs?",
+  "options": [
+   "Cache",
+   "Central Processing Unit (CPU)",
+   "Hard Disk",
+   "Random Access Memory (RAM)"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 5,
+  "topic": "2.5",
+  "topicSource": "keyword",
+  "stem": "Which of the following is required to network four computers in a star topology?",
+  "options": [
+   "a firewall",
+   "modem",
+   "a server",
+   "a switch"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 6,
+  "topic": "3.3",
+  "topicSource": "keyword",
+  "stem": "Which of the following is the octal equivalent of decimal 216₁₀?",
+  "options": [
+   "40₈",
+   "43₈",
+   "73₈",
+   "330₈"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 7,
+  "topic": "3.3",
+  "topicSource": "keyword",
+  "stem": "Which of the following is the decimal equivalent of binary 1000 1000₂?",
+  "options": [
+   "24₁₀",
+   "136₁₀",
+   "272₁₀",
+   "1024₁₀"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 8,
+  "topic": "3.3",
+  "topicSource": "keyword",
+  "stem": "Which of the following is the hexadecimal equivalent of octal 1572₈?",
+  "options": [
+   "DE8₁₆",
+   "37A₁₆",
+   "3710₁₆",
+   "12562₁₆"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 9,
+  "topic": "3.4",
+  "topicSource": "keyword",
+  "stem": "One Terabyte (1 TB) is equal to",
+  "options": [
+   "1024 KB",
+   "1024 × 1024 KB",
+   "1024 × 1024 × 1024 KB",
+   "1024 × 1024 × 1024 × 1024 KB"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 10,
+  "topic": "3.5",
+  "topicSource": "keyword",
+  "stem": "Which of the following statements are true regarding the ASCII coding system? A – Characters E and e are represented using the same code. B – # and $ symbols have different codes. C – Sinhala characters do not have ASCII codes",
+  "options": [
+   "B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 11,
+  "topic": "4.1",
+  "topicSource": "keyword",
+  "stem": "According to the adjacent logic circuit, what will be the A respective outputs at P and Q when A, B and C inputs are P B respectively 1, 1 and 0? Q C",
+  "options": [
+   "0, 0",
+   "0, 1",
+   "1, 0",
+   "1, 1"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 12,
+  "topic": "1.2",
+  "topicSource": "keyword",
+  "stem": "What is the shortcut key combination in a word processing software to select the entire document?",
+  "options": [
+   "Ctrl +A",
+   "Ctrl + B",
+   "Ctrl + C",
+   "Ctrl + V"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 13,
+  "topic": "1.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following icons in a word processing software can be used to align the left and right sides of a text parallel to each other?",
+  "options": null,
+  "imageOptions": true,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 14,
+  "topic": "5.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following statements are correct regarding a word processing software? A – It lets the user to add tables and images to a document. B – Format Painter tool ( ) lets a user to copy formatting like font style and apply it to other pieces of text. C – Landscape and Portrait are the two page orientations available",
+  "options": [
+   "A and B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 15,
+  "topic": "5.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following icons could be used to format a character as a subscript in a Word Processing Software?",
+  "options": null,
+  "imageOptions": true,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 16,
+  "topic": "7.4",
+  "topicSource": "keyword",
+  "stem": "What is the formula to be entered into cell D9, to find the number of students who appeared for the 3rd term test?",
+  "options": [
+   "=COUNT(B2:D8)",
+   "=COUNT(D2:D8)",
+   "=SUM(B2:D8)",
+   "=SUM(D2:D8)"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": "• To answer questions 16 and 17, consider the following spreadsheet segment which contains the ICT marks obtained by students for three term tests",
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 17,
+  "topic": "7.4",
+  "topicSource": "keyword",
+  "stem": "What is the correct formula to be entered into cell E2 to calculate the average mark of Shanaya for the three term tests?",
+  "options": [
+   "=(57+70+absent)/3",
+   "=(B2+C24+D2)/3",
+   "=AVERAGE(B2:D2)",
+   "=SUM(B2:D2)/3"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": "• To answer questions 16 and 17, consider the following spreadsheet segment which contains the ICT marks obtained by students for three term tests",
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 18,
+  "topic": "7.7",
+  "topicSource": "keyword",
+  "stem": "Which of the following formulas (I, II, III) contain valid cell addresses? I: X$1$+Y$1 II: P$14+$Q$2 III: M2*N$2",
+  "options": [
+   "I and II only",
+   "I and III only",
+   "II and III only",
+   "All I, II and III"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 19,
+  "topic": "9.1",
+  "topicSource": "keyword",
+  "stem": "What is most suitable to be the primary key of the ROUTE table?",
+  "options": [
+   "From_bus_station_code",
+   "Route_code",
+   "To_bus_station_code",
+   "Route_code + From_bus_station_code"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": "• Questions 19 to 22 are based on the following four partially shown database tables that are designed for a bus seat reservation system. BUS_STATION Bus_station_code Name W1 Colombo S1 Galle N1 Jaffna ROUTE Note: Routes are identified by the Route_code. Many routes can start from the same bus station and many routes can end at the same bus station. Route_code From_bus_station_code To_bus_station_code 1_1 W1 N1 2_1 W1 S1 ROUTE_INSTANCE Note: Assume there is only one trip per route per day. Route_code Date Available_seats 1_1 01-07-2024 1_1 02-07-2024 2_1 01-07-2024 2_1 02-07-2024 ROUTE_RESERVATION Note: Seat_number uniquely identifies a seat. Route_code Date Seat_number Passenger_name Passenger_phone 1_1 01-07-2024 ABC Fernando 0111111111 1_1 01-07-2024 DEF Sivarajah 0333333333 2_1 01-07-2024 IJK Meerasahib 0222222222",
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 20,
+  "topic": "9.1",
+  "topicSource": "keyword",
+  "stem": "What is most suitable to be the primary key of the SEAT_RESERVATION table?",
+  "options": [
+   "Route_code",
+   "Route_code + Date",
+   "Route_code + Seat_number",
+   "Route_code + Date + Seat_number"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": "• Questions 19 to 22 are based on the following four partially shown database tables that are designed for a bus seat reservation system. BUS_STATION Bus_station_code Name W1 Colombo S1 Galle N1 Jaffna ROUTE Note: Routes are identified by the Route_code. Many routes can start from the same bus station and many routes can end at the same bus station. Route_code From_bus_station_code To_bus_station_code 1_1 W1 N1 2_1 W1 S1 ROUTE_INSTANCE Note: Assume there is only one trip per route per day. Route_code Date Available_seats 1_1 01-07-2024 1_1 02-07-2024 2_1 01-07-2024 2_1 02-07-2024 ROUTE_RESERVATION Note: Seat_number uniquely identifies a seat. Route_code Date Seat_number Passenger_name Passenger_phone 1_1 01-07-2024 ABC Fernando 0111111111 1_1 01-07-2024 DEF Sivarajah 0333333333 2_1 01-07-2024 IJK Meerasahib 0222222222",
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 21,
+  "topic": "9.4",
+  "topicSource": "keyword",
+  "stem": "What is a foreign key in this database?",
+  "options": [
+   "Bus_station_code in the BUS_STATION table",
+   "Date in the ROUTE_INSTANCE table",
+   "Seat_number in the SEAT_RESERVATION table",
+   "To_bus_station_code in the ROUTE table"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": "• Questions 19 to 22 are based on the following four partially shown database tables that are designed for a bus seat reservation system. BUS_STATION Bus_station_code Name W1 Colombo S1 Galle N1 Jaffna ROUTE Note: Routes are identified by the Route_code. Many routes can start from the same bus station and many routes can end at the same bus station. Route_code From_bus_station_code To_bus_station_code 1_1 W1 N1 2_1 W1 S1 ROUTE_INSTANCE Note: Assume there is only one trip per route per day. Route_code Date Available_seats 1_1 01-07-2024 1_1 02-07-2024 2_1 01-07-2024 2_1 02-07-2024 ROUTE_RESERVATION Note: Seat_number uniquely identifies a seat. Route_code Date Seat_number Passenger_name Passenger_phone 1_1 01-07-2024 ABC Fernando 0111111111 1_1 01-07-2024 DEF Sivarajah 0333333333 2_1 01-07-2024 IJK Meerasahib 0222222222",
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 22,
+  "topic": "9.1",
+  "topicSource": "keyword",
+  "stem": "If it is decided to add a description to each route (e.g., Kurunegala-Anuradhapura-Vavuniya to Route 1_1), to which table should that field be added?",
+  "options": [
+   "BUS_STATION",
+   "ROUTE",
+   "ROUTE_INSTANCE",
+   "SEAT_RESERVATION −𝑏±√𝑏²−4𝑎𝑐"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": "• Questions 19 to 22 are based on the following four partially shown database tables that are designed for a bus seat reservation system. BUS_STATION Bus_station_code Name W1 Colombo S1 Galle N1 Jaffna ROUTE Note: Routes are identified by the Route_code. Many routes can start from the same bus station and many routes can end at the same bus station. Route_code From_bus_station_code To_bus_station_code 1_1 W1 N1 2_1 W1 S1 ROUTE_INSTANCE Note: Assume there is only one trip per route per day. Route_code Date Available_seats 1_1 01-07-2024 1_1 02-07-2024 2_1 01-07-2024 2_1 02-07-2024 ROUTE_RESERVATION Note: Seat_number uniquely identifies a seat. Route_code Date Seat_number Passenger_name Passenger_phone 1_1 01-07-2024 ABC Fernando 0111111111 1_1 01-07-2024 DEF Sivarajah 0333333333 2_1 01-07-2024 IJK Meerasahib 0222222222",
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 23,
+  "topic": "1.2",
+  "topicSource": "keyword",
+  "stem": "The roots of a quadratic equation 𝑎𝑥² + 𝑏𝑥+ 𝑐 = 0 are found by the equation 𝑥= , 2𝑎 eIf a program is to be wniten to use this equation to find roots, what would be the inputs to this eprogram?",
+  "options": [
+   "𝑎, 𝑏, 𝑐",
+   "𝑎, 𝑏, 𝑏², 𝑐",
+   "𝑥, 𝑎, 𝑏, 𝑐",
+   "𝑥, 𝑎, 𝑏, 𝑏², 𝑐"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 24,
+  "topic": "10.3",
+  "topicSource": "keyword",
+  "stem": "Suppose you are designing an algorithm to input an employee's age, check if that employee is eligible for retirement and output the result. The age of retirement is 60 years. Which of the following control structures would be most appropriate to use in this algorithm?",
+  "options": [
+   "Selection only",
+   "Sequence only",
+   "Iteration and selection only",
+   "Sequence and selection only"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 25,
+  "topic": "1.2",
+  "topicSource": "keyword",
+  "stem": "Consider the following P, Q and R logical expressions: P: (A >= 10) AND NOT (B > 30) Q: (A < 10) OR (B < 30) R: (A < > 10) OR (B = 30) If above A and B contain the values 10 and 10 respectively, which of the following represents the correct outcomes of P, Q and R respectively?",
+  "options": [
+   "false, false, true",
+   "false, true, true",
+   "true, true, false",
+   "true, true, true"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 26,
+  "topic": "4.1",
+  "topicSource": "keyword",
+  "stem": "Suppose you want to store the full name of a person in a variable. What would be the most suitable data type for that variable?",
+  "options": [
+   "Boolean",
+   "Char",
+   "Integer",
+   "String"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 27,
+  "topic": "10.4",
+  "topicSource": "keyword",
+  "stem": "When operator precedence in Pascal is considered, what will be the result of 4–1*3+5?",
+  "options": [
+   "–4",
+   "6",
+   "14",
+   "24"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 28,
+  "topic": "10.4",
+  "topicSource": "keyword",
+  "stem": "In which of the following instances would you use an if-then-else selection structure in structured programming?",
+  "options": [
+   "to assign a value to the variable age and print the value stored in age",
+   "to validate a password entered by a user",
+   "to calculate the sum of first 100 integers",
+   "to repeat a task for 15 times"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 29,
+  "topic": "1.2",
+  "topicSource": "keyword",
+  "stem": "What would be the output if the code shown in Figure 1 is executed?",
+  "options": [
+   "0",
+   "10",
+   "11",
+   "15"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": "• Questions 29 and 30 are based on the Pascal codes shown in figures 1 and 2 respectively. program whileTest; program looptest; var var i,j : integer; a, sum: integer; begin for i := 1 to 2 do begin begin sum := 0; a:= 1; for j := 1 to 2 do while a < 5 do write(i,j); begin end; sum := sum + a; end. a := a + 1; Figure 2 end; writeln(sum); end. Figure 1",
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 30,
+  "topic": "10.4",
+  "topicSource": "keyword",
+  "stem": "Which nested control structure is visible in the Pascal code of Figure 2?",
+  "options": [
+   "iteration",
+   "iteration",
+   "selection",
+   "selection inside inside inside inside iteration selection iteration selection"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": "• Questions 29 and 30 are based on the Pascal codes shown in figures 1 and 2 respectively. program whileTest; program looptest; var var i,j : integer; a, sum: integer; begin for i := 1 to 2 do begin begin sum := 0; a:= 1; for j := 1 to 2 do while a < 5 do write(i,j); begin end; sum := sum + a; end. a := a + 1; Figure 2 end; writeln(sum); end. Figure 1",
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 31,
+  "topic": "2.4",
+  "topicSource": "keyword",
+  "stem": "A program written in which of the following programming languages can be executed directly by the CPU of a computer?",
+  "options": [
+   "Assembly",
+   "C",
+   "machine language",
+   "Pascal"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 32,
+  "topic": "11.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following statements are true? A – It is important to do 'Identification of requirements' correctly in both waterfall and iterative eeeeincremental models. B – It is suitable if 'integration testing' is done only when the 'unit tests' are successful. C – 'System testing' should be done only after 'acceptance testing'",
+  "options": [
+   "A and B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 33,
+  "topic": "5.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following will best help the users of a proposed system to get an idea of its features and how it will appear?",
+  "options": [
+   "Interviews with system developers",
+   "Questionnaires from system developers",
+   "Sample reports / files given to system developers",
+   "The prototypes of the proposed system shown by system developers"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 34,
+  "topic": "12.2",
+  "topicSource": "keyword",
+  "stem": "Consider the following steps to send an email using a service like Gmail: A – Login to the email account B – Click 'Send' C – Click 'Compose' or 'New' D – Type the subject and the message E – Type the 'To' address Which of the following gives the correct order of the above steps?",
+  "options": [
+   "A B C D E",
+   "A C E D B",
+   "C B E D A",
+   "C D E A B"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 35,
+  "topic": "12.3",
+  "topicSource": "keyword",
+  "stem": "Which of the following are true regarding the use of a particular software through SaaS of cloud computing? A – The client needs an Internet connection to use the software. B – The client needs to design and code the software. C – An agreement with the cloud service provider is required to use the software",
+  "options": [
+   "A and B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 36,
+  "topic": "2.5",
+  "topicSource": "keyword",
+  "stem": "Which of the following is essential to connect a computer to the Internet?",
+  "options": [
+   "a fiber optic connection",
+   "an uninterruptible power supply",
+   "a web browser",
+   "a service from an Internet Service Provider"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 37,
+  "topic": "3.1",
+  "topicSource": "keyword",
+  "stem": "Which of the following statements are true regarding raster images? A – If an image uses n bits to keep information about each pixel, then that image is capable ee eeof displaying 2ⁿ colours. B – Image resolution refers to the number of pixels that exist within an image. C – A graphic with a large number of bits per pixel and a high resolution has a small file ee eesize",
+  "options": [
+   "A only",
+   "B only",
+   "A and B only",
+   "A and C only"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 38,
+  "topic": "5.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following statements are true? A – accdb is an example for a video file type. B – MP3 is an example for an audio file type. C – The frames between two key frames in an animation are called tween frames",
+  "options": [
+   "A and B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 39,
+  "topic": "2.5",
+  "topicSource": "keyword",
+  "stem": "You have been assigned to design a web page to be used by the out-patients to reserve times to meet doctors at a clinic of a government hospital. Which of the following is not essential to be included on that page?",
+  "options": [
+   "A video showing the doctors treating the patients in the clinic",
+   "Facility to view times available for reservation on a selected date",
+   "Facility to enter patient's name, NIC number and phone number to complete a reservation",
+   "Information on dates and times the clinic is open and location of the clinic"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2023,
+  "q": 40,
+  "topic": "5.2",
+  "topicSource": "keyword",
+  "stem": "Consider the following statement taken from an HTML file: <img src=\"dunhinda.jpg\" alt=\"Dunhinda\" width=\"100\" height=\"200\" align=\"right\"> Which of the following statements are not true with respect to it?",
+  "options": [
+   "The dunhinda.jpg image is displayed if it exists",
+   "The Dunhinda text is displayed if dunhinda.jpg image file is not available",
+   "Either the dunhinda.jpg image or Dunhinda text will always appear at the right on the web page",
+   "The Dunhinda text will always appear on the right of the dunhinda.jpg image"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 1,
+  "topic": "5.1",
+  "topicSource": "keyword",
+  "stem": "The hard drive in a computer is formatted during maintenance. Which of the following should now be first installed in it?",
+  "options": [
+   "a software firewall",
+   "an anti-virus software",
+   "an application software",
+   "an operating system"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 2,
+  "topic": "2.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following is an output device?",
+  "options": [
+   "a joystick",
+   "a microphone",
+   "a printer",
+   "a scanner"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 3,
+  "topic": "2.3",
+  "topicSource": "keyword",
+  "stem": "Which of the following is a solid state storage device?",
+  "options": [
+   "a CDROM",
+   "a floppy disk",
+   "a magnetic hard disk",
+   "a USB flash drive"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 4,
+  "topic": "2.5",
+  "topicSource": "keyword",
+  "stem": "The figure shows a local area network connected to the Internet. Which of the following correctly lists A, B and C in it?",
+  "options": [
+   "A - file server, B - switch, C - router",
+   "A - file server, B - router, C - switch",
+   "A - router, B - switch, C - file server",
+   "A - switch, B - file server, C - router"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 5,
+  "topic": "2.5",
+  "topicSource": "keyword",
+  "stem": "Which of the following could be used to connect two local area networks?",
+  "options": [
+   "a file server",
+   "a firewall",
+   "a modem",
+   "a router"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 6,
+  "topic": "3.3",
+  "topicSource": "keyword",
+  "stem": "Which of the following is the octal equivalent of binary 100 0110₂?",
+  "options": [
+   "46₈",
+   "70₈",
+   "106₈",
+   "430₈"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 7,
+  "topic": "3.3",
+  "topicSource": "keyword",
+  "stem": "Which of the following is the decimal equivalent of binary 1000 1000₂?",
+  "options": [
+   "64₁₀",
+   "132₁₀",
+   "136₁₀",
+   "260₁₀"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 8,
+  "topic": "3.4",
+  "topicSource": "keyword",
+  "stem": "Rani wants to store the following files in a USB Flash drive: trees.pdf (500 MB), config.txt (534 bytes), nickels.mp4 (2 GB), report.docx (900 KB) Which of the following is the lowest capacity USB drive that is sufficient to store them?",
+  "options": [
+   "2 GB",
+   "4 GB",
+   "8 GB",
+   "16GB"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 9,
+  "topic": "3.5",
+  "topicSource": "keyword",
+  "stem": "Consider the following statements P and Q: P - eWhen one enters a character (say A) to a digital computer, it is converted to a specific eeeeeepattern of 0s and 1s. Q - The ASCII code is used to assign standard numeric values to 128 characters used in computers. Which of the following is valid regarding the above statements?",
+  "options": [
+   "eBoth statements P and Q are correct and the ASCII code described in Statement Q assists eeeethe task mentioned in Statement P",
+   "eBoth statements P and Q are correct but the points presented in the two statements are not eeeerelated",
+   "Statement P is correct but statement Q is incorrect",
+   "Both statements are incorrect"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 10,
+  "topic": "13.4",
+  "topicSource": "keyword",
+  "stem": "Which of the following only contains examples of operating systems?",
+  "options": [
+   "Adobe Photoshop, LibreOffice, Movie Maker, Notepad",
+   "Android, LibreOffice, MacOS, McAfee AntiVirus",
+   "Movie Maker, Norton AntiVirus, Ubuntu, Windows",
+   "Android, MacOS, Ubuntu, Windows"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 11,
+  "topic": "10.4",
+  "topicSource": "keyword",
+  "stem": "While using a word processing software Kamal mistakenly deletes a paragraph of text. Which of the following icons should Kamal next press to get that paragraph back?",
+  "options": null,
+  "imageOptions": true,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 12,
+  "topic": "1.2",
+  "topicSource": "keyword",
+  "stem": "When using a word processing software, which of the following shortcut key combinations can one use to copy a selected piece of text and paste it elsewhere?",
+  "options": [
+   "Ctrl+A and Ctrl+S",
+   "Ctrl+C and Ctrl+V",
+   "Ctrl+X and Ctrl+H",
+   "Ctrl+X and Ctrl+V"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 13,
+  "topic": "7.1",
+  "topicSource": "keyword",
+  "stem": "Which of the following are valid column names in a spreadsheet? I. BZ II. A4 III. A1:B3 IV. B",
+  "options": [
+   "I only",
+   "II only",
+   "I and IV only",
+   "II and III only"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 14,
+  "topic": "7.4",
+  "topicSource": "keyword",
+  "stem": "Which of the following functions can be used to display the minimum mark of the practical and theory marks of all four students? I. = MIN (B2, B5, C2 , C5) II. = MIN (B2:B5,C2:C5) III. = MIN (B2:C5)",
+  "options": [
+   "I and II only",
+   "II and III only",
+   "I and III only",
+   "All I, II and III"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": " Questions 14 and 15 are based on the following part of a spreadsheet",
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 15,
+  "topic": "7.7",
+  "topicSource": "keyword",
+  "stem": "If the formula = (B2 * G$1/100) + (C2 * G$2/100) is entered in cell D2 and then copied to D3, what will be the formula that will appear in D3?",
+  "options": [
+   "= (B2 * G$1/100) + (C2 * G$2/100)",
+   "= (B3 * G$1/100) + (C3 * G$2/100)",
+   "= (B3 * G$2/100) + (C3 * G$3/100)",
+   "= (C2 * H$1/100) + (D2 * H$2/100)"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": " Questions 14 and 15 are based on the following part of a spreadsheet",
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 16,
+  "topic": "8.1",
+  "topicSource": "keyword",
+  "stem": "Which of the following is not a suitable advice to follow when making a slide presentation?",
+  "options": [
+   "First plan your presentation and then make the slides",
+   "Have at least 15 text lines per slide",
+   "Have a maximum of two images / graphs per slide",
+   "Avoid using a dark red colour throughout the presentation"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 17,
+  "topic": "9.1",
+  "topicSource": "keyword",
+  "stem": "What is most suitable for the primary key of the PURCHASE table?",
+  "options": [
+   "Book_ID",
+   "Supplier ID",
+   "Book ID + Supplier_ID",
+   "Book ID + Purchasing_price"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": " Questions 17 to 19 are based on the following partly shown database tables that are used to store data about books, purchases and suppliers of a book shop. Note: The book shop purchases books from suppliers and sells them to customers. A particular book can be purchased from many suppliers at different prices. BOOK PURCHASE Book_ID Book_name Selling_price Book_ID Supplier_ID Purchasing_price B001 Python for Beginners B001 SUP001 B002 Digital Fundamentals B002 SUP002 B003 Databases: Zero to Hero B003 SUP003 B004 Headfirst Java B003 SUP001 SUPPLIER Supplier_ID Supplier_name Address SUP001 Shane Colombo SUP002 Anil Kandy SUP003 Kavinkumar Colombo SUP004 Sharaf Galle",
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 18,
+  "topic": "9.4",
+  "topicSource": "keyword",
+  "stem": "What is a foreign key in this database?",
+  "options": [
+   "Book ID in the BOOK table",
+   "Selling price in the BOOK table",
+   "Supplier ID in the PURCHASE table",
+   "Supplier_ID in the SUPPLIER table"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": " Questions 17 to 19 are based on the following partly shown database tables that are used to store data about books, purchases and suppliers of a book shop. Note: The book shop purchases books from suppliers and sells them to customers. A particular book can be purchased from many suppliers at different prices. BOOK PURCHASE Book_ID Book_name Selling_price Book_ID Supplier_ID Purchasing_price B001 Python for Beginners B001 SUP001 B002 Digital Fundamentals B002 SUP002 B003 Databases: Zero to Hero B003 SUP003 B004 Headfirst Java B003 SUP001 SUPPLIER Supplier_ID Supplier_name Address SUP001 Shane Colombo SUP002 Anil Kandy SUP003 Kavinkumar Colombo SUP004 Sharaf Galle",
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 19,
+  "topic": "9.1",
+  "topicSource": "keyword",
+  "stem": "The book shop purchases the book 'Databases: Zero to Hero' from a new supplier (SUP005) located in Colombo. The book is sold at its normal price. Which table(s) is/(are) to be updated for this purpose?",
+  "options": [
+   "BOOK and PURCHASE",
+   "PURCHASE only",
+   "PURCHASE and SUPPLIER",
+   "SUPPLIER only"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": " Questions 17 to 19 are based on the following partly shown database tables that are used to store data about books, purchases and suppliers of a book shop. Note: The book shop purchases books from suppliers and sells them to customers. A particular book can be purchased from many suppliers at different prices. BOOK PURCHASE Book_ID Book_name Selling_price Book_ID Supplier_ID Purchasing_price B001 Python for Beginners B001 SUP001 B002 Digital Fundamentals B002 SUP002 B003 Databases: Zero to Hero B003 SUP003 B004 Headfirst Java B003 SUP001 SUPPLIER Supplier_ID Supplier_name Address SUP001 Shane Colombo SUP002 Anil Kandy SUP003 Kavinkumar Colombo SUP004 Sharaf Galle",
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 20,
+  "topic": "9.4",
+  "topicSource": "keyword",
+  "stem": "Which of the following statements are correct about database keys? A - A primary key is used to uniquely identify a record in a table. B - A foreign key is a field in one table that uniquely identifies a record in another table. C - A composite key is made up of two or more fields to uniquely identify a record",
+  "options": [
+   "A and B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 21,
+  "topic": "1.2",
+  "topicSource": "keyword",
+  "stem": "A long rectangular sheet roll is available in a shop. A number of small squares has to be cut from that sheet. A program is needed to find the minimum length of the sheet that is sufficient to cut the required number of squares. Which of the following are the required inputs for this program? A - Width of the sheet roll B - The required number of squares C - the length of a side in a square",
+  "options": [
+   "A and B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 22,
+  "topic": "10.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following tasks requires both 'iteration' and 'selection' control structures?",
+  "options": [
+   "calculating the average of two given numbers",
+   "checking if a number is a prime",
+   "displaying a welcome message to the user",
+   "printing the first twenty even numbers"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 23,
+  "topic": "1.2",
+  "topicSource": "keyword",
+  "stem": "Consider the following P, Q and R logical expressions: P : (A >= –3) AND (B < 25) Q : (A <> 10) AND (B = 20) R : NOT (A > 0) OR (B < 15) If above A and B contain the values –3 and 18 respectively, which of the following represents correct outcomes of P, Q and R respectively?",
+  "options": [
+   "false, true, false",
+   "false, true, true",
+   "true, false, false",
+   "true, false, true"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 24,
+  "topic": "10.4",
+  "topicSource": "keyword",
+  "stem": "What is the output of the following Pascal expression? (3 + 5) * 2 – 10 div 2",
+  "options": [
+   "8",
+   "10",
+   "11",
+   "16"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 25,
+  "topic": "1.2",
+  "topicSource": "keyword",
+  "stem": "What would be the output of the code shown in Figure 1?",
+  "options": [
+   "9",
+   "10",
+   "11",
+   "13"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": " Questions 25, 26 and 27 are based on the codes shown in figures 1, 2 and 3 respectively. x := 1 ; var if (value >= 30) then while x < 10 do i : integer; writeln('Hot') x := x + 2 ; x : integer = 5; else begin if (value >= 25) then writeln(x); for i := 1 to x do writeln('Warm') if i mod 2 = 0 then else write(i); if (value >= 20) then end. writeln('Chilly') else writeln('Cold'); Figure 1 Figure 2 Figure 3",
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 26,
+  "topic": "1.2",
+  "topicSource": "keyword",
+  "stem": "What would be the output of the code shown in Figure 2?",
+  "options": [
+   "2",
+   "24",
+   "135",
+   "12345"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": " Questions 25, 26 and 27 are based on the codes shown in figures 1, 2 and 3 respectively. x := 1 ; var if (value >= 30) then while x < 10 do i : integer; writeln('Hot') x := x + 2 ; x : integer = 5; else begin if (value >= 25) then writeln(x); for i := 1 to x do writeln('Warm') if i mod 2 = 0 then else write(i); if (value >= 20) then end. writeln('Chilly') else writeln('Cold'); Figure 1 Figure 2 Figure 3",
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 27,
+  "topic": "1.2",
+  "topicSource": "keyword",
+  "stem": "What would be the outputs of the code shown in Figure 3 when 'value' is 26 and 20 respectively?",
+  "options": [
+   "Hot, Chilly",
+   "Hot, Cold",
+   "Warm, Chilly",
+   "Warm, Cold"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": " Questions 25, 26 and 27 are based on the codes shown in figures 1, 2 and 3 respectively. x := 1 ; var if (value >= 30) then while x < 10 do i : integer; writeln('Hot') x := x + 2 ; x : integer = 5; else begin if (value >= 25) then writeln(x); for i := 1 to x do writeln('Warm') if i mod 2 = 0 then else write(i); if (value >= 20) then end. writeln('Chilly') else writeln('Cold'); Figure 1 Figure 2 Figure 3",
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 28,
+  "topic": "10.4",
+  "topicSource": "keyword",
+  "stem": "Which of the following refers to the first element of a Pascal array declared as arrA = array[0..4] of integer; ?",
+  "options": [
+   "arrA[-1]",
+   "arrA[0]",
+   "arrA[1]",
+   "arrA[first]"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 29,
+  "topic": "10.4",
+  "topicSource": "keyword",
+  "stem": "Which of the following statements are correct? A - An assembler converts an assembly language code into a machine language code. B - Pascal is considered a 'low level' programming language. Cee-eeA compiler converts a high-level language program completely into a machine eeeeelanguage program",
+  "options": [
+   "A and B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 30,
+  "topic": "14.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following contains an incorrect matching with respect to a website development project?",
+  "options": [
+   "Requirements analysis interviews, prototypes",
+   "Solution design hardware identification, software identification",
+   "Coding HTML, PHP, MySQL",
+   "Testing direct, parallel, phased"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 31,
+  "topic": "5.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following statements about a URL (Uniform Resource Locator) is correct?",
+  "options": [
+   "A URL cannot contain folder names",
+   "A URL is composed of only the protocol and domain name",
+   "A URL is as same as an IP address",
+   "A URL specifies the address of a resource on the world wide web"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 32,
+  "topic": "10.4",
+  "topicSource": "keyword",
+  "stem": "Which of the following statements is correct?",
+  "options": [
+   "A DNS server maps domain names into IP addresses, while a web server delivers website eeeecontent to its users",
+   "eA web server and a DNS server both store website content and serve it to users",
+   "eA web server and a DNS server both use the HTTP protocol",
+   "eA web server translates domain names into IP addresses, while a DNS server hosts website content"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 33,
+  "topic": "5.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following correctly matches the given file types with the example filename extensions?",
+  "options": [
+   "spreadsheet: exe, xlsx audio: mp3, pptx video: docx, mp4",
+   "spreadsheet: ods, xlsx audio: mp3, wav video: avi, mp4",
+   "spreadsheet: mp3, ods audio: pdf, xlsx video: jpg, wav",
+   "spreadsheet: mp4, wav audio: ods, png video: exe, xlsx"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 34,
+  "topic": "13.1",
+  "topicSource": "keyword",
+  "stem": "A raster image containing N pixels and having a dimension 2\" X 2\" is enlarged to be of dimension 2\" X 3\". What will be the number of pixels in the enlarged image'?",
+  "options": [
+   "N",
+   "2N",
+   "3N",
+   "6N"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 35,
+  "topic": "13.1",
+  "topicSource": "keyword",
+  "stem": "Which of the following statements is incorrect regarding raster and vector graphics?",
+  "options": [
+   "The GIMP software can be used to create a raster image",
+   "Vector images are constructed through lines, curves and fills",
+   "When a vector image is enlarged, its quality degrades",
+   "Raster images are not suitable for images like institution logos that frequently need resizing"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 36,
+  "topic": "5.2",
+  "topicSource": "keyword",
+  "stem": "An audio file of a song contains long silence portions before and after the song which have to be removed using Audacity. Some labelled icons from the Audacity interface are shown below. A: B: C: D: After the file is opened from Audacity, which of the following actions can be used to remove the silence portions?",
+  "options": [
+   "Click A Click B",
+   "Click A Click C Click D",
+   "Click A select the song portion Click C",
+   "Click A select the song portion Click D"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 37,
+  "topic": "13.1",
+  "topicSource": "keyword",
+  "stem": "Which of the following gives the approximate size in bytes of a raster image having a 275 × 175 resolution and a maximum of four colours? (Assume the image has not been compressed.)",
+  "options": [
+   "275×175",
+   "275×175×4",
+   "(275×175×2)/8",
+   "(275×175×4)/8"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 38,
+  "topic": "10.4",
+  "topicSource": "keyword",
+  "stem": "Consider the following list that was displayed on a web browser: 1. Java 2. Python 3. Pascal Which of the following HTML tags would have been used to produce it?",
+  "options": [
+   "<dl>,<dt>",
+   "<nl>, <li>",
+   "<ol>, <li>",
+   "<ul>,<li>"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 39,
+  "topic": "12.1",
+  "topicSource": "keyword",
+  "stem": "Consider the following paragraph with blanks labelled P-S: A website is a collection of related web pages hosted on the Internet that users can access through a ________ (P). The HTTP protocol is used to transfer data between a web ________ (Q) and a ________ (R), enabling users to request and view web content. To make a website accessible online, it must be hosted by a ________ (S). Which of the following gives the suitable replacements for the blanks?",
+  "options": [
+   "P - browser, Q - server, R - client, S - service provider",
+   "P - client, Q - service provider, R - server, S - browser",
+   "P - server, Q - client, R - service provider, S - browser",
+   "P - service provider, Q - browser, R - server, S - client"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
+  "year": 2024,
+  "q": 40,
+  "topic": "15.2",
+  "topicSource": "keyword",
+  "stem": "Which of the following will help to reduce the e-waste problem? A - people protecting and maintaining their electronic items B - finding new ways of recycling unusable electronic items C - avoiding buying unnecessary electronic items",
+  "options": [
+   "A and B only",
+   "A and C only",
+   "B and C only",
+   "All A, B and C"
+  ],
+  "imageOptions": false,
+  "sourceDefect": null,
+  "stimulus": null,
+  "transcription": "text_layer"
+ },
+ {
   "year": 2025,
   "q": 1,
+  "topic": "2.1",
+  "topicSource": "hand",
   "stem": "Which of the following is generally an advantage of a desktop computer over a laptop?",
   "options": [
    "Built-in battery",
@@ -10,13 +3377,15 @@
    "Lightweight design"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": null,
-  "transcription": "text_layer",
-  "topic": "2.1"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 2,
+  "topic": "2.4",
+  "topicSource": "hand",
   "stem": "In which of the following are the instructions of the operating system of a computer executed?",
   "options": [
    "caches",
@@ -25,13 +3394,15 @@
    "registers"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": null,
-  "transcription": "text_layer",
-  "topic": "2.4"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 3,
+  "topic": "2.4",
+  "topicSource": "hand",
   "stem": "What is the most suitable replacement for the blank in the following statement? \"Even when my computer is off, its operating system, application software and all my data exist in its ________________\"",
   "options": [
    "caches",
@@ -40,13 +3411,15 @@
    "processor"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": null,
-  "transcription": "text_layer",
-  "topic": "2.4"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 4,
+  "topic": "2.5",
+  "topicSource": "hand",
   "stem": "Which of the following uses 'half duplex' mode data transmission?",
   "options": [
    "radio broadcasts",
@@ -55,13 +3428,15 @@
    "walkie-talkie communications"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": null,
-  "transcription": "text_layer",
-  "topic": "2.5"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 5,
+  "topic": "2.5",
+  "topicSource": "hand",
   "stem": "In which of the following network topologies does every computer connect to a central device such as a switch?",
   "options": [
    "Bus",
@@ -70,13 +3445,15 @@
    "Mesh"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": null,
-  "transcription": "text_layer",
-  "topic": "2.5"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 6,
+  "topic": "3.3",
+  "topicSource": "hand",
   "stem": "Which of the following is the hexadecimal equivalent of binary 1110 1110₂?",
   "options": [
    "1F₁₆",
@@ -85,13 +3462,15 @@
    "FF₁₆"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": null,
-  "transcription": "text_layer",
-  "topic": "3.3"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 7,
+  "topic": "3.4",
+  "topicSource": "hand",
   "stem": "A USB flash drive has 256 MB of free space. A video file of 0.3 GB, an image file of 300 KB, and a document file of 400 bytes need to be copied to this drive. Which of the following statements is correct?",
   "options": [
    "Only the document file can be copied",
@@ -100,13 +3479,15 @@
    "All the indicated files can be copied"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": null,
-  "transcription": "text_layer",
-  "topic": "3.4"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 8,
+  "topic": "3.5",
+  "topicSource": "hand",
   "stem": "In the ASCII code, the character A is represented by 65₁₀. In that code, which character is represented by 0100 0011₂?",
   "options": [
    "A",
@@ -115,13 +3496,15 @@
    "D"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": null,
-  "transcription": "text_layer",
-  "topic": "3.5"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 9,
+  "topic": "5.1",
+  "topicSource": "hand",
   "stem": "Which of the following is not a task of an operating system?",
   "options": [
    "Giving each user process the chance to run on the processor",
@@ -130,13 +3513,15 @@
    "Right-justifying the text of a word processor's document"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": null,
-  "transcription": "text_layer",
-  "topic": "5.1"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 10,
+  "topic": "6.5",
+  "topicSource": "hand",
   "stem": "Which of the following statements are true regarding word processor software? A – They allow users to save the opened documents with passwords. B – They allow users to save the opened documents in pdf format. C – One can use the 'Save As...' option in the 'File' menu to save a document with a different name",
   "options": [
    "A and B only",
@@ -145,43 +3530,51 @@
    "All A, B and C"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": null,
-  "transcription": "text_layer",
-  "topic": "6.5"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 11,
+  "topic": "6.3",
+  "topicSource": "hand",
   "stem": "Which of the following word processor software icons can be used to center align a piece of text?",
   "options": null,
   "imageOptions": true,
+  "sourceDefect": null,
   "stimulus": null,
-  "transcription": "text_layer",
-  "topic": "6.3"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 12,
+  "topic": "6.3",
+  "topicSource": "hand",
   "stem": "Which of the following word processor software icons can be used to help obtain X²?",
   "options": null,
   "imageOptions": true,
+  "sourceDefect": null,
   "stimulus": null,
-  "transcription": "text_layer",
-  "topic": "6.3"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 13,
+  "topic": "6.3",
+  "topicSource": "hand",
   "stem": "Which of the following word processor software icons can be used to strike-through a piece of text?",
   "options": null,
   "imageOptions": true,
+  "sourceDefect": null,
   "stimulus": null,
-  "transcription": "text_layer",
-  "topic": "6.3"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 14,
+  "topic": "6.1",
+  "topicSource": "hand",
   "stem": "Which of the following statements are true regarding word processor software? P – One can easily send the same letter to multiple recipients using their 'mail merge' features. Q – A document in the .docx format cannot be edited using LibreOffice Writer. R – When a wide table does not fit in the 'portrait' orientation, one should test the 'landscape' orientation available in the software",
   "options": [
    "P and Q only",
@@ -190,13 +3583,15 @@
    "All P, Q and R"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": null,
-  "transcription": "text_layer",
-  "topic": "6.1"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 15,
+  "topic": "7.1",
+  "topicSource": "hand",
   "stem": "Which of the following only contains examples of spreadsheet software?",
   "options": [
    "Google Docs, LibreOffice Writer, Microsoft Excel",
@@ -205,13 +3600,15 @@
    "Microsoft PowerPoint, Google Sheets, LibreOffice Calc"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": null,
-  "transcription": "text_layer",
-  "topic": "7.1"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 16,
+  "topic": "7.1",
+  "topicSource": "hand",
   "stem": "On a worksheet, how many cells are included in the range B2:D4?",
   "options": [
    "6",
@@ -220,13 +3617,15 @@
    "12"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": null,
-  "transcription": "text_layer",
-  "topic": "7.1"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 17,
+  "topic": "7.4",
+  "topicSource": "hand",
   "stem": "Which of the following spreadsheet software formulae correctly calculates the average of B1:B4 and D1:D4?",
   "options": [
    "=AVERAGE(B1:D4)",
@@ -235,13 +3634,15 @@
    "=AVERAGE(B1:B4 + D1:D4)"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": null,
-  "transcription": "text_layer",
-  "topic": "7.4"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 18,
+  "topic": "8.1",
+  "topicSource": "hand",
   "stem": "Which of the following only contains examples of presentation software?",
   "options": [
    "Apple Keynote, LibreOffice Impress, Microsoft PowerPoint",
@@ -250,13 +3651,15 @@
    "Google Sheets, LibreOffice Calc, Ubuntu"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": null,
-  "transcription": "text_layer",
-  "topic": "8.1"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 19,
+  "topic": "9.4",
+  "topicSource": "hand",
   "stem": "What is most suitable for the primary key for the SUBJECT_TEACHER table?",
   "options": [
    "Subject_ID",
@@ -265,13 +3668,15 @@
    "Subject_ID + Teacher_ID"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": " Questions 19 to 21 are based on the following partly shown database tables that are used to store data about school subjects, teachers and their subject allocations. Note: A subject can be taught by many teachers and a teacher can teach many subjects. The Hours _per_week field stores the weekly teaching hours allocated to a particular teacher to teach the relevant subject. SUBJECT Subject_ID Subject_name SU01 Mathematics SU02 Science SU03 English SU04 ICT TEACHER Teacher_ID Teacher_name T001 Ms. Perera T002 Mr. Silva T003 Ms. Fernando T004 Mr. Khan SUBJECT_TEACHER Subject_ID Teacher_ID Hours_per_week SU01 T002 SU02 T001 SU04 T003 SU02 T004",
-  "transcription": "text_layer",
-  "topic": "9.4"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 20,
+  "topic": "9.4",
+  "topicSource": "hand",
   "stem": "What is a foreign key in this database?",
   "options": [
    "Hours_per_week in the SUBJECT_TEACHER table",
@@ -280,13 +3685,15 @@
    "Subject_name in the SUBJECT table"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": " Questions 19 to 21 are based on the following partly shown database tables that are used to store data about school subjects, teachers and their subject allocations. Note: A subject can be taught by many teachers and a teacher can teach many subjects. The Hours _per_week field stores the weekly teaching hours allocated to a particular teacher to teach the relevant subject. SUBJECT Subject_ID Subject_name SU01 Mathematics SU02 Science SU03 English SU04 ICT TEACHER Teacher_ID Teacher_name T001 Ms. Perera T002 Mr. Silva T003 Ms. Fernando T004 Mr. Khan SUBJECT_TEACHER Subject_ID Teacher_ID Hours_per_week SU01 T002 SU02 T001 SU04 T003 SU02 T004",
-  "transcription": "text_layer",
-  "topic": "9.4"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 21,
+  "topic": "9.4",
+  "topicSource": "hand",
   "stem": "A new teacher (Mr. Sivarajah, T005) joins the school and starts teaching Science (SU02). Which tables are to be updated for this purpose?",
   "options": [
    "TEACHER only",
@@ -295,13 +3702,15 @@
    "TEACHER and SUBJECT_TEACHER only"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": " Questions 19 to 21 are based on the following partly shown database tables that are used to store data about school subjects, teachers and their subject allocations. Note: A subject can be taught by many teachers and a teacher can teach many subjects. The Hours _per_week field stores the weekly teaching hours allocated to a particular teacher to teach the relevant subject. SUBJECT Subject_ID Subject_name SU01 Mathematics SU02 Science SU03 English SU04 ICT TEACHER Teacher_ID Teacher_name T001 Ms. Perera T002 Mr. Silva T003 Ms. Fernando T004 Mr. Khan SUBJECT_TEACHER Subject_ID Teacher_ID Hours_per_week SU01 T002 SU02 T001 SU04 T003 SU02 T004",
-  "transcription": "text_layer",
-  "topic": "9.4"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 22,
+  "topic": "9.3",
+  "topicSource": "hand",
   "stem": "Which of the following statements are correct regarding databases? A – Compared to manual databases, electronic databases are more efficient in retrieving information. B – Updating data is easier in a manual database than in an electronic database. C – Electronic databases can be protected through passwords and data encryption",
   "options": [
    "A and B only",
@@ -310,13 +3719,15 @@
    "All A, B and C"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": null,
-  "transcription": "text_layer",
-  "topic": "9.3"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 23,
+  "topic": "9.2",
+  "topicSource": "hand",
   "stem": "Which of the following statements is correct regarding databases?",
   "options": [
    "A record in a table that has a composite primary key can be uniquely identified by just one field of its composite primary key",
@@ -325,13 +3736,15 @@
    "When a table in a database is being created using a software, one should indicate the data type of each of its fields"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": null,
-  "transcription": "text_layer",
-  "topic": "9.2"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 24,
+  "topic": "10.1",
+  "topicSource": "hand",
   "stem": "A program is required to compute the shortest route between cities P and Q. A route is made up of small road segments that could be collectively used to go from P to Q. The program will require a collection of road segments to be given as its input. Which of the following contains the data that has to be input for each road segment? Note: traffic indicator is a number indicating the traffic congestion on a particular segment and length contains the length of that road segment",
   "options": [
    "Ending city, length, traffic indicator",
@@ -340,13 +3753,15 @@
    "Starting city, ending city, traffic indicator"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": null,
-  "transcription": "text_layer",
-  "topic": "10.1"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 25,
+  "topic": "10.3",
+  "topicSource": "hand",
   "stem": "What will be the output if the input N is 4?",
   "options": [
    "0",
@@ -355,13 +3770,15 @@
    "325"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": " Questions 25, 26, 27 and 28 are based on the following flow-chart",
-  "transcription": "text_layer",
-  "topic": "10.3"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 26,
+  "topic": "10.3",
+  "topicSource": "hand",
   "stem": "What will be the output if the input N is 1?",
   "options": [
    "0",
@@ -370,13 +3787,15 @@
    "3"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": " Questions 25, 26, 27 and 28 are based on the following flow-chart",
-  "transcription": "text_layer",
-  "topic": "10.3"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 27,
+  "topic": "10.3",
+  "topicSource": "hand",
   "stem": "When the condition 'I <= N?' is changed to 'I < N?' and the input N is given as 5, what will be the output?",
   "options": [
    "0",
@@ -385,13 +3804,15 @@
    "325"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": " Questions 25, 26, 27 and 28 are based on the following flow-chart",
-  "transcription": "text_layer",
-  "topic": "10.3"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 28,
+  "topic": "10.4",
+  "topicSource": "hand",
   "stem": "Which of the following Pascal constructs is most suited to implement the control structure shown in the flow-chart?",
   "options": [
    "case",
@@ -400,13 +3821,15 @@
    "while-do"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": " Questions 25, 26, 27 and 28 are based on the following flow-chart",
-  "transcription": "text_layer",
-  "topic": "10.4"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 29,
+  "topic": "10.4",
+  "topicSource": "hand",
   "stem": "What is SIZE in the above code?",
   "options": [
    "A constant",
@@ -415,13 +3838,15 @@
    "An array"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": " Questions 29, 30, 31, 32 and 33 are based on the following labelled fragment taken from a Pascal code to print the average of the values in the 'numbers' array. sum := A; B i := 1 to SIZE do begin sum := sum + numbers[C]; end; D := E / F ; writeln('The average is: ', average:5:2)",
-  "transcription": "text_layer",
-  "topic": "10.4"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 30,
+  "topic": "10.4",
+  "topicSource": "hand",
   "stem": "What should be the replacement for A?",
   "options": [
    "0",
@@ -430,13 +3855,15 @@
    "numbers"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": " Questions 29, 30, 31, 32 and 33 are based on the following labelled fragment taken from a Pascal code to print the average of the values in the 'numbers' array. sum := A; B i := 1 to SIZE do begin sum := sum + numbers[C]; end; D := E / F ; writeln('The average is: ', average:5:2)",
-  "transcription": "text_layer",
-  "topic": "10.4"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 31,
+  "topic": "10.4",
+  "topicSource": "hand",
   "stem": "What should be the replacement for B?",
   "options": [
    "case",
@@ -445,13 +3872,15 @@
    "while"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": " Questions 29, 30, 31, 32 and 33 are based on the following labelled fragment taken from a Pascal code to print the average of the values in the 'numbers' array. sum := A; B i := 1 to SIZE do begin sum := sum + numbers[C]; end; D := E / F ; writeln('The average is: ', average:5:2)",
-  "transcription": "text_layer",
-  "topic": "10.4"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 32,
+  "topic": "10.4",
+  "topicSource": "hand",
   "stem": "What should be the replacement for C?",
   "options": [
    "0",
@@ -460,13 +3889,15 @@
    "SIZE"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": " Questions 29, 30, 31, 32 and 33 are based on the following labelled fragment taken from a Pascal code to print the average of the values in the 'numbers' array. sum := A; B i := 1 to SIZE do begin sum := sum + numbers[C]; end; D := E / F ; writeln('The average is: ', average:5:2)",
-  "transcription": "text_layer",
-  "topic": "10.4"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 33,
+  "topic": "10.4",
+  "topicSource": "hand",
   "stem": "What should be the replacements for D, E and F respectively?",
   "options": [
    "average, sum, SIZE",
@@ -475,13 +3906,15 @@
    "sum, SIZE, average"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": " Questions 29, 30, 31, 32 and 33 are based on the following labelled fragment taken from a Pascal code to print the average of the values in the 'numbers' array. sum := A; B i := 1 to SIZE do begin sum := sum + numbers[C]; end; D := E / F ; writeln('The average is: ', average:5:2)",
-  "transcription": "text_layer",
-  "topic": "10.4"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 34,
+  "topic": "11.2",
+  "topicSource": "hand",
   "stem": "When developing an information system, what is the main advantage of using the iterative incremental model instead of the waterfall model?",
   "options": [
    "skipping of some stages to save time",
@@ -490,13 +3923,15 @@
    "not requiring any testing"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": null,
-  "transcription": "text_layer",
-  "topic": "11.2"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 35,
+  "topic": "11.2",
+  "topicSource": "hand",
   "stem": "Which of the following best describes acceptance testing?",
   "options": [
    "It is done by programmers to check whether the requirements of the users are acceptable",
@@ -505,13 +3940,15 @@
    "It is done by users after deployment to add new features"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": null,
-  "transcription": "text_layer",
-  "topic": "11.2"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 36,
+  "topic": "12.1",
+  "topicSource": "hand",
   "stem": "Which of the following is a correct example for an Internet Protocol (IP) address?",
   "options": [
    "172.215.8.4.2",
@@ -520,13 +3957,15 @@
    "192.246.11.254"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": null,
-  "transcription": "text_layer",
-  "topic": "12.1"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 37,
+  "topic": "13.1",
+  "topicSource": "hand",
   "stem": "If this image is not compressed, then its approximate size in bytes is",
   "options": [
    "1920 × 1080",
@@ -535,13 +3974,15 @@
    "(1920 × 1080 × 3) / 8"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": " To answer questions 37 and 38, consider a raster image of resolution 1920 × 1080 using 8 bits for a pixel",
-  "transcription": "text_layer",
-  "topic": "13.1"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 38,
+  "topic": "13.1",
+  "topicSource": "hand",
   "stem": "What is the maximum number of colours that the above image can contain?",
   "options": [
    "3",
@@ -550,13 +3991,15 @@
    "2⁸ × 1920 × 1080"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": " To answer questions 37 and 38, consider a raster image of resolution 1920 × 1080 using 8 bits for a pixel",
-  "transcription": "text_layer",
-  "topic": "13.1"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 39,
+  "topic": "13.1",
+  "topicSource": "hand",
   "stem": "Which of the following only contains examples of graphics file formats?",
   "options": [
    "avi, docx, pdf",
@@ -565,13 +4008,15 @@
    "mp4, png, ppt"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": null,
-  "transcription": "text_layer",
-  "topic": "13.1"
+  "transcription": "text_layer"
  },
  {
   "year": 2025,
   "q": 40,
+  "topic": "14.2",
+  "topicSource": "hand",
   "stem": "Which of the following statements are correct? A – The <img> tag is used to insert an image to a web page. B – The src attribute of <img> indicates the image file. C – An <img> tag must have a closing </img> tag",
   "options": [
    "A and B only",
@@ -580,8 +4025,8 @@
    "All A, B and C"
   ],
   "imageOptions": false,
+  "sourceDefect": null,
   "stimulus": null,
-  "transcription": "text_layer",
-  "topic": "14.2"
+  "transcription": "text_layer"
  }
 ]

@@ -49,6 +49,9 @@ export type StudentQuestion = {
     imageUrl: string | null;
     /** The asset's own description. A caption is not a substitute — see below. */
     imageAlt: string | null;
+    /** Natural pixel size, so a wide figure can refuse to shrink past legibility. */
+    imageWidth: number | null;
+    imageHeight: number | null;
     caption: string | null;
   } | null;
   /** Provenance — drives the PAST PAPER / MODEL QUESTION badge. */
@@ -113,6 +116,8 @@ export async function getQuestionsForStudent(
       stimulusCaption: stimuli.caption,
       stimulusAssetPath: assets.storagePath,
       stimulusAssetAlt: assets.altText,
+      stimulusAssetWidth: assets.width,
+      stimulusAssetHeight: assets.height,
     })
     .from(questions)
     .innerJoin(syllabusNodes, eq(syllabusNodes.id, questions.syllabusNodeId))
@@ -144,6 +149,8 @@ export async function getQuestionsForStudent(
             content: r.stimulusContent,
             imageUrl: r.stimulusAssetPath,
             imageAlt: r.stimulusAssetAlt,
+            imageWidth: r.stimulusAssetWidth,
+            imageHeight: r.stimulusAssetHeight,
             caption: r.stimulusCaption,
           }
         : null,

@@ -31,24 +31,24 @@ export default async function ReportPage({
   if (!question) notFound();
 
   return (
-    <div className="mx-auto flex max-w-xl flex-col gap-3">
-      <header className="border-y border-ink bg-paper px-3 py-4 sm:border-x sm:px-4">
+    <div className="mx-auto flex max-w-2xl flex-col gap-5">
+      <header className="px-1 pt-2 sm:pt-4">
         <Link
           href="/dashboard"
-          className="ant-focus font-pixel inline-flex items-center gap-2 text-[16px] uppercase leading-none"
+          className="island inline-flex h-10 items-center gap-2 rounded-full px-4 text-[13px] font-medium text-muted transition-colors hover:text-ink"
         >
-          <ArrowLeftIcon size={12} />
+          <ArrowLeftIcon size={14} />
           Back
         </Link>
-        <h1 className="font-pixel mt-3 text-[24px] uppercase leading-tight">Report a problem</h1>
-        <p className="mt-2 text-[15px] leading-relaxed">
+        <h1 className="page-title mt-5">Report a problem</h1>
+        <p className="mt-3 text-[15px] leading-relaxed text-muted">
           If something here looks wrong, tell us. Reports go straight to the review queue,
           and we would rather hear about ten that turn out to be fine than miss one that is
           not.
         </p>
       </header>
 
-      <Window title="The question" note={question.publicId}>
+      <Window title="The question" note={<span className="font-mono">{question.publicId}</span>}>
         <div
           className="text-[15px] leading-relaxed"
           dangerouslySetInnerHTML={{ __html: renderInline(question.stem) }}

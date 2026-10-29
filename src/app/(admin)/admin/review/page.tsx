@@ -8,7 +8,7 @@ import {
 import { getQuestionsForGrading } from '@/lib/services/questions';
 import { can } from '@/lib/auth/rbac';
 import { ReviewCard } from './review-card';
-import { Window, Label } from '@/components/ui/window';
+import { Window } from '@/components/ui/window';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = { title: 'Review queue' };
@@ -45,10 +45,10 @@ export default async function ReviewQueuePage({
   const filtered = year !== undefined || onlyFigures;
 
   return (
-    <div className="flex flex-col gap-3">
-      <header className="border-y border-ink bg-paper px-3 py-4 sm:border-x sm:px-4">
-        <h1 className="font-pixel text-[24px] uppercase leading-tight">Review queue</h1>
-        <p className="mt-2 text-[15px]">
+    <div className="flex flex-col gap-4 sm:gap-5">
+      <header className="px-1 pb-3 pt-4 sm:pt-6">
+        <h1 className="page-title">Review queue</h1>
+        <p className="mt-3 text-[16px] text-muted tabular">
           {queue.length} {queue.length === 1 ? 'question' : 'questions'} shown
           {needsKey.length > 0 ? ` · ${needsKey.length} with no answer key` : ''}
           {filtered ? '' : ' · oldest paper first'}
@@ -61,42 +61,41 @@ export default async function ReviewQueuePage({
         these controls only the oldest paper is ever reachable — and every
         recovered figure is on a 2020+ paper.
       */}
-      <Window title="Filter">
-        <form className="flex flex-wrap items-center gap-2">
-          <select
-            name="year"
-            defaultValue={year !== undefined ? String(year) : ''}
-            aria-label="Paper year"
-            className="font-pixel h-10 border border-ink bg-paper px-2 text-[16px] uppercase"
-          >
-            <option value="">All years</option>
-            {years.map((y) => (
-              <option key={y} value={String(y)}>
-                {y}
-              </option>
-            ))}
-          </select>
+      <form className="glass flex flex-wrap items-center gap-2.5 rounded-[24px] p-3 sm:rounded-full sm:p-2">
+        <select
+          name="year"
+          defaultValue={year !== undefined ? String(year) : ''}
+          aria-label="Paper year"
+          className="h-12 flex-1 rounded-full bg-sunken px-5 text-[15px] sm:flex-none"
+        >
+          <option value="">All years</option>
+          {years.map((y) => (
+            <option key={y} value={String(y)}>
+              {y}
+            </option>
+          ))}
+        </select>
 
-          <label className="flex h-10 items-center gap-2 border border-ink px-3 text-[15px]">
-            <input
-              type="checkbox"
-              name="figures"
-              value="1"
-              defaultChecked={onlyFigures}
-              className="h-4 w-4"
-            />
-            Only questions with a figure ({figureCount})
-          </label>
+        <label className="flex h-12 flex-[1_1_16rem] cursor-pointer items-center gap-3 rounded-full bg-sunken px-5 text-[15px] has-[:checked]:bg-accent has-[:checked]:text-accent-ink has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-focus">
+          <input
+            type="checkbox"
+            name="figures"
+            value="1"
+            defaultChecked={onlyFigures}
+            className="h-4 w-4 accent-current"
+          />
+          Only questions with a figure
+          <span className="ml-auto tabular opacity-70">{figureCount}</span>
+        </label>
 
-          <Button type="submit" size="md">
-            Filter
-          </Button>
-        </form>
-      </Window>
+        <Button type="submit" size="md">
+          Filter
+        </Button>
+      </form>
 
       {queue.length === 0 ? (
         <Window title={filtered ? 'Nothing matches that filter' : 'The queue is empty'}>
-          <p className="text-[15px] leading-relaxed">
+          <p className="text-[15px] leading-relaxed text-muted">
             {filtered
               ? 'No question in the queue matches. Try another year, or clear the filter.'
               : 'Everything has been reviewed.'}
@@ -105,9 +104,14 @@ export default async function ReviewQueuePage({
       ) : null}
 
       {needsKey.length > 0 ? (
-        <section className="flex flex-col gap-3">
-          <Window title="No answer key — blocked" note={`${needsKey.length}`} className="border-y-2 sm:border-x-2">
-            <p className="max-w-2xl text-[15px] leading-relaxed">
+        <section className="flex flex-col gap-4">
+          <Window
+            tone="raised"
+            title="No answer key — blocked"
+            count={needsKey.length}
+            note="These cannot move until a key is set"
+          >
+            <p className="max-w-[68ch] text-[15px] leading-relaxed text-muted">
               These came from past papers for years whose marking scheme we do not hold, or
               from questions the Department marked with more than one accepted option. Work
               out the answer, set it, then approve. Past-paper questions need a second,
@@ -115,7 +119,7 @@ export default async function ReviewQueuePage({
             </p>
           </Window>
 
-          <ul className="flex flex-col gap-3">
+          <ul className="flex flex-col gap-4">
             {needsKey.map((item) => (
               <li key={item.id}>
                 <ReviewCard
@@ -131,11 +135,14 @@ export default async function ReviewQueuePage({
       ) : null}
 
       {rest.length > 0 ? (
-        <section className="flex flex-col gap-3">
-          <div className="border-y border-ink bg-paper px-3 py-2.5 sm:border-x sm:px-4">
-            <Label as="h2">Ready to review</Label>
-          </div>
-          <ul className="flex flex-col gap-3">
+        <section aria-labelledby="ready-heading" className="flex flex-col gap-4">
+          <h2 id="ready-heading" className="flex items-center gap-3 px-1 pt-4 text-[22px] tracking-[-0.025em]">
+            Ready to review
+            <span className="rounded-full bg-sunken px-2.5 py-0.5 text-[13px] font-medium tracking-normal text-muted tabular">
+              {rest.length}
+            </span>
+          </h2>
+          <ul className="flex flex-col gap-4">
             {rest.map((item) => (
               <li key={item.id}>
                 <ReviewCard

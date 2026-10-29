@@ -17,16 +17,13 @@ export default async function SignInPage({
 
   return (
     <div>
-      <Window title="Welcome back">
-        <p className="text-[15px] leading-relaxed">
-          Sign in to pick up where you left off.
-        </p>
+      <Window tone="raised" title="Welcome back" note="Sign in to pick up where you left off">
         <SignInForm next={next} />
       </Window>
 
-      <p className="mt-5 px-3 text-center text-[15px] sm:px-0">
+      <p className="mt-6 text-center text-[15px] text-muted">
         New here?{' '}
-        <Link href="/sign-up" className="ant-focus font-semibold underline underline-offset-2">
+        <Link href="/sign-up" className="font-medium text-ink underline decoration-accent-line underline-offset-4 transition-colors hover:decoration-accent">
           Create an account
         </Link>
       </p>

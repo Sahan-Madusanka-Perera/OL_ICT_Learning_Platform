@@ -3,7 +3,7 @@
 import { useActionState } from 'react';
 import { useFormStatus } from 'react-dom';
 import { reportQuestionAction } from '@/lib/actions/report';
-import { Window, Label } from '@/components/ui/window';
+import { Window } from '@/components/ui/window';
 import { Button } from '@/components/ui/button';
 import { CheckIcon } from '@/components/ui/icon';
 
@@ -22,9 +22,11 @@ export function ReportForm({ questionId }: { questionId: string }) {
 
   if (state.ok) {
     return (
-      <Window title="Report sent">
-        <p role="status" className="flex items-start gap-2.5 text-[15px] leading-relaxed">
-          <CheckIcon size={12} className="mt-1" />
+      <Window tone="raised" title="Report sent">
+        <p role="status" className="flex items-start gap-3 text-[15px] leading-relaxed">
+          <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-correct-soft text-correct">
+            <CheckIcon size={16} />
+          </span>
           {state.message}
         </p>
       </Window>
@@ -35,13 +37,13 @@ export function ReportForm({ questionId }: { questionId: string }) {
     <form action={action}>
       <input type="hidden" name="questionId" value={questionId} />
 
-      <Window title="What is wrong?" bodyClassName="px-0 py-0 sm:px-0">
-        <fieldset>
+      <Window title="What is wrong?" note="Pick the closest" bodyClassName="px-3 pb-3 sm:px-4 sm:pb-4">
+        <fieldset className="flex flex-col gap-1">
           <legend className="sr-only-live">What is wrong?</legend>
           {REASONS.map((r) => (
             <label
               key={r.value}
-              className="flex min-h-[--spacing-touch] cursor-pointer items-center gap-3 border-b border-dashed border-ink px-3 py-3 text-[15px] last:border-b-0 has-[:checked]:bg-ink has-[:checked]:text-paper sm:px-4"
+              className="flex min-h-14 cursor-pointer items-center gap-3.5 rounded-[18px] px-3 py-3 text-[15px] transition-colors duration-200 hover:bg-sunken has-[:checked]:bg-lilac has-[:checked]:text-lilac-ink"
             >
               <input type="radio" name="reason" value={r.value} required className="h-4 w-4" />
               {r.label}
@@ -50,18 +52,21 @@ export function ReportForm({ questionId }: { questionId: string }) {
         </fieldset>
       </Window>
 
-      <Window title="Anything to add?" note="Optional" className="mt-3">
+      <Window title="Anything to add?" note="Optional" className="mt-5">
         <textarea
           name="detail"
           rows={3}
           maxLength={1000}
           aria-label="Anything to add"
-          className="w-full border border-ink bg-paper px-3 py-2 text-[16px]"
+          className="w-full rounded-tile bg-sunken px-4 py-3 text-[16px] shadow-[inset_0_0_0_1px_var(--color-line-soft)] focus:bg-raised"
           placeholder="I think the answer should be option 3, because…"
         />
 
         {state.message && !state.ok ? (
-          <p role="alert" className="dither-25 mt-3 border border-ink px-3 py-2 text-[15px] font-semibold">
+          <p
+            role="alert"
+            className="mt-3 rounded-tile bg-wrong-soft px-4 py-3 text-[15px] font-medium text-wrong shadow-[inset_0_0_0_1px_var(--color-wrong)]"
+          >
             {state.message}
           </p>
         ) : null}

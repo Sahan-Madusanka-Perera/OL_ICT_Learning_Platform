@@ -1,188 +1,721 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-02T00:00:00Z",
+  "generatedAt": "2026-10-29T06:55:50Z",
   "title": "Design System: O/L ICT Practice",
   "extensions": {
     "colorMeta": {
-      "ink": {
+      "accent": {
         "role": "primary",
-        "displayName": "Ink",
-        "canonical": "#000000",
-        "tonalRamp": ["#000000", "#000000", "#000000", "#000000", "#000000", "#000000", "#000000", "#000000"],
-        "note": "There is no ramp. Apparent tone is produced by four ordered dither densities of this one value on paper, never by a lighter colour."
+        "displayName": "Ink Pill",
+        "canonical": "#111219",
+        "oklch": "oklch(18.4% 0.014 278.5)",
+        "tonalRamp": [
+          "#101118",
+          "#27282f",
+          "#46474e",
+          "#67686e",
+          "#8b8c91",
+          "#b0b1b4",
+          "#d3d4d6",
+          "#eeeef1"
+        ],
+        "note": "Primary action, active tab, selected key, icon tiles. Chalk #f2f2f7 at night."
       },
-      "paper": {
+      "focus": {
+        "role": "primary",
+        "displayName": "Violet Focus",
+        "canonical": "#6352f2",
+        "oklch": "oklch(55.4% 0.229 280.7)",
+        "tonalRamp": [
+          "#0f003f",
+          "#240773",
+          "#3e29a9",
+          "#5a49e1",
+          "#7b78f9",
+          "#a3a8f9",
+          "#ccd0ff",
+          "#ebedff"
+        ],
+        "note": "The single 2px focus ring and the caret. #a99dff at night."
+      },
+      "lilac": {
+        "role": "secondary",
+        "displayName": "Lilac Tint",
+        "canonical": "#ddd8fe",
+        "oklch": "oklch(89.8% 0.052 291.4)",
+        "tonalRamp": [
+          "#111117",
+          "#292831",
+          "#474654",
+          "#696679",
+          "#8c89a2",
+          "#b1adcc",
+          "#d4cff4",
+          "#eeecfe"
+        ],
+        "note": "Identity sheet; recommendation card, selection, avatar. Paired with lilac-ink #2c2470."
+      },
+      "sky": {
+        "role": "secondary",
+        "displayName": "Sky Tint",
+        "canonical": "#d5eafc",
+        "oklch": "oklch(92.7% 0.033 244.0)",
+        "tonalRamp": [
+          "#0f1215",
+          "#25292d",
+          "#42494f",
+          "#606a73",
+          "#818e99",
+          "#a3b3c1",
+          "#c4d7e8",
+          "#e2f1fe"
+        ],
+        "note": "Identity sheet. Paired with sky-ink #113a5c."
+      },
+      "mint": {
+        "role": "secondary",
+        "displayName": "Mint Tint",
+        "canonical": "#ddf4cf",
+        "oklch": "oklch(94.1% 0.055 133.6)",
+        "tonalRamp": [
+          "#0f130d",
+          "#262b23",
+          "#434a3e",
+          "#626d5c",
+          "#83917b",
+          "#a6b89b",
+          "#c7dcbb",
+          "#e0f7d2"
+        ],
+        "note": "Identity sheet. Paired with mint-ink #1d4719."
+      },
+      "peach": {
+        "role": "secondary",
+        "displayName": "Peach Tint",
+        "canonical": "#fde3d6",
+        "oklch": "oklch(93.4% 0.034 48.3)",
+        "tonalRamp": [
+          "#15110e",
+          "#2d2825",
+          "#4e4641",
+          "#726660",
+          "#988880",
+          "#c0aca2",
+          "#e6cfc3",
+          "#ffeadf"
+        ],
+        "note": "Identity sheet. Paired with peach-ink #6b2c12."
+      },
+      "series-1": {
+        "role": "tertiary",
+        "displayName": "Answered Violet",
+        "canonical": "#8070f0",
+        "oklch": "oklch(62.3% 0.185 285.4)",
+        "tonalRamp": [
+          "#110338",
+          "#27195e",
+          "#44368e",
+          "#6354c2",
+          "#8576f4",
+          "#a9a5ff",
+          "#cfcffe",
+          "#ecedff"
+        ],
+        "note": "Weekly chart answered series. #8f7ff7 at night."
+      },
+      "series-2": {
+        "role": "tertiary",
+        "displayName": "Correct Teal",
+        "canonical": "#1d9a86",
+        "oklch": "oklch(61.7% 0.107 178.6)",
+        "tonalRamp": [
+          "#001712",
+          "#033129",
+          "#005448",
+          "#007a69",
+          "#2ea18d",
+          "#6cc4b2",
+          "#9ce5d5",
+          "#befeef"
+        ],
+        "note": "Weekly chart correct series and the high meter end. #25a690 at night."
+      },
+      "brass": {
+        "role": "tertiary",
+        "displayName": "Past-Paper Brass",
+        "canonical": "#8f4a12",
+        "oklch": "oklch(48.5% 0.113 53.6)",
+        "tonalRamp": [
+          "#230900",
+          "#431d00",
+          "#713500",
+          "#985524",
+          "#b97c54",
+          "#d9a482",
+          "#f7c9ad",
+          "#feeade"
+        ],
+        "note": "Past-paper provenance and the official-key seal only. #ffbb8c at night."
+      },
+      "correct": {
+        "role": "tertiary",
+        "displayName": "Correct Green",
+        "canonical": "#16784e",
+        "oklch": "oklch(50.8% 0.109 159.0)",
+        "tonalRamp": [
+          "#00170a",
+          "#00321c",
+          "#0b5536",
+          "#1e7b52",
+          "#569e77",
+          "#85c19f",
+          "#b0e2c5",
+          "#d0fbe1"
+        ],
+        "note": "Right answers, always with a check and the word. #6fdca0 at night."
+      },
+      "wrong": {
+        "role": "tertiary",
+        "displayName": "Wrong Red",
+        "canonical": "#b4302d",
+        "oklch": "oklch(51.4% 0.169 26.5)",
+        "tonalRamp": [
+          "#2c0000",
+          "#540105",
+          "#861316",
+          "#b6332f",
+          "#d6645b",
+          "#f69187",
+          "#fec4bd",
+          "#ffe9e6"
+        ],
+        "note": "Wrong answers, errors, mistake counts, always with a mark and a word. #ff928a at night."
+      },
+      "caution": {
+        "role": "tertiary",
+        "displayName": "Caution Amber",
+        "canonical": "#8d5a0c",
+        "oklch": "oklch(51.2% 0.107 70.0)",
+        "tonalRamp": [
+          "#1f0c00",
+          "#3d2200",
+          "#643e04",
+          "#8f5c12",
+          "#b0824b",
+          "#d1a97b",
+          "#f0cea7",
+          "#ffebd5"
+        ],
+        "note": "Slipping trend, low mastery. #f3c065 at night."
+      },
+      "ink": {
         "role": "neutral",
-        "displayName": "Paper",
+        "displayName": "Night Ink",
+        "canonical": "#101119",
+        "oklch": "oklch(18.1% 0.017 279.0)",
+        "tonalRamp": [
+          "#101119",
+          "#272830",
+          "#46474f",
+          "#67686f",
+          "#8b8c91",
+          "#b0b1b5",
+          "#d3d4d7",
+          "#eeeef1"
+        ],
+        "note": "Primary text. #f2f2f7 at night."
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "Slate Muted",
+        "canonical": "#545869",
+        "oklch": "oklch(46.3% 0.028 274.8)",
+        "tonalRamp": [
+          "#0f111a",
+          "#252834",
+          "#434756",
+          "#646878",
+          "#888b9a",
+          "#adb0bd",
+          "#d1d4df",
+          "#eceef8"
+        ],
+        "note": "Secondary text, notes, labels."
+      },
+      "ink-faint": {
+        "role": "neutral",
+        "displayName": "Faint Slate",
+        "canonical": "#6c7084",
+        "oklch": "oklch(54.9% 0.031 276.4)",
+        "tonalRamp": [
+          "#0f111a",
+          "#262834",
+          "#444756",
+          "#64687b",
+          "#878b9e",
+          "#adb0c1",
+          "#d0d3e2",
+          "#ebeefb"
+        ],
+        "note": "Axis ticks, placeholders, disabled."
+      },
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Daylight Canvas",
+        "canonical": "#f2f2f7",
+        "oklch": "oklch(96.3% 0.007 286.3)",
+        "tonalRamp": [
+          "#111112",
+          "#29292a",
+          "#474749",
+          "#69696b",
+          "#8c8c8f",
+          "#b1b1b4",
+          "#d4d4d8",
+          "#eeeef3"
+        ],
+        "note": "Solid fallback beneath the wash. #0b0c14 at night."
+      },
+      "raised": {
+        "role": "neutral",
+        "displayName": "Opaque Sheet",
         "canonical": "#ffffff",
-        "tonalRamp": ["#ffffff", "#ffffff", "#ffffff", "#ffffff", "#ffffff", "#ffffff", "#ffffff", "#ffffff"],
-        "note": "Every reading surface, and the ink colour of anything inverted."
+        "oklch": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#121212",
+          "#292929",
+          "#484848",
+          "#696969",
+          "#8c8c8c",
+          "#b1b1b1",
+          "#d4d4d4",
+          "#eeeeee"
+        ],
+        "note": "The one subject sheet, secondary buttons, options. #191a27 at night."
+      },
+      "wash-peach": {
+        "role": "neutral",
+        "displayName": "Wash Peach",
+        "canonical": "#fde1d2",
+        "oklch": "oklch(92.9% 0.037 50.0)",
+        "tonalRamp": [
+          "#15100e",
+          "#2d2724",
+          "#4f4540",
+          "#73665f",
+          "#9a887f",
+          "#c2aca0",
+          "#e8cec0",
+          "#feeadf"
+        ],
+        "note": "Wash glow, top-left."
+      },
+      "wash-sky": {
+        "role": "neutral",
+        "displayName": "Wash Sky",
+        "canonical": "#d6e8fc",
+        "oklch": "oklch(92.4% 0.033 251.0)",
+        "tonalRamp": [
+          "#0f1215",
+          "#25292e",
+          "#42484f",
+          "#616a74",
+          "#828d9a",
+          "#a5b3c2",
+          "#c6d6e9",
+          "#e3f0fe"
+        ],
+        "note": "Wash glow, top-right."
+      },
+      "wash-lavender": {
+        "role": "neutral",
+        "displayName": "Wash Lavender",
+        "canonical": "#e4defd",
+        "oklch": "oklch(91.5% 0.042 294.4)",
+        "tonalRamp": [
+          "#121116",
+          "#29282f",
+          "#484651",
+          "#696676",
+          "#8d899d",
+          "#b2adc6",
+          "#d5d0ed",
+          "#efecfe"
+        ],
+        "note": "Wash glow, low right."
+      },
+      "wash-mint": {
+        "role": "neutral",
+        "displayName": "Wash Mint",
+        "canonical": "#e1f4e3",
+        "oklch": "oklch(94.8% 0.030 148.4)",
+        "tonalRamp": [
+          "#0f1310",
+          "#262a27",
+          "#434a44",
+          "#636c64",
+          "#849086",
+          "#a7b6a9",
+          "#c9daca",
+          "#e2f4e4"
+        ],
+        "note": "Wash glow, bottom-left."
       }
     },
     "typographyMeta": {
-      "display": { "displayName": "Monumental Numeral", "purpose": "48px Silkscreen. Register counts, the recommended set size, the session score. Always in reserved digit slots." },
-      "headline": { "displayName": "Page Headline", "purpose": "32px Silkscreen from sm up (40px on the landing hero only); 24px on a phone." },
-      "title": { "displayName": "Title", "purpose": "24px Silkscreen. Page headings, the dashboard greeting, mid-weight numerals." },
-      "label": { "displayName": "Chrome Label", "purpose": "16px uppercase Silkscreen. Title bars, buttons, badges, nav, palette cells, placeholders. The pixel voice's floor — never set below this." },
-      "question": { "displayName": "Question", "purpose": "17px Source Sans 3. Question stems; never smaller." },
-      "option": { "displayName": "Option", "purpose": "16px Source Sans 3. Answer options." },
-      "body": { "displayName": "Body", "purpose": "15px Source Sans 3. Explanations, descriptions, list rows." },
-      "fine": { "displayName": "Fine Print", "purpose": "13px Source Sans 3. Hints, field errors, provenance notes." }
+      "display-hero": {
+        "displayName": "Display Hero",
+        "purpose": "Landing hero line only (42px, 72px from 640px)."
+      },
+      "display": {
+        "displayName": "Page Title",
+        "purpose": "A page's own name, set on the wash (page-title utility, 38/56px)."
+      },
+      "headline": {
+        "displayName": "Section Title",
+        "purpose": "Long-form marketing section heads (section-title utility, 30/42px)."
+      },
+      "numeral": {
+        "displayName": "Display Numeral",
+        "purpose": "Light figures in reserved digit slots (28/42/56px)."
+      },
+      "title": {
+        "displayName": "Sheet Title",
+        "purpose": "Sheet and in-page section headings (20/22px)."
+      },
+      "question": {
+        "displayName": "Question",
+        "purpose": "Question stems. 18px, never below 17px."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Intro paragraph under a page title (17px)."
+      },
+      "option": {
+        "displayName": "Option",
+        "purpose": "Answer option text; document base (16px)."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Workhorse reading size (15px)."
+      },
+      "control": {
+        "displayName": "Control",
+        "purpose": "Button labels, 500 weight."
+      },
+      "nav": {
+        "displayName": "Nav",
+        "purpose": "Tab island labels (14px)."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Sentence-case muted caption naming a quantity or field. Never a kicker."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Pills, ticks, bottom-nav labels (12px medium)."
+      },
+      "mono": {
+        "displayName": "Mono",
+        "purpose": "JetBrains Mono for binary, hex, cell refs, code, topic codes."
+      }
     },
-    "materials": [
-      { "name": "dither-12", "value": "4x4 SVG data URI, 2 of 16 cells on, background-size 4px 4px", "purpose": "Finest texture. Unmeasured mastery, disabled chrome, first frame of the loading cycle." },
-      { "name": "dither-25", "value": "4x4 SVG data URI, 4 of 16 cells on, background-size 4px 4px", "purpose": "Disabled fill, secondary ground, a wrong answer's ground, a field in error, model-question badge, scrollbar track, an unset bit cell." },
-      { "name": "dither-50", "value": "4x4 SVG data URI, checker, background-size 4px 4px", "purpose": "The desktop. Edge to edge on body; every window sits on it." },
-      { "name": "dither-75", "value": "4x4 SVG data URI, 12 of 16 cells on, background-size 4px 4px", "purpose": "Heavy but short of committed. Fills BitStrip cells when MasteryBar sees confidence === 'low'." }
+    "shadows": [
+      {
+        "name": "hairline",
+        "value": "0 0 0 1px var(--line-soft)",
+        "purpose": "Whisper outline."
+      },
+      {
+        "name": "raised",
+        "value": "0 1px 2px 0 var(--shade-weak), 0 8px 24px -12px var(--shade)",
+        "purpose": "Secondary buttons at rest, empty-state chips."
+      },
+      {
+        "name": "float",
+        "value": "0 2px 6px -2px var(--shade-weak), 0 24px 48px -22px var(--shade), 0 1px 0 0 var(--sheen) inset",
+        "purpose": "Hover lift, tooltips, avatar."
+      },
+      {
+        "name": "lifted",
+        "value": "0 4px 12px -4px var(--shade-weak), 0 40px 80px -32px var(--shade-strong), 0 1px 0 0 var(--sheen) inset",
+        "purpose": "The one opaque subject sheet (with an inset rim)."
+      },
+      {
+        "name": "glass",
+        "value": "inset 0 0 0 1px var(--rim), 0 1px 2px 0 var(--shade-weak), 0 22px 48px -28px var(--shade)",
+        "purpose": "Every glass sheet, tinted sheet and island."
+      },
+      {
+        "name": "ink-pill",
+        "value": "0 1px 0 0 rgba(255,255,255,0.14) inset, 0 10px 24px -10px var(--shade-strong)",
+        "purpose": "Primary buttons and brand tile; deepens to 0 14px 30px -10px on hover."
+      },
+      {
+        "name": "shade (light)",
+        "value": "rgba(70, 62, 140, 0.16) / weak 0.07 / strong 0.26",
+        "purpose": "Violet-tinted shadow colour by day; black 0.45 / 0.3 / 0.6 at night."
+      },
+      {
+        "name": "island-backdrop",
+        "value": "background: color-mix(in oklab, var(--raised) 72%, transparent); backdrop-filter: blur(18px) saturate(1.4)",
+        "purpose": "Fixed or sticky chrome only. Never on scrolling surfaces."
+      },
+      {
+        "name": "focus-ring",
+        "value": "outline: 2px solid var(--focus); outline-offset: 2px",
+        "purpose": "The one focus treatment for every interactive element."
+      }
     ],
-    "shadows": [],
     "motion": [
-      { "name": "ants", "value": "480ms steps(4) infinite", "purpose": "Marching-ants overlay for selection (.ants) and focus (.ant-focus, 3px outset)." },
-      { "name": "window-open", "value": "240ms steps(6) both (clip-path inset shutter)", "purpose": "The product's one authored moment: the explanation window opening after an answer." },
-      { "name": "verdict-land", "value": "160ms steps(4) 200ms both (scale 0.25 to 1)", "purpose": "The verdict mark landing inside the opened window a beat later. One gesture in two parts." },
-      { "name": "dither-cycle", "value": "1200ms steps(1, end) infinite, 12 to 25 to 50 to 25", "purpose": "Loading. The pattern does the work a spinner would, at no request and no layout cost." },
-      { "name": "reduced-motion", "value": "prefers-reduced-motion: reduce disables ants and the loading cycle; the reveal never starts", "purpose": "All motion is optional." }
+      {
+        "name": "ease-settle",
+        "value": "cubic-bezier(0.32, 0.72, 0, 1)",
+        "purpose": "The one curve for state changes and authored moments."
+      },
+      {
+        "name": "ease-exit",
+        "value": "cubic-bezier(0.4, 0, 1, 1)",
+        "purpose": "Leaving."
+      },
+      {
+        "name": "state",
+        "value": "200ms ease-settle",
+        "purpose": "Colour, shadow and press transitions; press scale 0.98."
+      },
+      {
+        "name": "reveal",
+        "value": "settle-in 320ms ease-settle",
+        "purpose": "Explanation panel after an answer (opacity + 10px rise)."
+      },
+      {
+        "name": "verdict-mark",
+        "value": "verdict-land 260ms ease-settle 140ms",
+        "purpose": "Right/wrong mark landing a beat after the reveal."
+      },
+      {
+        "name": "stagger",
+        "value": "settle-in 520ms, 50ms steps, capped at 200ms",
+        "purpose": "Sheets arriving in reading order on first paint."
+      },
+      {
+        "name": "draw-in",
+        "value": "clip-path 900ms ease-settle 120ms",
+        "purpose": "Weekly chart draws left to right once."
+      },
+      {
+        "name": "meter",
+        "value": "width 500ms ease-settle",
+        "purpose": "Meter fill changes."
+      },
+      {
+        "name": "shimmer",
+        "value": "sheen-sweep 1500ms infinite",
+        "purpose": "Loading skeletons."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation: none",
+        "purpose": "All authored animation removed under prefers-reduced-motion."
+      }
     ],
     "breakpoints": [
-      { "name": "sm", "value": "640px", "note": "The only structural breakpoint: windows go from full-bleed to boxed, the palette goes from scrolling to wrapping, the bottom nav becomes window tabs." },
-      { "name": "lg", "value": "1024px", "note": "Dashboard mastery windows go two-up." }
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "2xl",
+        "value": "1536px"
+      }
     ],
-    "containers": [
-      { "name": "student", "value": "max-w-5xl" },
-      { "name": "session", "value": "max-w-3xl" },
-      { "name": "auth", "value": "max-w-md" }
-    ]
+    "themes": {
+      "light": ":root",
+      "dark": "@media (prefers-color-scheme: dark) :root:not([data-theme=light]), and :root[data-theme=dark]",
+      "note": "Night is a first-class theme: aurora wash over indigo, glass at 5% white, chalk ink pill. *-night tokens in the frontmatter carry its values."
+    },
+    "grain": {
+      "value": "fractalNoise SVG tile 140px, baseFrequency 0.82, 3 octaves",
+      "opacity": {
+        "light": 0.03,
+        "dark": 0.045
+      },
+      "purpose": "Fixed over everything to stop the wash banding on 8-bit panels."
+    }
   },
   "components": [
     {
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "The inversion. The viewport's one inverted element; at most one on screen.",
-      "html": "<button class=\"ds-btn ds-btn-primary\"><span class=\"ds-btn-label\">START THIS SET</span></button>",
-      "css": ".ds-btn { font-family: Silkscreen, ui-monospace, 'Courier New', monospace; font-weight: 400; font-synthesis: none; letter-spacing: 0.02em; font-size: 16px; line-height: 1.25; text-transform: uppercase; display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 56px; padding: 8px 16px; border: 1px solid #000; border-radius: 0; transition: none; cursor: pointer; } .ds-btn-primary { background: #000; color: #fff; } .ds-btn-primary:active { background: #fff; color: #000; } .ds-btn-primary:focus-visible { outline: none; position: relative; } .ds-btn-primary:focus-visible::after { content: ''; position: absolute; inset: -3px; pointer-events: none; background-image: repeating-linear-gradient(90deg, currentColor 0 4px, transparent 4px 8px), repeating-linear-gradient(90deg, currentColor 0 4px, transparent 4px 8px), repeating-linear-gradient(0deg, currentColor 0 4px, transparent 4px 8px), repeating-linear-gradient(0deg, currentColor 0 4px, transparent 4px 8px); background-size: 8px 2px, 8px 2px, 2px 8px, 2px 8px; background-position: 0 0, 0 100%, 0 0, 100% 0; background-repeat: repeat-x, repeat-x, repeat-y, repeat-y; animation: ds-ants 480ms steps(4) infinite; } @keyframes ds-ants { to { background-position: 8px 0, -8px 100%, 0 -8px, 100% 8px; } }"
+      "description": "The ink pill; one per viewport. Arrow sits in its own affordance disc.",
+      "html": "<button class=\"ds-btn-primary\">Start this set <span class=\"ds-btn-disc\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4.5 10h11M11 5.5l4.5 4.5-4.5 4.5\"/></svg></span></button>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:12px 24px;border:0;border-radius:9999px;background:var(--accent,#111219);color:var(--accent-ink,#fff);font:500 15px/1 Lexend,ui-sans-serif,system-ui,sans-serif;letter-spacing:-0.01em;box-shadow:0 1px 0 0 rgba(255,255,255,0.14) inset,0 10px 24px -10px rgba(70,62,140,0.26);transition:transform 200ms cubic-bezier(0.32,0.72,0,1),box-shadow 200ms cubic-bezier(0.32,0.72,0,1),background-color 200ms cubic-bezier(0.32,0.72,0,1);cursor:pointer}.ds-btn-primary:hover{background:var(--accent-hover,#2a2c38);box-shadow:0 1px 0 0 rgba(255,255,255,0.14) inset,0 14px 30px -10px rgba(70,62,140,0.26)}.ds-btn-primary:active{transform:scale(0.98)}.ds-btn-primary:focus-visible{outline:2px solid var(--focus,#6352f2);outline-offset:2px}.ds-btn-disc{display:flex;align-items:center;justify-content:center;width:32px;height:32px;margin:0 -12px 0 6px;border-radius:9999px;background:color-mix(in srgb,currentColor 15%,transparent);transition:transform 300ms cubic-bezier(0.32,0.72,0,1)}.ds-btn-primary:hover .ds-btn-disc{transform:translateX(2px)}"
     },
     {
       "name": "Secondary Button",
       "kind": "button",
       "refersTo": "button-secondary",
-      "description": "Paper ground, ink text; inverts on hover and flips back on press.",
-      "html": "<button class=\"ds-btn ds-btn-secondary\"><span class=\"ds-btn-label\">JUST GIVE ME 10</span></button>",
-      "css": ".ds-btn { font-family: Silkscreen, ui-monospace, 'Courier New', monospace; font-weight: 400; letter-spacing: 0.02em; font-size: 16px; text-transform: uppercase; display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 8px 16px; border: 1px solid #000; border-radius: 0; transition: none; cursor: pointer; } .ds-btn-secondary { background: #fff; color: #000; } .ds-btn-secondary:hover { background: #000; color: #fff; } .ds-btn-secondary:active { background: #fff; color: #000; }"
+      "description": "Opaque white pill with a hairline; for every action that is not the one live thing.",
+      "html": "<button class=\"ds-btn-secondary\">All topics</button>",
+      "css": ".ds-btn-secondary{display:inline-flex;align-items:center;min-height:48px;padding:12px 24px;border:0;border-radius:9999px;background:var(--raised,#fff);color:var(--ink,#101119);font:500 15px/1 Lexend,ui-sans-serif,system-ui,sans-serif;letter-spacing:-0.01em;box-shadow:inset 0 0 0 1px rgba(22,24,52,0.12),0 1px 2px 0 rgba(70,62,140,0.07),0 8px 24px -12px rgba(70,62,140,0.16);transition:transform 200ms cubic-bezier(0.32,0.72,0,1),box-shadow 200ms cubic-bezier(0.32,0.72,0,1);cursor:pointer}.ds-btn-secondary:hover{box-shadow:inset 0 0 0 1px rgba(17,18,25,0.22),0 2px 6px -2px rgba(70,62,140,0.07),0 24px 48px -22px rgba(70,62,140,0.16)}.ds-btn-secondary:active{transform:scale(0.98)}.ds-btn-secondary:focus-visible{outline:2px solid var(--focus,#6352f2);outline-offset:2px}"
     },
     {
-      "name": "Disabled Button",
-      "kind": "button",
-      "refersTo": "button-primary",
-      "description": "Disabled is a 25% dither ground and dashed chrome, with the label knocked out onto its own paper plate. Never opacity: opacity would manufacture a grey.",
-      "html": "<button class=\"ds-btn ds-btn-disabled\" disabled><span class=\"ds-btn-label\">CHECK ANSWER</span></button>",
-      "css": ".ds-btn { font-family: Silkscreen, ui-monospace, 'Courier New', monospace; font-size: 16px; letter-spacing: 0.02em; text-transform: uppercase; display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 8px 16px; border-radius: 0; } .ds-btn-disabled { color: #000; border: 1px dashed #000; pointer-events: none; background-color: #fff; background-repeat: repeat; background-size: 4px 4px; background-image: url(\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='4'%20height='4'%20shape-rendering='crispEdges'%3E%3Crect%20width='1'%20height='1'%20fill='%23000'/%3E%3Crect%20x='2'%20width='1'%20height='1'%20fill='%23000'/%3E%3Crect%20y='2'%20width='1'%20height='1'%20fill='%23000'/%3E%3Crect%20x='2'%20y='2'%20width='1'%20height='1'%20fill='%23000'/%3E%3C/svg%3E\"); } .ds-btn-disabled .ds-btn-label { background: #fff; padding-inline: 6px; }"
-    },
-    {
-      "name": "Window",
+      "name": "Glass Sheet",
       "kind": "card",
-      "refersTo": "window",
-      "description": "Every surface. 1px ink chrome, a Silkscreen title bar that is never inverted, content on solid paper. Full-bleed below sm (border-y only), boxed above it.",
-      "html": "<section class=\"ds-window\"><div class=\"ds-window-bar\"><h2 class=\"ds-window-title\">RECOMMENDED FOR YOU</h2><p class=\"ds-window-note\">ABOUT 13 MIN</p></div><div class=\"ds-window-body\"><p>A spread across the syllabus, so we can find out where you are.</p></div></section>",
-      "css": ".ds-window { border: 1px solid #000; background: #fff; color: #000; border-radius: 0; } .ds-window-bar { display: flex; align-items: center; gap: 12px; min-height: 36px; padding: 8px 16px; border-bottom: 1px solid #000; } .ds-window-title { font-family: Silkscreen, ui-monospace, monospace; font-weight: 400; font-size: 16px; line-height: 1; letter-spacing: 0.02em; text-transform: uppercase; flex: 1 1 auto; min-width: 0; margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } .ds-window-note { font-family: Silkscreen, ui-monospace, monospace; font-size: 16px; line-height: 1; letter-spacing: 0.02em; text-transform: uppercase; margin: 0; flex-shrink: 0; } .ds-window-body { padding: 16px; font-family: 'Source Sans 3', ui-sans-serif, system-ui, sans-serif; font-size: 15px; line-height: 1.55; }"
+      "refersTo": "sheet",
+      "description": "Default milk-glass container: title with a note underneath, 28px corner, lit rim.",
+      "html": "<section class=\"ds-sheet\"><h2 class=\"ds-sheet-title\">On your list <span class=\"ds-count\">3</span></h2><p class=\"ds-sheet-note\">What is waiting for you</p><p class=\"ds-sheet-body\">Questions you got wrong land here.</p></section>",
+      "css": ".ds-sheet{max-width:420px;border-radius:28px;padding:24px 28px 28px;background:rgba(255,255,255,0.72);box-shadow:inset 0 0 0 1px rgba(255,255,255,0.85),0 1px 2px 0 rgba(70,62,140,0.07),0 22px 48px -28px rgba(70,62,140,0.16);font-family:Lexend,ui-sans-serif,system-ui,sans-serif;color:#101119}.ds-sheet-title{display:flex;align-items:center;gap:10px;margin:0;font-size:22px;font-weight:400;line-height:1.2;letter-spacing:-0.025em}.ds-count{border-radius:9999px;padding:2px 10px;background:rgba(22,24,52,0.045);color:#545869;font-size:13px;font-weight:500;letter-spacing:0}.ds-sheet-note{margin:4px 0 0;font-size:13px;color:#545869}.ds-sheet-body{margin:20px 0 0;font-size:15px;line-height:1.6;color:#545869}"
+    },
+    {
+      "name": "Tinted Topic Tile",
+      "kind": "card",
+      "refersTo": "sheet-lilac",
+      "description": "A whole sheet in a pastel tint with its own ink; mono topic code, light numeral, estimate meter with hatched tail.",
+      "html": "<a class=\"ds-tile\" href=\"#\"><span class=\"ds-tile-title\"><code>7.4</code> Built-in functions</span><span class=\"ds-tile-fig\">54<small>%</small> <em>early estimate</em></span><span class=\"ds-meter\"><span class=\"ds-meter-fill\"></span><span class=\"ds-meter-tail\"></span></span></a>",
+      "css": ".ds-tile{display:flex;flex-direction:column;gap:20px;width:240px;min-height:220px;padding:22px;border-radius:28px;background:#ddd8fe;color:#2c2470;text-decoration:none;font-family:Lexend,ui-sans-serif,system-ui,sans-serif;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.85),0 1px 2px 0 rgba(70,62,140,0.07),0 22px 48px -28px rgba(70,62,140,0.16);transition:box-shadow 200ms cubic-bezier(0.32,0.72,0,1)}.ds-tile:hover{box-shadow:inset 0 0 0 1px rgba(255,255,255,0.85),0 4px 12px -4px rgba(70,62,140,0.07),0 40px 80px -32px rgba(70,62,140,0.26)}.ds-tile:focus-visible{outline:2px solid #6352f2;outline-offset:2px}.ds-tile-title{font-size:18px;line-height:1.3;letter-spacing:-0.02em}.ds-tile-title code{font-family:\"JetBrains Mono\",ui-monospace,monospace;font-size:14px;opacity:.75}.ds-tile-fig{margin-top:auto;font-size:42px;font-weight:300;letter-spacing:-0.04em;line-height:1}.ds-tile-fig small{font-size:20px}.ds-tile-fig em{font-style:normal;font-size:13px;letter-spacing:0;opacity:.8}.ds-meter{position:relative;display:block;height:8px;border-radius:9999px;background:rgba(22,24,52,0.045);overflow:hidden}.ds-meter-fill{position:absolute;inset:0 46% 0 0;border-radius:9999px;background:linear-gradient(90deg,#a8e48c,#5cb8f0);opacity:.7}.ds-meter-tail{position:absolute;inset:0 0 0 54%;opacity:.45;color:#6c7084;background-image:repeating-linear-gradient(135deg,currentColor 0 1px,transparent 1px 5px)}"
     },
     {
       "name": "Text Field",
       "kind": "input",
-      "refersTo": "input",
-      "description": "48px, 1px ink chrome, square. The placeholder speaks in the pixel voice at full opacity so it can never be mistaken for a value; error is a 25% dither ground and a doubled rule.",
-      "html": "<label class=\"ds-field-label\" for=\"ds-f\">EMAIL</label><input id=\"ds-f\" class=\"ds-input\" placeholder=\"you@example.com\" />",
-      "css": ".ds-field-label { display: block; font-family: Silkscreen, ui-monospace, monospace; font-size: 16px; line-height: 1; letter-spacing: 0.02em; text-transform: uppercase; margin-bottom: 8px; } .ds-input { height: 48px; width: 100%; border: 1px solid #000; border-radius: 0; background: #fff; color: #000; padding: 0 12px; font-family: 'Source Sans 3', ui-sans-serif, system-ui, sans-serif; font-size: 16px; caret-color: #000; } .ds-input::placeholder { font-family: Silkscreen, ui-monospace, monospace; text-transform: uppercase; font-size: 14px; color: #000; opacity: 1; } .ds-input:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }"
+      "refersTo": "field",
+      "description": "A sunken well that turns opaque on focus; error carries ground, outline, icon and words.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">Email</span><input class=\"ds-input\" placeholder=\"you@example.com\"></label>",
+      "css": ".ds-field{display:flex;flex-direction:column;gap:8px;width:320px;font-family:Lexend,ui-sans-serif,system-ui,sans-serif}.ds-field-label{font-size:14px;font-weight:500;color:#101119}.ds-input{height:52px;padding:0 16px;border:0;border-radius:16px;background:rgba(22,24,52,0.045);color:#101119;font:400 16px Lexend,ui-sans-serif,system-ui,sans-serif;box-shadow:inset 0 0 0 1px rgba(22,24,52,0.065);caret-color:#6352f2;transition:box-shadow 200ms cubic-bezier(0.32,0.72,0,1),background-color 200ms cubic-bezier(0.32,0.72,0,1)}.ds-input::placeholder{color:#6c7084}.ds-input:hover{box-shadow:inset 0 0 0 1px rgba(22,24,52,0.12)}.ds-input:focus{background:#fff;box-shadow:inset 0 0 0 1px rgba(17,18,25,0.22)}.ds-input:focus-visible{outline:2px solid #6352f2;outline-offset:2px}"
     },
     {
-      "name": "Provenance Badge",
+      "name": "Tab Island",
+      "kind": "nav",
+      "refersTo": "nav-tab-active",
+      "description": "Centred pill group on island glass; the current tab is the ink pill.",
+      "html": "<nav class=\"ds-tabs\"><a class=\"ds-tab ds-tab-active\" aria-current=\"page\" href=\"#\">Today</a><a class=\"ds-tab\" href=\"#\">Practice</a><a class=\"ds-tab\" href=\"#\">Mistakes <span class=\"ds-tab-badge\">3</span></a><a class=\"ds-tab\" href=\"#\">Progress</a></nav>",
+      "css": ".ds-tabs{display:inline-flex;gap:4px;padding:6px;border-radius:9999px;background:color-mix(in oklab,#fff 72%,transparent);box-shadow:inset 0 0 0 1px rgba(255,255,255,0.85),0 1px 2px 0 rgba(70,62,140,0.07),0 22px 48px -28px rgba(70,62,140,0.16);font-family:Lexend,ui-sans-serif,system-ui,sans-serif}.ds-tab{display:flex;align-items:center;gap:8px;height:48px;padding:0 20px;border-radius:9999px;color:#545869;font-size:14px;line-height:1;letter-spacing:-0.01em;text-decoration:none;transition:background-color 200ms cubic-bezier(0.32,0.72,0,1),color 200ms cubic-bezier(0.32,0.72,0,1)}.ds-tab:hover{background:rgba(22,24,52,0.045);color:#101119}.ds-tab:focus-visible{outline:2px solid #6352f2;outline-offset:2px}.ds-tab-active,.ds-tab-active:hover{background:#111219;color:#fff;font-weight:500;box-shadow:0 8px 20px -10px rgba(70,62,140,0.26)}.ds-tab-badge{border-radius:9999px;padding:2px 6px;background:rgba(225,70,60,0.11);color:#b4302d;font-size:12px;font-weight:500}"
+    },
+    {
+      "name": "Provenance Pills",
       "kind": "chip",
-      "refersTo": "window-titlebar",
-      "description": "Past paper versus authored question, separated four ways at once: chrome, ground, mark and wording. A model question can never be mistaken for an examination question.",
-      "html": "<span class=\"ds-badge ds-badge-paper\"><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" shape-rendering=\"crispEdges\" fill=\"currentColor\" aria-hidden=\"true\"><rect x=\"0\" y=\"0\" width=\"12\" height=\"2\"/><rect x=\"0\" y=\"10\" width=\"12\" height=\"2\"/><rect x=\"0\" y=\"0\" width=\"2\" height=\"12\"/><rect x=\"10\" y=\"0\" width=\"2\" height=\"12\"/><rect x=\"3\" y=\"6\" width=\"2\" height=\"2\"/><rect x=\"5\" y=\"5\" width=\"2\" height=\"2\"/><rect x=\"6\" y=\"4\" width=\"2\" height=\"2\"/><rect x=\"7\" y=\"3\" width=\"2\" height=\"2\"/></svg>PAST PAPER · 2019/P1/Q7</span> <span class=\"ds-badge ds-badge-model\"><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" shape-rendering=\"crispEdges\" fill=\"currentColor\" aria-hidden=\"true\"><rect x=\"8\" y=\"1\" width=\"3\" height=\"3\"/><rect x=\"6\" y=\"3\" width=\"2\" height=\"2\"/><rect x=\"4\" y=\"5\" width=\"2\" height=\"2\"/><rect x=\"2\" y=\"7\" width=\"2\" height=\"2\"/><rect x=\"1\" y=\"9\" width=\"2\" height=\"2\"/></svg>MODEL QUESTION</span>",
-      "css": ".ds-badge { font-family: Silkscreen, ui-monospace, monospace; font-size: 16px; line-height: 1; letter-spacing: 0.02em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; padding: 4px 8px; color: #000; border-radius: 0; } .ds-badge-paper { border: 1px solid #000; background: #fff; } .ds-badge-model { border: 1px dashed #000; background-color: #fff; background-repeat: repeat; background-size: 4px 4px; background-image: url(\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='4'%20height='4'%20shape-rendering='crispEdges'%3E%3Crect%20width='1'%20height='1'%20fill='%23000'/%3E%3Crect%20x='2'%20width='1'%20height='1'%20fill='%23000'/%3E%3Crect%20y='2'%20width='1'%20height='1'%20fill='%23000'/%3E%3Crect%20x='2'%20y='2'%20width='1'%20height='1'%20fill='%23000'/%3E%3C/svg%3E\"); }"
+      "refersTo": "pill-past-paper",
+      "description": "Past paper is brass, solid and sealed; model question is dashed and pencilled. Four axes of difference.",
+      "html": "<div class=\"ds-pills\"><span class=\"ds-pill ds-pill-brass\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"10\" cy=\"8.5\" r=\"5\"/><path d=\"M7.5 13l-1 4.5 3.5-2 3.5 2-1-4.5\"/></svg>Past paper <code>2019 · P1 Q12</code></span><span class=\"ds-pill ds-pill-model\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M13.5 3.5l3 3-9 9H4.5v-3z\"/></svg>Model question</span></div>",
+      "css": ".ds-pills{display:flex;gap:8px;font-family:Lexend,ui-sans-serif,system-ui,sans-serif}.ds-pill{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:9999px;font-size:12px;font-weight:500;line-height:1;white-space:nowrap}.ds-pill code{font-family:\"JetBrains Mono\",ui-monospace,monospace;font-size:12px;opacity:.85}.ds-pill-brass{background:rgba(240,140,70,0.16);color:#8f4a12}.ds-pill-model{background:transparent;color:#545869;border:1px dashed rgba(108,112,132,0.7)}"
     },
     {
-      "name": "Bit Strip",
+      "name": "Answer Option",
       "kind": "custom",
-      "refersTo": "window",
-      "description": "Mastery as data: set cells solid, unset cells 25% dither, an early estimate filled at 75% instead of solid. An unmeasured topic gets a different material entirely — 12% dither behind dashed chrome — so 'not measured' and 'measured at nothing' can never look alike.",
-      "html": "<div class=\"ds-bits\"><span class=\"ds-bit-on\"></span><span class=\"ds-bit-on\"></span><span class=\"ds-bit-on\"></span><span class=\"ds-bit-soft\"></span><span class=\"ds-bit-off\"></span><span class=\"ds-bit-off\"></span></div><div class=\"ds-bits-unmeasured\"></div>",
-      "css": ".ds-bits { display: flex; gap: 1px; height: 16px; border: 1px solid #000; background: #000; } .ds-bits > span { flex: 1 1 0; } .ds-bit-on { background: #000; } .ds-bit-off { background-color: #fff; background-size: 4px 4px; background-image: url(\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='4'%20height='4'%20shape-rendering='crispEdges'%3E%3Crect%20width='1'%20height='1'%20fill='%23000'/%3E%3Crect%20x='2'%20width='1'%20height='1'%20fill='%23000'/%3E%3Crect%20y='2'%20width='1'%20height='1'%20fill='%23000'/%3E%3Crect%20x='2'%20y='2'%20width='1'%20height='1'%20fill='%23000'/%3E%3C/svg%3E\"); } .ds-bit-soft { background-color: #fff; background-size: 4px 4px; background-image: url(\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='4'%20height='4'%20shape-rendering='crispEdges'%3E%3Crect%20width='4'%20height='4'%20fill='%23000'/%3E%3Crect%20x='1'%20y='1'%20width='1'%20height='1'%20fill='%23fff'/%3E%3Crect%20x='3'%20y='1'%20width='1'%20height='1'%20fill='%23fff'/%3E%3Crect%20x='1'%20y='3'%20width='1'%20height='1'%20fill='%23fff'/%3E%3Crect%20x='3'%20y='3'%20width='1'%20height='1'%20fill='%23fff'/%3E%3C/svg%3E\"); } .ds-bits-unmeasured { height: 16px; margin-top: 8px; border: 1px dashed #000; background-color: #fff; background-size: 4px 4px; background-image: url(\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='4'%20height='4'%20shape-rendering='crispEdges'%3E%3Crect%20width='1'%20height='1'%20fill='%23000'/%3E%3Crect%20x='2'%20y='2'%20width='1'%20height='1'%20fill='%23000'/%3E%3C/svg%3E\"); }"
+      "refersTo": "answer-option",
+      "description": "64px row with a numbered key; selected is an ink outline, verdicts add a mark and a word.",
+      "html": "<div class=\"ds-options\"><button class=\"ds-opt\"><span class=\"ds-key\">1</span><span class=\"ds-opt-text\">RAM</span></button><button class=\"ds-opt ds-opt-sel\"><span class=\"ds-key\">2</span><span class=\"ds-opt-text\">ROM</span></button><div class=\"ds-opt ds-opt-right\"><span class=\"ds-key\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4.5 10.5l3.5 3.5 7.5-8\"/></svg></span><span class=\"ds-opt-text\">Cache</span><span class=\"ds-verdict\">Correct</span></div></div>",
+      "css": ".ds-options{display:flex;flex-direction:column;gap:10px;width:420px;font-family:Lexend,ui-sans-serif,system-ui,sans-serif}.ds-opt{display:flex;align-items:center;gap:16px;min-height:64px;padding:12px 16px 12px 12px;border:0;border-radius:20px;background:#fff;color:#101119;text-align:left;box-shadow:inset 0 0 0 1px rgba(22,24,52,0.12);transition:background-color 200ms cubic-bezier(0.32,0.72,0,1),box-shadow 200ms cubic-bezier(0.32,0.72,0,1),transform 200ms cubic-bezier(0.32,0.72,0,1);cursor:pointer}.ds-opt:hover{background:rgba(22,24,52,0.045)}.ds-opt:active{transform:scale(0.995)}.ds-opt:focus-visible{outline:2px solid #6352f2;outline-offset:2px}.ds-key{display:flex;align-items:center;justify-content:center;width:40px;height:40px;flex-shrink:0;border-radius:13px;background:rgba(22,24,52,0.045);color:#545869;font-size:15px;font-weight:500}.ds-opt-text{flex:1;font-size:16px;line-height:1.5}.ds-opt-sel{background:rgba(17,18,25,0.06);box-shadow:inset 0 0 0 1.5px #111219}.ds-opt-sel .ds-key{background:#111219;color:#fff}.ds-opt-right{background:rgba(22,160,100,0.13);box-shadow:inset 0 0 0 1.5px #16784e;cursor:default}.ds-opt-right .ds-key{background:#16784e;color:#fff}.ds-verdict{font-size:13px;font-weight:500;color:#16784e}"
     },
     {
-      "name": "Register Cell",
+      "name": "Meter States",
       "kind": "custom",
-      "refersTo": "window",
-      "description": "A quantity in reserved digit slots, so last digits align down a column of windows. Zeroes are drawn as zeroes — 'nothing due' is a measurement. The whole cell inverts on hover.",
-      "html": "<a class=\"ds-register-cell\" href=\"#\"><span class=\"ds-numeral\"><span>&nbsp;</span><span>&nbsp;</span><span>1</span></span><span class=\"ds-register-label\">TO FIX</span></a>",
-      "css": ".ds-register-cell { display: flex; align-items: center; gap: 16px; min-height: 56px; padding: 16px; background: #fff; color: #000; text-decoration: none; } .ds-register-cell:hover, .ds-register-cell:focus-visible { background: #000; color: #fff; } .ds-numeral { font-family: Silkscreen, ui-monospace, monospace; font-size: 48px; line-height: 1; letter-spacing: 0.02em; display: inline-flex; } .ds-numeral > span { display: inline-block; width: 0.72em; text-align: center; } .ds-register-label { font-family: Silkscreen, ui-monospace, monospace; font-size: 16px; line-height: 1; letter-spacing: 0.02em; text-transform: uppercase; }"
-    },
-    {
-      "name": "Question Palette Cell",
-      "kind": "nav",
-      "refersTo": "palette-cell",
-      "description": "56px cells, wrapping above sm and scrolling below it with the current cell centred. Set, unset, wrong, and current are four different materials — the current cell wears marching ants.",
-      "html": "<nav class=\"ds-palette\"><button class=\"ds-cell\">1</button><button class=\"ds-cell ds-cell-done\">2</button><button class=\"ds-cell ds-cell-wrong\">3</button><button class=\"ds-cell ds-cell-current\">4</button></nav>",
-      "css": ".ds-palette { display: flex; gap: 6px; border-top: 1px solid #000; padding: 8px 16px; } .ds-cell { position: relative; width: 56px; height: 56px; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #000; border-radius: 0; background: #fff; color: #000; font-family: Silkscreen, ui-monospace, monospace; font-size: 16px; line-height: 1; letter-spacing: 0.02em; cursor: pointer; } .ds-cell-done { background: #000; color: #fff; } .ds-cell-wrong { background-color: #fff; background-size: 4px 4px; background-image: url(\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='4'%20height='4'%20shape-rendering='crispEdges'%3E%3Crect%20width='1'%20height='1'%20fill='%23000'/%3E%3Crect%20x='2'%20width='1'%20height='1'%20fill='%23000'/%3E%3Crect%20y='2'%20width='1'%20height='1'%20fill='%23000'/%3E%3Crect%20x='2'%20y='2'%20width='1'%20height='1'%20fill='%23000'/%3E%3C/svg%3E\"); } .ds-cell-current { border-width: 2px; } .ds-cell-current::after { content: ''; position: absolute; inset: 0; pointer-events: none; background-image: repeating-linear-gradient(90deg, currentColor 0 4px, transparent 4px 8px), repeating-linear-gradient(90deg, currentColor 0 4px, transparent 4px 8px), repeating-linear-gradient(0deg, currentColor 0 4px, transparent 4px 8px), repeating-linear-gradient(0deg, currentColor 0 4px, transparent 4px 8px); background-size: 8px 2px, 8px 2px, 2px 8px, 2px 8px; background-position: 0 0, 0 100%, 0 0, 100% 0; background-repeat: repeat-x, repeat-x, repeat-y, repeat-y; animation: ds-ants 480ms steps(4) infinite; } @keyframes ds-ants { to { background-position: 8px 0, -8px 100%, 0 -8px, 100% 8px; } }"
-    },
-    {
-      "name": "Navigation Tabs",
-      "kind": "nav",
-      "refersTo": "nav-tab",
-      "description": "Silkscreen caps, active marked by a solid 4px ink edge rather than inversion, hover inverts. Window tabs above sm; a fixed 64px bottom bar below it.",
-      "html": "<nav class=\"ds-tabs\"><a class=\"ds-tab ds-tab-active\" href=\"#\">TODAY</a><a class=\"ds-tab\" href=\"#\">PRACTICE</a><a class=\"ds-tab\" href=\"#\">MISTAKES <span class=\"ds-tab-badge\">1</span></a><a class=\"ds-tab\" href=\"#\">PROGRESS</a></nav>",
-      "css": ".ds-tabs { display: flex; background: #fff; } .ds-tab { display: inline-flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 4px solid transparent; font-family: Silkscreen, ui-monospace, monospace; font-size: 16px; line-height: 1; letter-spacing: 0.02em; text-transform: uppercase; color: #000; text-decoration: none; } .ds-tab-active { border-bottom-color: #000; } .ds-tab:hover { background: #000; color: #fff; } .ds-tab-badge { border: 1px solid currentColor; padding: 0 4px; line-height: 1; }"
+      "refersTo": "meter-track",
+      "description": "Unmeasured (dashed, empty), early estimate (fill plus hatched tail), measured (solid ramp).",
+      "html": "<div class=\"ds-meters\"><div class=\"ds-m-row\"><span>Not measured yet</span><span class=\"ds-m-unmeasured\"></span></div><div class=\"ds-m-row\"><span>48% estimate</span><span class=\"ds-m-track\"><span class=\"ds-m-fill ds-m-plain\" style=\"width:48%;opacity:.7\"></span><span class=\"ds-m-tail\" style=\"left:48%\"></span></span></div><div class=\"ds-m-row\"><span>81%</span><span class=\"ds-m-track\"><span class=\"ds-m-fill ds-m-high\" style=\"width:81%\"></span></span></div></div>",
+      "css": ".ds-meters{display:flex;flex-direction:column;gap:14px;width:320px;font:400 13px Lexend,ui-sans-serif,system-ui,sans-serif;color:#545869}.ds-m-row{display:flex;flex-direction:column;gap:6px}.ds-m-unmeasured{display:block;height:8px;border-radius:9999px;border:1px dashed rgba(108,112,132,0.6)}.ds-m-track{position:relative;display:block;height:8px;border-radius:9999px;background:rgba(22,24,52,0.045);overflow:hidden}.ds-m-fill{position:absolute;inset:0 auto 0 0;border-radius:9999px;transition:width 500ms cubic-bezier(0.32,0.72,0,1)}.ds-m-plain{background:linear-gradient(90deg,#a8e48c,#5cb8f0)}.ds-m-high{background:linear-gradient(90deg,#7fdcb1,#1d9a86)}.ds-m-tail{position:absolute;top:0;bottom:0;right:0;opacity:.45;color:#6c7084;background-image:repeating-linear-gradient(135deg,currentColor 0 1px,transparent 1px 5px)}"
     }
   ],
   "narrative": {
-    "northStar": "The Two-State Desktop",
-    "overview": "Unit 3 of this syllabus is two-state data representation, so the interface is rendered in two states. There are exactly two colours — ink (#000000) and paper (#ffffff) — and every apparent grey is an ordered dither: real black pixels on white, on a 4x4 tile painted at 4px, 1:1, never scaled. Surfaces are windows: 1px black chrome, a Silkscreen title bar, content on solid white, tiled on a 50% dither desktop. The interface is the curriculum, not a costume.\n\nThe build refuses the practice-app dashboard outright: no coloured progress rings, no green ticks, no red crosses. Correctness cannot be a colour here because there is no colour, so every state is carried by pattern and form — marching ants for selection and focus, inversion for the live thing, dither density for confidence and unavailability, dashed chrome for 'quieter' and 'not measured'. What the old system had to promise about not relying on colour is structural here.\n\nEmphasis is inversion, and it is the loudest thing the system owns, so it is rationed to one inverted element per viewport. On the dashboard that is START THIS SET; inside the runner it is the primary control while a question is open, handed to the correct option the moment an answer lands. Title bars, nav tabs, and badges are ink on white and stay that way. Density is high and rhythm is tight (12px inline, 16px block, 12px between windows) because the target device is a mid-range Android on mobile data and the student is a tired fifteen-year-old on a bus.",
+    "northStar": "Daylight Glass",
+    "overview": "A student practising for the exam that decides their A/L stream sits in a room that feels good to be in. The page is a fixed field of soft daylight (peach top-left, sky top-right, lavender low right, a breath of mint bottom-left) and every piece of content is a sheet of milk glass laid over it: translucent white, a lit rim along its edge, a long violet-tinted shadow, a big 28px corner. The world refuses both the paper-and-serif exam sheet and the dense SaaS grid. It is airy, light-weight in its type, and generous in its spacing, so a tired fifteen-year-old on a mid-range Android can read for forty minutes without strain.\n\nColour does two jobs only: identity (the pastel family, each tint with its own ink) and data (a violet/teal series pair, three meter ramps). The live thing on any screen, whether the primary action, the current section or the selected option, is a solid ink pill: black by day, chalk white at night. Correctness carries semantic colour but never travels on colour alone; there is always an icon and a word beside it. The measurement is honest in its shapes as well as its numbers: an unmeasured topic draws a dashed empty outline, an early estimate draws a meter with a hatched uncertainty tail, and a measured reading draws a solid gradient fill.\n\nNight is a first-class theme rather than an inversion: the same wash rendered as a low aurora over deep indigo, glass at five percent white, and the ink pill turning to chalk. A trace of fractal grain (3% by day, 4.5% at night) sits over everything so the large gradients never band on an 8-bit phone panel.",
     "keyCharacteristics": [
-      "Two colours only; every tone is a 4x4 ordered dither at 1:1",
-      "Zero radius, zero shadow — both Tailwind namespaces reset to initial",
-      "Inversion as the only accent, one per viewport",
-      "Silkscreen for chrome and numerals, Source Sans 3 for reading",
-      "Quantities in reserved digit slots that align down a register",
-      "56px touch floor as the default, not the exception",
-      "Whole-pixel everything: type sizes, icon grids, dither tiles, steps() motion"
+      "Fixed four-point pastel wash behind everything, painted once, never scrolled.",
+      "Translucent milk-glass sheets with lit rims and violet-tinted ambient shadows; one opaque sheet per screen.",
+      "Ink pill as the sole accent; colour is spent on the pastel identity family and on data.",
+      "Lexend at light weights for display, regular for reading; JetBrains Mono for syllabus data.",
+      "Pills for controls, 28px sheets, 20px inner panels, 16px tiles.",
+      "Three meter states that cannot be mistaken for each other.",
+      "Floating island chrome: tab island, icon rail, bottom pill nav."
     ],
     "rules": [
-      { "name": "The Two Values Rule", "body": "Tailwind's entire --color-* namespace is reset to initial; only ink, paper, transparent, and current are redefined. A third colour is not a policy here, it is unexpressible — there is no utility that can type it.", "section": "colors" },
-      { "name": "The Never-Scaled Rule", "body": "A dither is always background-size: 4px 4px on a whole-pixel grid. A dither at any other scale is a moire, not a tone.", "section": "colors" },
-      { "name": "The Content-Off-The-Dither Rule", "body": "Long-form reading always happens on solid paper. Where a dither must sit under words — the disabled control — the words get their own paper plate (button:disabled > .btn-label, 6px inline padding). Both rules hold only if the ground is dithered and the words are not; neither 25% nor 12% alone survives a 2px Silkscreen stem.", "section": "colors" },
-      { "name": "The One Inversion Rule", "body": "At most one inverted element per viewport, and it marks the live thing: the primary action, the current question, the selected option. Window chrome, navigation, and badges are never inverted — a live title bar was built during this session and deleted before ship.", "section": "colors" },
-      { "name": "The 16px Floor Rule", "body": "Silkscreen is never set below 16px. Its ladder in this build is 16 / 24 / 32 / 48 — whole-pixel steps only. At 8px this face has roughly 4px of cap height and is not readable.", "section": "typography" },
-      { "name": "The Tabular Rule", "body": "font-variant-numeric: tabular-nums is on body. Every digit in the product is the same width, everywhere, always.", "section": "typography" },
-      { "name": "The Placeholder-Speaks-Chrome Rule", "body": "A placeholder cannot be grey text here, and grey text was always the weakest way to say it. ::placeholder takes the pixel voice at 14px, uppercase, full-opacity ink; the value speaks in the reading voice. The distinction survives at any contrast setting.", "section": "typography" },
-      { "name": "The One-Screen Rule", "body": "A session owns the whole viewport. Persistent chrome and the bottom nav both return null under /session/; a student answering a question has exactly one thing in front of them.", "section": "layout" },
-      { "name": "The Wrap-Above-Scroll-Below Rule", "body": "The question palette wraps at sm:flex-wrap and scrolls horizontally below it, with the current cell scrolled to centre on change. Full 56px targets and a whole-paper overview only conflict inside a single row.", "section": "layout" },
-      { "name": "The Flat Raster Rule", "body": "Nothing casts. If a surface needs to separate from what is behind it, give it chrome or change its ground's density — never a shadow, never a blur, never opacity.", "section": "elevation" }
+      {
+        "name": "The Ink Is The Accent Rule",
+        "body": "The ink pill marks the live thing, and a viewport gets one primary. A second primary turns the first into decoration. When a more urgent action exists (an unfinished session), the recommendation card's buttons drop to secondary white pills.",
+        "section": "colors"
+      },
+      {
+        "name": "The Never Colour Alone Rule",
+        "body": "Right, wrong, trend direction, provenance and mastery tone are each carried by a mark and a word first; colour is the third signal. This is binding product truth.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tint Carries Its Ink Rule",
+        "body": "A pastel goes on the sheet, never on a panel inside a white sheet, and text on it uses that tint's own ink.",
+        "section": "colors"
+      },
+      {
+        "name": "The Provenance Is Not Action Rule",
+        "body": "Past-paper badges are brass, solid and sealed; model questions are dashed, plain and pencilled. Never ink for provenance.",
+        "section": "colors"
+      },
+      {
+        "name": "The Light Display Rule",
+        "body": "Anything 28px and up is weight 300 with tight negative tracking; anything under 18px stays at 400 or 500. Headings default to 400, never bold.",
+        "section": "typography"
+      },
+      {
+        "name": "The Question Floor Rule",
+        "body": "Question text is 18px and never goes below 17px. It is the one size taken from a person rather than a scale.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Body Rule",
+        "body": "The body runs `tabular-nums` everywhere, so counts and scores line up without per-element opt-in.",
+        "section": "typography"
+      },
+      {
+        "name": "The Caption Not Kicker Rule",
+        "body": "The 13px label names a quantity or a field (a stat cell's \"Answered\", a figure caption, a table header). It never stands above a heading as a kicker, and it is never uppercase or tracked.",
+        "section": "typography"
+      },
+      {
+        "name": "The 48px Floor Rule",
+        "body": "Every control a thumb reaches on a student surface is at least 48px (`spacing.touch`). Large buttons and bottom-nav items are 56px; answer options are at least 64px. The 36px small button exists for mouse-driven admin chrome only.",
+        "section": "layout"
+      },
+      {
+        "name": "The Painted-Once Rule",
+        "body": "The wash and the grain are `position: fixed` and never repaint on scroll. Scrolling sheets are translucent, never blurred. Backdrop blur (18px, saturate 1.4) is only allowed on fixed or sticky chrome (nav islands, session bars, the header fade strip, modal scrims), where it composites once.",
+        "section": "elevation"
+      },
+      {
+        "name": "The One Opaque Sheet Rule",
+        "body": "A screen gets one `glass-raised` sheet, the card that is its subject (the question card in a session, the submit dialog). Everything else is glass.",
+        "section": "elevation"
+      }
     ],
     "dos": [
-      "Do build every surface as a Window: 1px ink chrome, Silkscreen title bar, content on solid paper.",
-      "Do spend the viewport's one inversion on the live thing — the primary action, the current question, the selected option — and hand it over when the live thing changes.",
-      "Do keep Silkscreen at 16 / 24 / 32 / 48px and Source Sans 3 for anything longer than a label.",
-      "Do carry state with pattern and form: ants for selection and focus, dither density for confidence and unavailability, dashed chrome for quieter, the word alongside every verdict mark.",
-      "Do give a disabled control a 25% dither ground, dashed chrome, and a paper plate under its label.",
-      "Do distinguish unmeasured (12% dither, dashed) from measured-at-zero (25% empty cells). This is the product's honesty rule rendered, and it must survive every future change.",
-      "Do put quantities in reserved digit slots so they align down the column, and draw zeroes as zeroes.",
-      "Do hold a 56px minimum on anything a student taps; 44px exists only for mouse-driven admin chrome.",
-      "Do let windows go full-bleed below sm (border-y / sm:border-x, containers px-0 sm:px-4).",
-      "Do invert secondary controls and nav links on hover.",
-      "Do time every animation in steps() and stop all of it under prefers-reduced-motion."
+      "**Do** set every surface as a sheet over the fixed wash: glass by default, one opaque raised sheet per screen.",
+      "**Do** give a viewport exactly one ink-pill primary; drop competing actions to secondary white pills.",
+      "**Do** pair every correctness, trend and provenance colour with an icon and a word.",
+      "**Do** draw unmeasured as a dashed empty outline and early estimates with a hatched tail; show no percentage without evidence.",
+      "**Do** set page titles and figures in Lexend 300 with tight negative tracking, and keep question text at 18px.",
+      "**Do** set syllabus data (binary, hex, cell references, code, topic codes) in JetBrains Mono.",
+      "**Do** step radii down as you nest: 28 sheet, 20 panel, 18 cell, 16 tile, 13 key.",
+      "**Do** keep student-facing touch targets at 48px or more, 56px for primary navigation and large CTAs.",
+      "**Do** carry each pastel tint with its own ink, and apply the tint to the whole sheet.",
+      "**Do** design night as its own theme: aurora wash over indigo, 5% glass, chalk pills."
     ],
     "donts": [
-      "Don't introduce a third value, a gradient, or an opacity that manufactures a grey. Two colours and four dither densities is the whole material set.",
-      "Don't round a corner or cast a shadow — the namespaces are reset; there is nothing to reach for.",
-      "Don't invert a title bar, a nav item, or a badge. Chrome is not the live thing.",
-      "Don't scale a dither. background-size is 4px 4px, always.",
-      "Don't set body text on a dither, and don't set a Silkscreen label on one without a paper plate.",
-      "Don't synthesise bold or italic on the pixel voice.",
-      "Don't draw a bar at zero for something that has not been measured.",
-      "Don't carry a verdict on a mark alone; the word ships beside every check and cross.",
-      "Don't import a stroked or rounded icon set. Icons are filled cells on a 12x12 grid at whole multiples.",
-      "Don't add decorative pixel art, a fake menu bar, or a trash can. If a pixel is not carrying information, it is not in the design."
+      "**Don't** put a backdrop blur on anything that scrolls; blur belongs only to fixed or sticky chrome.",
+      "**Don't** use colour as the only carrier of right, wrong, trend or provenance.",
+      "**Don't** use ink or the accent for provenance; past paper is brass, model is dashed.",
+      "**Don't** place a pastel panel inside a white sheet; one surface, not two.",
+      "**Don't** use hard or offset shadows, or grey drop shadows; depth is violet-tinted ambient light.",
+      "**Don't** stack an uppercase or tracked label above a heading as a kicker.",
+      "**Don't** add gamification: no confetti, celebration bounce, flame or reward motifs, or animation triggered by a right answer.",
+      "**Don't** introduce colours outside the named tokens; the default Tailwind palette is switched off.",
+      "**Don't** exceed 900ms on any authored animation, or keyframe anything other than transform, opacity or clip; state changes are colour and shadow transitions of 200ms."
     ]
   }
 }

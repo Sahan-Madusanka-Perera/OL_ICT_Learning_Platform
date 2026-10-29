@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { db } from '@/lib/db/client';
 import { examPapers } from '@/lib/db/schema';
 import { asc } from 'drizzle-orm';
-import { Label } from '@/components/ui/window';
 
 export const metadata: Metadata = { title: 'How we write questions' };
 
@@ -18,11 +17,11 @@ export default async function MethodologyPage() {
   const papers = await db.select().from(examPapers).orderBy(asc(examPapers.year));
 
   return (
-    <article className="mx-auto max-w-[46rem] px-3 py-12 sm:px-5 sm:py-14">
-      <h1 className="font-pixel text-[24px] uppercase leading-tight sm:text-[32px]">
+    <article className="mx-auto max-w-[48rem] px-3 pb-16 pt-6 sm:px-5 sm:pb-24 sm:pt-10">
+      <h1 className="page-title">
         How we write and check questions
       </h1>
-      <p className="mt-5 text-[17px] leading-relaxed">
+      <p className="mb-10 mt-5 text-[17px] leading-relaxed text-muted">
         Practice is only worth doing if the answers are right. Here is exactly how our
         content is produced, what we are confident about, and where we are not.
       </p>
@@ -39,8 +38,7 @@ export default async function MethodologyPage() {
         </p>
         <p>
           The two are labelled differently everywhere they appear, using different chrome,
-          different ground, different marks and different wording — and never colour, which
-          this interface does not have.
+          different ground, different marks and different wording — never colour alone.
         </p>
       </Section>
 
@@ -128,10 +126,10 @@ export default async function MethodologyPage() {
       <Section title="The papers we work from">
         <p>An honest account of the state of each source document.</p>
 
-        <div className="overflow-x-auto border border-ink">
+        <div className="overflow-x-auto rounded-[18px] bg-raised shadow-[inset_0_0_0_1px_var(--color-line-soft)]">
           <table className="w-full min-w-[30rem] border-collapse">
             <thead>
-              <tr className="border-b border-ink text-left">
+              <tr className="border-b border-line-soft text-left">
                 <Th>Year</Th>
                 <Th>Sitting</Th>
                 <Th>Status</Th>
@@ -139,12 +137,12 @@ export default async function MethodologyPage() {
             </thead>
             <tbody>
               {papers.map((p) => (
-                <tr key={p.id} className="border-b border-dashed border-ink last:border-b-0">
-                  <td className="font-pixel px-4 py-2.5 text-[16px] leading-none">{p.year}</td>
-                  <td className="px-4 py-2.5 text-[14px]">{p.sitting}</td>
-                  <td className="px-4 py-2.5 text-[14px]">
+                <tr key={p.id} className="border-b border-line-soft last:border-b-0">
+                  <td className="px-5 py-3 text-[15px] font-medium text-ink tabular">{p.year}</td>
+                  <td className="px-5 py-3 text-[14px]">{p.sitting}</td>
+                  <td className="px-5 py-3 text-[14px]">
                     {p.notes ? (
-                      <span className="dither-25 border border-ink px-1.5 py-0.5">
+                      <span className="rounded-full bg-caution-soft px-2.5 py-1 text-[12px] font-medium text-caution">
                         Source needs work
                       </span>
                     ) : (
@@ -169,16 +167,16 @@ export default async function MethodologyPage() {
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section className="mt-10 border-t border-ink pt-7">
-      <Label as="h2">{title}</Label>
-      <div className="mt-4 flex flex-col gap-4 text-[15px] leading-relaxed">{children}</div>
+    <section className="glass mt-4 rounded-[24px] p-6 sm:rounded-xl sm:p-9">
+      <h2 className="text-[22px] leading-tight tracking-[-0.03em]">{title}</h2>
+      <div className="mt-4 flex flex-col gap-4 text-[15px] leading-relaxed text-muted [&_strong]:text-ink">{children}</div>
     </section>
   );
 }
 
 function Th({ children }: { children: React.ReactNode }) {
   return (
-    <th className="font-pixel px-4 py-2.5 text-left text-[16px] uppercase leading-none">
+    <th className="eyebrow px-5 py-3 text-left font-medium">
       {children}
     </th>
   );

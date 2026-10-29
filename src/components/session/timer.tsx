@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react';
 import { cn } from '@/lib/utils/cn';
+import { ClockIcon } from '@/components/ui/icon';
 
 /**
  * Exam countdown.
@@ -10,9 +11,11 @@ import { cn } from '@/lib/utils/cn';
  * only displays the remaining time — editing the client clock changes what
  * the student sees, not whether their answers are accepted.
  *
- * Under five minutes the chip doubles its chrome and takes a 25% dither
- * ground. There is no red to reach for here, and the pattern change is
- * something a colour-blind student and a student in bright sunlight both get.
+ * Under five minutes the chip turns amber AND gains a clock mark AND starts
+ * announcing itself politely. Colour alone would be the wrong signal to rely
+ * on for the one element on screen that a student cannot afford to miss — in
+ * bright sunlight on a cheap panel, an amber pill and a neutral one are very
+ * nearly the same pill.
  */
 export function ExamTimer({
   initialSeconds,
@@ -51,10 +54,15 @@ export function ExamTimer({
       aria-live={urgent ? 'polite' : 'off'}
       aria-label={`${minutes} minutes ${secs} seconds remaining`}
       className={cn(
-        'font-pixel shrink-0 border border-ink px-2 py-1.5 text-[16px] leading-none',
-        urgent && 'dither-25 border-2',
+        'flex h-10 shrink-0 items-center gap-1.5 rounded-full px-3.5',
+        'text-[14px] font-medium leading-none tabular',
+        'transition-colors duration-300 ease-[var(--ease-settle)]',
+        urgent
+          ? 'bg-caution-soft text-caution shadow-[inset_0_0_0_1px_var(--color-caution)]'
+          : 'bg-sunken text-ink',
       )}
     >
+      {urgent ? <ClockIcon size={14} /> : null}
       <span aria-hidden="true">
         {minutes}:{String(secs).padStart(2, '0')}
       </span>

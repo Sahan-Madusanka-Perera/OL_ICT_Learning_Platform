@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import type { StudentQuestion } from '@/lib/services/questions';
 import { cn } from '@/lib/utils/cn';
+import { CheckIcon, CrossIcon } from '@/components/ui/icon';
 
 /**
  * The question palette.
@@ -12,9 +13,12 @@ import { cn } from '@/lib/utils/cn';
  * fixed 48px of the action bar however long the paper is — a palette that
  * grows to four rows on a phone eats the question it was meant to serve.
  *
- * Every cell is legible as a bit: set, unset, or marked.
+ * Four states, each distinguishable without colour: unanswered is an outline,
+ * answered is filled, correct and incorrect carry their semantic fill plus a
+ * tick or a cross, and the current cell carries a ring that sits clear of the
+ * cell so it survives on top of any of the other four.
  *
- * Cells are full 56px targets, which puts two of this component's jobs in
+ * Cells are full 48px targets, which puts two of this component's jobs in
  * tension: hitting a cell and seeing the whole paper. They only conflict in
  * a single row, so above `sm` the row wraps and every question is visible at
  * full target size. On a phone it stays one scrolling strip and the current
@@ -52,8 +56,13 @@ export function QuestionPalette({
   }, [current]);
 
   return (
-    <nav aria-label="Jump to question" className="border-t border-ink">
-      <ul className="mx-auto flex max-w-3xl gap-1.5 overflow-x-auto px-3 py-2 sm:flex-wrap sm:overflow-x-visible sm:px-4">
+    <nav aria-label="Jump to question" className="border-t border-line-soft">
+      {/*
+        On a phone the strip scrolls; its right edge fades so a cut-off cell
+        reads as "more this way" rather than as the end of the paper. The extra
+        end padding lets the last cell scroll clear of the fade.
+      */}
+      <ul className="flex gap-2 overflow-x-auto py-3 pl-3 pr-12 [mask-image:linear-gradient(to_right,black_calc(100%-3rem),transparent)] sm:flex-wrap sm:overflow-x-visible sm:px-4 sm:[mask-image:none]">
         {questions.map((q, i) => {
           const answer = answers[q.id];
           const answered = (answer?.selectedOptionIds.length ?? 0) > 0;
@@ -74,20 +83,38 @@ export function QuestionPalette({
                   (answer?.markedForReview ? ', marked for review' : '')
                 }
                 className={cn(
-                  'font-pixel ant-focus relative flex h-14 w-14 shrink-0 items-center justify-center',
-                  'border border-ink text-[16px] leading-none',
-                  isCurrent && 'ants border-2',
-                  correct === true && 'bg-ink text-paper',
-                  correct === false && 'dither-25',
-                  correct === null && answered && 'bg-ink text-paper',
-                  !answered && 'bg-paper',
+                  'relative flex h-12 w-12 shrink-0 items-center justify-center rounded-tile',
+                  'text-[14px] font-medium leading-none tabular',
+                  'transition-[background-color,color,box-shadow,transform] duration-200',
+                  'ease-[var(--ease-settle)] active:scale-95',
+                  correct === true && 'bg-correct text-raised',
+                  correct === false && 'bg-wrong text-raised',
+                  correct === null && answered && 'bg-accent text-accent-ink',
+                  !answered &&
+                    'bg-raised text-muted shadow-[inset_0_0_0_1px_var(--color-line)] hover:text-ink',
+                  /* The ring is drawn outside the cell so it reads on top of
+                     every fill above, including the semantic ones. */
+                  isCurrent &&
+                    'ring-2 ring-focus ring-offset-2 ring-offset-raised',
                 )}
               >
                 {i + 1}
+                {correct === true || correct === false ? (
+                  <span
+                    aria-hidden="true"
+                    className={cn(
+                      'absolute -bottom-1 -right-1 flex h-[18px] w-[18px] items-center justify-center rounded-full bg-raised',
+                      'shadow-[var(--shadow-hairline)]',
+                      correct ? 'text-correct' : 'text-wrong',
+                    )}
+                  >
+                    {correct ? <CheckIcon size={12} /> : <CrossIcon size={12} />}
+                  </span>
+                ) : null}
                 {answer?.markedForReview ? (
                   <span
                     aria-hidden="true"
-                    className="absolute right-0.5 top-0.5 h-1.5 w-1.5 bg-current"
+                    className="absolute right-1 top-1 h-1.5 w-1.5 rounded-full bg-current"
                   />
                 ) : null}
               </button>

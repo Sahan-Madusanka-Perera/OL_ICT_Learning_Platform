@@ -1364,7 +1364,7 @@ export const MODEL_QUESTIONS: QuestionSeed[] = [
       'This adds instead of subtracting: 10 + 4 × 2.',
     ],
     explanation:
-      'A spreadsheet follows the ordinary **order of operations**: brackets, then powers, then multiplication and division, then addition and subtraction. So A2\\*A3 is evaluated first, giving 4 × 2 = 8, and then 10 − 8 = **2**. Writing `=(A1-A2)*A3` instead would give 12.',
+      'A spreadsheet follows the ordinary **order of operations**: brackets, then powers, then multiplication and division, then addition and subtraction. So `A2*A3` is evaluated first, giving 4 × 2 = 8, and then 10 − 8 = **2**. Writing `=(A1-A2)*A3` instead would give 12.',
     examTip:
       'If a formula mixes − with \\* or /, do the multiplication or division first unless brackets say otherwise.',
     difficulty: 'medium',
@@ -2854,25 +2854,25 @@ export const MODEL_QUESTIONS: QuestionSeed[] = [
   {
     topic: '14.2',
     stem: 'Which HTML tag creates a **hyperlink**?',
-    options: ['&lt;link&gt;', '&lt;a&gt;', '&lt;href&gt;', '&lt;url&gt;'],
+    options: ['`<link>`', '`<a>`', '`<href>`', '`<url>`'],
     correct: 1,
     misconceptions: [
-      '&lt;link&gt; connects a page to an external resource such as a stylesheet; it does not make a clickable link.',
+      '`<link>` connects a page to an external resource such as a stylesheet; it does not make a clickable link.',
       '',
       'href is an *attribute* of the anchor tag, not a tag in its own right.',
-      'There is no &lt;url&gt; tag in HTML.',
+      'There is no `<url>` tag in HTML.',
     ],
     explanation:
-      'The anchor tag **&lt;a&gt;** creates a hyperlink, and its `href` attribute holds the address: `&lt;a href="page.html"&gt;Click here&lt;/a&gt;`. The text between the opening and closing tags is what the user clicks.',
+      'The anchor tag **`<a>`** creates a hyperlink, and its `href` attribute holds the address: `<a href="page.html">Click here</a>`. The text between the opening and closing tags is what the user clicks.',
     examTip:
-      'Keep tags and attributes apart. &lt;a&gt; is the tag; href is an attribute that lives inside it.',
+      'Keep tags and attributes apart. `<a>` is the tag; href is an attribute that lives inside it.',
     difficulty: 'medium',
     cognitive: 'recall',
   },
   {
     topic: '14.2',
     stem: 'In an HTML document, which section holds the content that is **displayed in the browser window**?',
-    options: ['&lt;head&gt;', '&lt;title&gt;', '&lt;body&gt;', '&lt;meta&gt;'],
+    options: ['`<head>`', '`<title>`', '`<body>`', '`<meta>`'],
     correct: 2,
     misconceptions: [
       'The head holds information *about* the page, which is not displayed in the page itself.',
@@ -2881,7 +2881,7 @@ export const MODEL_QUESTIONS: QuestionSeed[] = [
       'A meta tag carries information about the document for browsers and search engines.',
     ],
     explanation:
-      'An HTML document has two main sections. The **&lt;head&gt;** holds information about the page — its title, its character set, links to stylesheets. The **&lt;body&gt;** holds everything the visitor actually sees.',
+      'An HTML document has two main sections. The **`<head>`** holds information about the page — its title, its character set, links to stylesheets. The **`<body>`** holds everything the visitor actually sees.',
     examTip:
       'Head is about the page, body is the page. If a student can see it, it is in the body.',
     difficulty: 'easy',

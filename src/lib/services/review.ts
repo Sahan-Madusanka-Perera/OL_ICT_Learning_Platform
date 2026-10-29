@@ -49,6 +49,8 @@ export type ReviewQueueItem = {
   optionCount: number;
   hasKey: boolean;
   hasExplanation: boolean;
+  /** The current explanation, so the queue can edit it in place. */
+  explanation: string | null;
   approvals: number;
   updatedAt: Date;
   /** A figure was recovered from the paper and attached to this question. */
@@ -192,6 +194,7 @@ export async function getReviewQueue(
       optionCount: opts.length,
       hasKey: opts.some((o) => o.isCorrect),
       hasExplanation: Boolean(r.explanation),
+      explanation: r.explanation,
       approvals: approvers.size,
       updatedAt: r.updatedAt,
       hasFigure: r.stimulusId !== null,
@@ -242,6 +245,46 @@ export async function setAnswerKey(input: {
       entityType: 'question',
       entityId: input.questionId,
       after: { correctOptionId: input.correctOptionId, confidence: input.confidence },
+    });
+  });
+}
+
+/**
+ * Write or replace a question's explanation.
+ *
+ * Publishing refuses a question without one, so the queue has to be able to
+ * write it. Audited like the answer key, with the previous text kept in the
+ * log so an overwrite can be recovered.
+ */
+export async function setExplanation(input: {
+  questionId: string;
+  explanationMd: string;
+  actorId: string;
+}): Promise<void> {
+  const text = input.explanationMd.trim();
+  if (!text) throw new ReviewError('Write an explanation before saving.');
+
+  const [question] = await db
+    .select({ id: questions.id, explanationMd: questions.explanationMd })
+    .from(questions)
+    .where(eq(questions.id, input.questionId))
+    .limit(1);
+
+  if (!question) throw new ReviewError('Question not found.');
+
+  await db.transaction(async (tx) => {
+    await tx
+      .update(questions)
+      .set({ explanationMd: text, updatedBy: input.actorId, updatedAt: new Date() })
+      .where(eq(questions.id, input.questionId));
+
+    await tx.insert(auditLogs).values({
+      actorId: input.actorId,
+      action: 'question.set_explanation',
+      entityType: 'question',
+      entityId: input.questionId,
+      before: { explanationMd: question.explanationMd },
+      after: { explanationMd: text },
     });
   });
 }

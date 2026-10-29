@@ -4,7 +4,8 @@ import { useState } from 'react';
 import type { StudentQuestion } from '@/lib/services/questions';
 import type { AnswerOutcome } from '@/lib/services/sessions';
 import { SourceBadge } from '@/components/ui/source-badge';
-import { Label } from '@/components/ui/window';
+import { Pill } from '@/components/ui/window';
+import { StimulusFigure } from '@/components/session/stimulus-figure';
 import { cn } from '@/lib/utils/cn';
 import { renderInline } from '@/lib/utils/markdown';
 import { CheckIcon, CrossIcon, BookmarkIcon } from '@/components/ui/icon';
@@ -15,16 +16,20 @@ import { CheckIcon, CrossIcon, BookmarkIcon } from '@/components/ui/icon';
  * The options are a radiogroup built from real buttons with roving state, so
  * keyboard and screen-reader behaviour is standard.
  *
- * State is carried by pattern and form, which in a world with no colour is
- * not a discipline — it is the only option available:
+ * Every state is carried three ways — never by colour alone:
  *
- *   selected  marching ants, running
- *   correct   full inversion, checkmark, and the word CORRECT
- *   your mark ╳, a 25% dither ground, and the words YOUR MARK
- *   inert     chrome dropped to a dashed line
+ *   selected   ink outline, ink number disc
+ *   correct    green ground, a tick, and the word "Correct"
+ *   your mark  red ground, a cross, and the words "Your answer"
+ *   inert      faded to muted, outline dropped to a hairline
  *
- * The inversion on a correct option is the viewport's one inversion, which
- * is why the action bar's control goes quiet the moment an answer lands.
+ * That is not belt-and-braces. Roughly one student in twelve cannot separate
+ * the green from the red, and this is the exact screen where being wrong about
+ * that costs them the explanation.
+ *
+ * The number disc stays a disc at every state. A control that changes shape as
+ * well as colour reads as a different control, and the student has to re-find
+ * which row they were on.
  */
 export function QuestionCard({
   question,
@@ -45,13 +50,13 @@ export function QuestionCard({
   const correctIds = outcome?.feedback?.correctOptionIds ?? [];
 
   return (
-    <article className="border-y border-ink bg-paper sm:border-x">
-      {/* ---- provenance bar ---- */}
-      <div className="flex flex-wrap items-center gap-2 border-b border-ink px-3 py-2 sm:px-4">
+    <article className="glass-raised overflow-hidden rounded-[24px] sm:rounded-xl">
+      {/* ---- provenance ---- */}
+      <div className="flex flex-wrap items-center gap-2 px-5 pt-5 sm:px-8 sm:pt-7">
         <SourceBadge source={question.source} />
-        <span className="font-pixel border border-ink px-2 py-1 text-[16px] uppercase leading-none">
+        <Pill tone="neutral" className="capitalize">
           {question.difficulty}
-        </span>
+        </Pill>
 
         {onBookmark ? (
           <button
@@ -62,11 +67,15 @@ export function QuestionCard({
             }}
             aria-pressed={bookmarked}
             className={cn(
-              'ant-focus ml-auto flex h-14 w-14 items-center justify-center border border-ink',
-              bookmarked ? 'bg-ink text-paper' : 'bg-paper hover:bg-ink hover:text-paper',
+              'ml-auto flex h-11 w-11 items-center justify-center rounded-full',
+              'transition-[background-color,color,transform] duration-200 ease-[var(--ease-settle)]',
+              'active:scale-95',
+              bookmarked
+                ? 'bg-accent text-accent-ink'
+                : 'bg-sunken text-muted hover:text-ink',
             )}
           >
-            <BookmarkIcon size={24} />
+            <BookmarkIcon size={20} />
             <span className="sr-only-live">
               {bookmarked ? 'Remove bookmark' : 'Save this question'}
             </span>
@@ -74,49 +83,20 @@ export function QuestionCard({
         ) : null}
       </div>
 
-      <div className="px-3 py-4 sm:px-4">
+      <div className="px-5 pb-6 pt-5 sm:px-8 sm:pb-8 sm:pt-6">
         {/* ---- shared stimulus ---- */}
         {question.stimulus ? (
-          <figure className="mb-5 border-y border-ink py-3">
-            {question.stimulus.caption ? (
-              <Label as="p" className="mb-2">
-                {question.stimulus.caption}
-              </Label>
-            ) : null}
-            {question.stimulus.imageUrl ? (
-              /*
-               * The asset's own alt text, never the caption. A caption is
-               * printed beside the figure and a screen reader already reads
-               * it, so reusing it as alt says the same words twice and still
-               * never describes the picture — and for these questions the
-               * picture is the question. Past-paper figures are seeded with an
-               * explicit "not yet described" placeholder, which is why nothing
-               * carrying one can be published.
-               */
-              /* eslint-disable-next-line @next/next/no-img-element */
-              <img
-                src={question.stimulus.imageUrl}
-                alt={question.stimulus.imageAlt ?? ''}
-                className="max-w-full"
-              />
-            ) : null}
-            {question.stimulus.content ? (
-              <div
-                className="text-[15px] leading-relaxed"
-                dangerouslySetInnerHTML={{ __html: renderInline(question.stimulus.content) }}
-              />
-            ) : null}
-          </figure>
+          <StimulusFigure stimulus={question.stimulus} className="mb-6" />
         ) : null}
 
         {/* ---- the question ---- */}
         <h1
-          className="text-question"
+          className="prose-tight text-question font-sans font-normal tracking-[-0.01em]"
           dangerouslySetInnerHTML={{ __html: renderInline(question.stem) }}
         />
 
         {/* ---- options ---- */}
-        <div role="radiogroup" aria-label="Answer options" className="mt-5 flex flex-col gap-2">
+        <div role="radiogroup" aria-label="Answer options" className="mt-7 flex flex-col gap-2.5">
           {question.options.map((option, i) => {
             const isSelected = selected.includes(option.id);
             const isCorrect = correctIds.includes(option.id);
@@ -133,32 +113,52 @@ export function QuestionCard({
                 disabled={locked}
                 onClick={() => onSelect([option.id])}
                 className={cn(
-                  'ant-focus flex min-h-[--spacing-touch] w-full items-stretch border text-left',
-                  'disabled:cursor-default',
-                  showAsRight && 'border-ink bg-ink text-paper',
-                  showAsWrong && 'dither-25 border-2 border-ink',
-                  inert && 'border-dashed border-ink bg-paper',
-                  !locked && isSelected && 'ants border-2 border-ink bg-paper',
-                  !locked && !isSelected && 'border-ink bg-paper',
+                  'group flex min-h-16 w-full items-center gap-4 rounded-[20px] p-3 pr-4 text-left',
+                  'transition-[background-color,box-shadow,transform,opacity] duration-200',
+                  'ease-[var(--ease-settle)] disabled:cursor-default',
+                  !locked && 'active:scale-[0.995]',
+                  showAsRight &&
+                    'bg-correct-soft shadow-[inset_0_0_0_1.5px_var(--color-correct)]',
+                  showAsWrong && 'bg-wrong-soft shadow-[inset_0_0_0_1.5px_var(--color-wrong)]',
+                  inert && 'opacity-55 shadow-[inset_0_0_0_1px_var(--color-line-soft)]',
+                  !locked &&
+                    isSelected &&
+                    'bg-accent-soft shadow-[inset_0_0_0_1.5px_var(--color-accent)]',
+                  !locked &&
+                    !isSelected &&
+                    'bg-raised shadow-[inset_0_0_0_1px_var(--color-line)] hover:bg-sunken',
                 )}
               >
                 <span
                   aria-hidden="true"
-                  className="font-pixel flex w-12 shrink-0 items-center justify-center border-r border-current text-[16px] leading-none"
+                  className={cn(
+                    'flex h-10 w-10 shrink-0 items-center justify-center rounded-[13px]',
+                    'text-[15px] font-medium leading-none',
+                    'transition-colors duration-200 ease-[var(--ease-settle)]',
+                    showAsRight && 'bg-correct text-raised',
+                    showAsWrong && 'bg-wrong text-raised',
+                    inert && 'bg-sunken text-muted',
+                    !locked && isSelected && 'bg-accent text-accent-ink',
+                    !locked && !isSelected && 'bg-sunken text-muted',
+                  )}
                 >
                   {showAsRight ? (
-                    <CheckIcon size={12} />
+                    <CheckIcon size={16} />
                   ) : showAsWrong ? (
-                    <CrossIcon size={12} />
+                    <CrossIcon size={16} />
                   ) : (
                     i + 1
                   )}
                 </span>
 
-                <span className="min-w-0 flex-1 px-3 py-3">
+                <span className="min-w-0 flex-1">
                   {option.imageUrl ? (
                     /* eslint-disable-next-line @next/next/no-img-element */
-                    <img src={option.imageUrl} alt={option.imageAlt ?? ''} className="max-h-24" />
+                    <img
+                      src={option.imageUrl}
+                      alt={option.imageAlt ?? ''}
+                      className="max-h-28 rounded-sm bg-[#fff] p-1"
+                    />
                   ) : null}
                   {option.content ? (
                     <span
@@ -170,8 +170,13 @@ export function QuestionCard({
 
                 {/* The word, always — the mark alone never carries the verdict. */}
                 {showAsRight || showAsWrong ? (
-                  <span className="font-pixel flex shrink-0 items-center px-3 text-[16px] uppercase leading-none">
-                    {showAsRight ? 'Correct' : 'Your mark'}
+                  <span
+                    className={cn(
+                      'shrink-0 text-[13px] font-medium',
+                      showAsRight ? 'text-correct' : 'text-wrong',
+                    )}
+                  >
+                    {showAsRight ? 'Correct' : 'Your answer'}
                   </span>
                 ) : null}
               </button>
@@ -185,9 +190,12 @@ export function QuestionCard({
           exactly where a student's eye travels next. It goes away on answer.
         */}
         {locked ? null : (
-          <p className="font-pixel mt-4 hidden text-[16px] uppercase leading-none sm:block">
-            <Key>1</Key>–<Key>{String(question.options.length)}</Key> to choose ·{' '}
-            <Key>Enter</Key> to confirm
+          <p className="mt-6 hidden items-center gap-1.5 text-[13px] text-muted sm:flex">
+            <Key>1</Key>–<Key>{String(question.options.length)}</Key>
+            <span>to choose</span>
+            <span className="px-1 opacity-50">·</span>
+            <Key>Enter</Key>
+            <span>to confirm</span>
           </p>
         )}
       </div>
@@ -196,5 +204,15 @@ export function QuestionCard({
 }
 
 function Key({ children }: { children: React.ReactNode }) {
-  return <kbd className="border border-ink px-1 not-italic">{children}</kbd>;
+  return (
+    <kbd
+      className={cn(
+        'inline-flex min-w-[22px] items-center justify-center rounded-[7px] px-1.5 py-0.5',
+        'bg-raised font-mono text-[12px] not-italic text-ink',
+        'shadow-[inset_0_0_0_1px_var(--color-line),0_1px_0_0_var(--color-line)]',
+      )}
+    >
+      {children}
+    </kbd>
+  );
 }

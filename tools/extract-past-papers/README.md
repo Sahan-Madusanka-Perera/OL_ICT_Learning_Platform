@@ -17,15 +17,26 @@ pip install pymupdf             # PDF rendering
 
 ## Running it
 
+The nine scanned years, in order:
+
 ```bash
-python3 tools/extract-past-papers/ocr_all.py    # 1. render + OCR  (slow, ~20 min)
-python3 tools/extract-past-papers/parse.py      # 2. text -> question blocks
-python3 tools/extract-past-papers/export.py     # 3. -> seed/data/past-paper-mcqs.json
-python3 tools/extract-past-papers/figures.py   # 4. -> seed/data/past-paper-figures.json
+python3 tools/extract-past-papers/ocr_all.py     # 1.  render + OCR, two passes (~40 min)
+python3 tools/extract-past-papers/parse.py       # 2a. primary pass  -> parsed.json
+python3 tools/extract-past-papers/parse.py --psm4 # 2b. alternate    -> parsed.psm4.json
+python3 tools/extract-past-papers/repair.py      # 2c. merge the gaps
+python3 tools/extract-past-papers/rescue.py      # 2d. 500 dpi, per question (slow)
+python3 tools/extract-past-papers/export.py      # 3.  -> seed/data/past-paper-mcqs.json
 ```
 
-Step 4 is independent of steps 1-3 and takes seconds: it reads the PDFs
-directly and never touches `.extract/`.
+The six born-digital years do not go through any of that:
+
+```bash
+python3 tools/extract-past-papers/borndigital.py  # -> past-paper-borndigital.json
+python3 tools/extract-past-papers/option-icons.py # -> past-paper-option-icons.json
+python3 tools/extract-past-papers/figures.py      # -> past-paper-figures.json
+```
+
+Those three read the PDFs directly, take seconds, and never touch `.extract/`.
 
 Intermediate files go to `.extract/` at the repo root (override with `WORKDIR`).
 **Step 1 writes ~700 MB of page images to `.extract/png`** — delete that
@@ -33,10 +44,26 @@ directory when the run finishes.
 
 ## What each step does
 
-**`ocr_all.py`** renders every page at 300 dpi and runs tesseract over it. It
-OCRs even the papers that already carry a text layer, because several of those
-layers are themselves poor OCR passes (the 2012 file decodes as `oLl20l2t80-E-r`).
-It skips the file named `2013`, which is byte-identical to the 2012 file.
+**`ocr_all.py`** renders every page at 300 dpi and runs tesseract over it
+**twice**, at two page-segmentation modes. It OCRs even the papers that already
+carry a text layer, because several of those layers are themselves poor OCR
+passes (the 2012 file decodes as `oLl20l2t80-E-r`). It skips the file named
+`2013`, which is byte-identical to the 2012 file.
+
+The two passes fail differently, which is the whole point:
+
+| | psm 6 (primary) | psm 4 (alternate) |
+|---|---|---|
+| 2011 | 31/40 blocks | 36/40 |
+| 2014 | 36/40 | 39/40 |
+| 2017 | 38/40 | 40/40 |
+| 2019 | 40/40 | **7/40** |
+
+psm 6 reads a page as one uniform block and flattens a four-column option row
+into a single line, after which the question numbers inside it stop looking
+like question numbers. psm 4 keeps the column structure and occasionally loses
+a whole page to a mis-detected column. Either alone leaves questions on the
+floor.
 
 **`parse.py`** finds question boundaries and splits options. The hard part is
 that OCR damages the question numbers themselves, so it works in two passes:
@@ -45,7 +72,24 @@ by a stray `(3)`, then a repair pass that fills gaps by looking *only* between
 the two neighbours the first pass already anchored. That is why `18.` read as
 `8.`, or `23.` read as `93.`, is recovered without inventing questions.
 
-**`export.py`** assigns a syllabus topic by keyword and grades the extraction.
+**`repair.py`** merges the alternate pass into the primary one, and may only
+ever *fill gaps*: a question the primary never found, or one whose options it
+could not read. A question the primary read completely is kept, always, even if
+the alternate disagrees — two OCR passes disagreeing is not evidence about which
+is right, and a merge that "picks the better one" picks at random twice a page.
+Each repaired question is marked `pass: psm4` so the provenance reaches the seed.
+
+**`rescue.py`** is the last and most expensive attempt, for what both whole-page
+passes missed. It interpolates which pages a question can be on from the
+questions either side of it, re-renders only those at 500 dpi, and runs three
+segmentation modes over each — including psm 11, which is useless on a whole
+page and occasionally the only thing that reads a four-column option row. It
+keeps a result only if the question's own number *and* four ordered option
+markers are present in the output. That constraint is what makes it safe to run:
+a rescue pass that accepts its best guess is a machine for inventing questions.
+
+**`export.py`** assigns a syllabus topic by keyword (from `topics.py`, shared
+with the born-digital extractor) and grades the extraction.
 
 **`figures.py`** recovers the pictures, for the six papers that can give them
 up. See below — it works on completely different evidence from the other three
@@ -151,18 +195,35 @@ Page numbers for each year are recorded in `answer-keys.ts`.
 | | |
 |---|---|
 | Papers held | 15 (2013 is missing — the supplied file duplicates 2012) |
-| Questions extracted | 580 of a possible 600 |
+| Questions in the platform | **573 of a possible 600** |
+| Papers complete at 40/40 | **8** — 2010, 2017, and all six born-digital years |
+| Recovered by the alternate pass | 25 |
+| Recovered at 500 dpi | 10 |
 | Figures extracted | 37, from the 6 born-digital papers (2020-2025) |
-| Questions carrying a figure | 53 — 50 of which have a question row to attach to |
+| Picture-only option images | 40 across 10 questions, each described |
 | Official marking schemes | 10 years — 2012, 2014, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2025 |
-| Questions with an official answer | 392 |
+| Questions with an official answer | 398 |
+
+### What is still missing, and why
+
+| year | in platform | missing |
+|---|---|---|
+| 2011 | 32 / 40 | 8 |
+| 2014 | 34 / 40 | 6 |
+| 2012, 2015, 2016, 2018 | 37 / 40 | 3 each |
+| 2019 | 39 / 40 | 1 |
+
+All 27 are in the scanned years and all have survived every pass above. The
+2011 paper is the worst because the file is a photograph of a photocopy — more
+extraction cleverness will not fix a source that does not hold the ink. A
+cleaner scan of 2011 and 2014 would be worth more than any further work here.
 
 Five years — 2010, 2011, 2015, 2016, 2024 — have a paper but no official
 marking scheme. Their questions cannot be published until a key is sourced.
 
-The nine scanned years have no figures at all, which is the larger gap: 140
-questions across the corpus are graded `needs_asset`, and only the 2020-2025
-share of them can currently be given the picture they ask about.
+The nine scanned years have no figures at all, which is the larger remaining
+gap: 145 questions across the corpus are graded `needs_asset`, and only the
+2020-2025 share of them can currently be given the picture they ask about.
 
 ## Not every file in `Marking Scheme/` is a marking scheme
 

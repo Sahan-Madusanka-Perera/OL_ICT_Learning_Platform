@@ -23,12 +23,12 @@ export function DangerZone() {
   return (
     <Window
       title="Delete your account"
-      note="Permanent"
-      className="border-y-2 sm:border-x-2"
+      note="Permanent — nothing is kept"
+      className="shadow-[inset_0_0_0_1.5px_var(--color-wrong),var(--shadow-raised)]"
     >
       {!confirming ? (
         <>
-          <p className="text-[15px] leading-relaxed">
+          <p className="max-w-prose text-[15px] leading-relaxed text-muted">
             This removes your profile, your answer history, your progress and your mistake
             book. Nothing is kept, and it cannot be undone.
           </p>
@@ -46,7 +46,7 @@ export function DangerZone() {
             value={typed}
             onChange={(e) => setTyped(e.target.value)}
             aria-label="Type DELETE to confirm"
-            className="font-pixel mt-3 h-12 w-full max-w-xs border border-ink bg-paper px-3 text-[16px]"
+            className="mt-3 h-13 w-full max-w-xs rounded-tile bg-sunken px-4 font-mono text-[16px] shadow-[inset_0_0_0_1px_var(--color-line)] focus:bg-raised"
           />
           <div className="mt-4 flex flex-wrap gap-2">
             <Button

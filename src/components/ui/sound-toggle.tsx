@@ -61,13 +61,16 @@ export function SoundToggle({
         if (next) play('select');
       }}
       className={cn(
-        'ant-focus font-pixel flex items-center gap-2 border border-ink px-2 text-[16px] uppercase leading-none',
-        'hover:bg-ink hover:text-paper',
-        labelled ? 'h-14 px-3' : 'h-10',
+        'flex items-center gap-2 rounded-full text-[14px] font-medium text-muted',
+        'bg-raised shadow-[inset_0_0_0_1px_var(--color-line-soft)]',
+        'transition-[color,box-shadow] duration-200 ease-[var(--ease-settle)]',
+        'hover:text-ink hover:shadow-[inset_0_0_0_1px_var(--color-line)]',
+        'aria-checked:bg-accent aria-checked:text-accent-ink aria-checked:shadow-none',
+        labelled ? 'h-12 pl-4 pr-5' : 'h-10 w-10 justify-center',
         className,
       )}
     >
-      {on ? <SoundOnIcon size={24} /> : <SoundOffIcon size={24} />}
+      {on ? <SoundOnIcon size={20} /> : <SoundOffIcon size={20} />}
       {/* The word ships with the mark, the way every other state in this
           system does — an icon whose two forms differ by a few cells is not
           something to bet a setting on. In dense chrome it is screen-reader

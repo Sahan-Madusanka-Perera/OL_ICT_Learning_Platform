@@ -37,9 +37,9 @@
   "shared": true,
   "path": "/past-papers/2020/shared-19-20-21.png",
   "page": 4,
-  "width": 1351,
-  "height": 572,
-  "byteSize": 83975,
+  "width": 1349,
+  "height": 601,
+  "byteSize": 48237,
   "altText": null,
   "anchorText": "• Questions 19 to 21 are based on the following database tables that are used to store data about"
  },
@@ -51,9 +51,9 @@
   "shared": false,
   "path": "/past-papers/2020/q26.png",
   "page": 5,
-  "width": 438,
-  "height": 220,
-  "byteSize": 17725,
+  "width": 435,
+  "height": 218,
+  "byteSize": 8812,
   "altText": null,
   "anchorText": "26. Which of the following HTML tags and parameters can be"
  },
@@ -65,9 +65,9 @@
   "shared": false,
   "path": "/past-papers/2020/q34.png",
   "page": 5,
-  "width": 674,
-  "height": 240,
-  "byteSize": 11641,
+  "width": 621,
+  "height": 205,
+  "byteSize": 5774,
   "altText": null,
   "anchorText": "34. Which of the following Boolean expressions is"
  },
@@ -79,9 +79,9 @@
   "shared": false,
   "path": "/past-papers/2020/q35.png",
   "page": 5,
-  "width": 1235,
-  "height": 420,
-  "byteSize": 52316,
+  "width": 516,
+  "height": 125,
+  "byteSize": 3721,
   "altText": null,
   "anchorText": "35. Consider the following logic circuit:"
  },
@@ -93,25 +93,25 @@
   "shared": false,
   "path": "/past-papers/2020/q38.png",
   "page": 6,
-  "width": 621,
-  "height": 752,
-  "byteSize": 39912,
+  "width": 667,
+  "height": 80,
+  "byteSize": 3036,
   "altText": null,
   "anchorText": "38. Consider the following array M in PASCAL language:"
  },
  {
-  "year": 2021,
+  "year": 2020,
   "questions": [
-   12
+   39
   ],
   "shared": false,
-  "path": "/past-papers/2021/q12-2.png",
-  "page": 3,
-  "width": 640,
-  "height": 308,
-  "byteSize": 42292,
+  "path": "/past-papers/2020/q39.png",
+  "page": 6,
+  "width": 612,
+  "height": 724,
+  "byteSize": 19982,
   "altText": null,
-  "anchorText": "12. Consider the following spreadsheet segment with four components labelled as P, Q, R and S:"
+  "anchorText": "39. What would be the Output of the given flowchart,"
  },
  {
   "year": 2021,
@@ -130,6 +130,21 @@
  {
   "year": 2021,
   "questions": [
+   13,
+   14
+  ],
+  "shared": true,
+  "path": "/past-papers/2021/shared-13-14.png",
+  "page": 3,
+  "width": 659,
+  "height": 291,
+  "byteSize": 20295,
+  "altText": null,
+  "anchorText": "• Consider the following segment of a marksheet entered into an electronic spreadsheet to answer questions 13 and 14:"
+ },
+ {
+  "year": 2021,
+  "questions": [
    17,
    18,
    19
@@ -137,9 +152,9 @@
   "shared": true,
   "path": "/past-papers/2021/shared-17-18-19.png",
   "page": 3,
-  "width": 1307,
-  "height": 494,
-  "byteSize": 70885,
+  "width": 1304,
+  "height": 521,
+  "byteSize": 40673,
   "altText": null,
   "anchorText": "• Questions 17 to 19 are based on the following partly shown database tables that are used to store"
  },
@@ -165,11 +180,25 @@
   "shared": false,
   "path": "/past-papers/2021/q26.png",
   "page": 5,
-  "width": 633,
-  "height": 169,
-  "byteSize": 13920,
+  "width": 533,
+  "height": 151,
+  "byteSize": 6707,
   "altText": null,
   "anchorText": "26. Consider the following URL:"
+ },
+ {
+  "year": 2021,
+  "questions": [
+   28
+  ],
+  "shared": false,
+  "path": "/past-papers/2021/q28.png",
+  "page": 5,
+  "width": 161,
+  "height": 158,
+  "byteSize": 11371,
+  "altText": null,
+  "anchorText": "28. Which of the following best describes the icon in GIMP image manipulation software?"
  },
  {
   "year": 2021,
@@ -188,16 +217,46 @@
  {
   "year": 2021,
   "questions": [
-   33
+   34,
+   35
   ],
-  "shared": false,
-  "path": "/past-papers/2021/q33.png",
+  "shared": true,
+  "path": "/past-papers/2021/shared-34-35.png",
   "page": 6,
   "width": 434,
   "height": 630,
   "byteSize": 25456,
   "altText": null,
-  "anchorText": "33. Which of the following control structures can be used in an algorithm?"
+  "anchorText": "• Consider the given flowchart to answer the questions 34 and 35:"
+ },
+ {
+  "year": 2021,
+  "questions": [
+   37,
+   38
+  ],
+  "shared": true,
+  "path": "/past-papers/2021/shared-37-38.png",
+  "page": 6,
+  "width": 888,
+  "height": 66,
+  "byteSize": 4428,
+  "altText": null,
+  "anchorText": "• Consider the following “Books” array which is used to store prices of 8 books to answer questions 37 and 38."
+ },
+ {
+  "year": 2021,
+  "questions": [
+   39
+  ],
+  "shared": false,
+  "path": "/past-papers/2021/q39.png",
+  "page": 6,
+  "width": 360,
+  "height": 145,
+  "byteSize": 2490,
+  "altText": null,
+  "anchorText": "39. Consider the following logic gate:"
  },
  {
   "year": 2021,
@@ -235,53 +294,87 @@
   "shared": false,
   "path": "/past-papers/2022/q05.png",
   "page": 2,
-  "width": 446,
-  "height": 240,
-  "byteSize": 10245,
+  "width": 572,
+  "height": 254,
+  "byteSize": 6688,
   "altText": null,
   "anchorText": "5. The following diagram shows a computer network connected to the Internet:"
  },
  {
   "year": 2022,
   "questions": [
-   15
+   11
   ],
   "shared": false,
-  "path": "/past-papers/2022/q15.png",
-  "page": 3,
-  "width": 731,
-  "height": 194,
-  "byteSize": 10201,
+  "path": "/past-papers/2022/q11.png",
+  "page": 2,
+  "width": 358,
+  "height": 161,
+  "byteSize": 2679,
   "altText": null,
-  "anchorText": "15. What is the shortcut key combination to select the entire document in a word processing software?"
+  "anchorText": "11. Consider the following logic gate:"
  },
  {
   "year": 2022,
   "questions": [
-   18
+   16,
+   17
   ],
-  "shared": false,
-  "path": "/past-papers/2022/q18.png",
+  "shared": true,
+  "path": "/past-papers/2022/shared-16-17.png",
   "page": 3,
-  "width": 1329,
-  "height": 309,
-  "byteSize": 54709,
+  "width": 726,
+  "height": 184,
+  "byteSize": 4400,
   "altText": null,
-  "anchorText": "18. Which of the following (I, II, III, IV) are valid cell addresses?"
+  "anchorText": "• Consider the following spreadsheet segment to answer questions 16 and 17."
  },
  {
   "year": 2022,
   "questions": [
-   24
+   19,
+   20,
+   21,
+   22
   ],
-  "shared": false,
-  "path": "/past-papers/2022/q24.png",
+  "shared": true,
+  "path": "/past-papers/2022/shared-19-20-21-22.png",
+  "page": 3,
+  "width": 486,
+  "height": 1004,
+  "byteSize": 26826,
+  "altText": null,
+  "anchorText": "• Consider the following partially shown database tables to answer questions 19 to 22. The tables"
+ },
+ {
+  "year": 2022,
+  "questions": [
+   25,
+   26,
+   27
+  ],
+  "shared": true,
+  "path": "/past-papers/2022/shared-25-26-27.png",
   "page": 4,
-  "width": 378,
+  "width": 364,
   "height": 752,
-  "byteSize": 25881,
+  "byteSize": 13200,
   "altText": null,
-  "anchorText": "24. A raster image of resolution 2400 x 3000 uses 24 bits to keep the information of each pixel."
+  "anchorText": "• Answer the questions 25 to 27 using the given flowchart."
+ },
+ {
+  "year": 2022,
+  "questions": [
+   28
+  ],
+  "shared": false,
+  "path": "/past-papers/2022/q28.png",
+  "page": 4,
+  "width": 1222,
+  "height": 61,
+  "byteSize": 3834,
+  "altText": null,
+  "anchorText": "28. The array named A holds the average price of an egg for each month of last year:"
  },
  {
   "year": 2022,
@@ -356,16 +449,16 @@
  {
   "year": 2023,
   "questions": [
-   10
+   11
   ],
   "shared": false,
-  "path": "/past-papers/2023/q10.png",
+  "path": "/past-papers/2023/q11.png",
   "page": 2,
-  "width": 573,
-  "height": 232,
-  "byteSize": 10023,
+  "width": 655,
+  "height": 280,
+  "byteSize": 15096,
   "altText": null,
-  "anchorText": "10. Which of the following statements are true regarding the ASCII coding system?"
+  "anchorText": "11. According to the adjacent logic circuit, what will be the"
  },
  {
   "year": 2023,
@@ -375,25 +468,26 @@
   "shared": false,
   "path": "/past-papers/2023/q14.png",
   "page": 2,
-  "width": 1440,
-  "height": 198,
-  "byteSize": 47217,
+  "width": 148,
+  "height": 140,
+  "byteSize": 7231,
   "altText": null,
   "anchorText": "14. Which of the following statements are correct regarding a word processing software?"
  },
  {
   "year": 2023,
   "questions": [
-   16
+   16,
+   17
   ],
-  "shared": false,
-  "path": "/past-papers/2023/q16.png",
+  "shared": true,
+  "path": "/past-papers/2023/shared-16-17.png",
   "page": 2,
   "width": 722,
   "height": 451,
   "byteSize": 62959,
   "altText": null,
-  "anchorText": "16. What is the formula to be entered into cell D9,"
+  "anchorText": "• To answer questions 16 and 17, consider the following spreadsheet segment which contains the"
  },
  {
   "year": 2023,
@@ -407,24 +501,24 @@
   "path": "/past-papers/2023/shared-19-20-21-22.png",
   "page": 3,
   "width": 1285,
-  "height": 1024,
-  "byteSize": 128197,
+  "height": 917,
+  "byteSize": 103315,
   "altText": null,
   "anchorText": "• Questions 19 to 22 are based on the following four partially shown database tables that are"
  },
  {
   "year": 2024,
   "questions": [
-   3
+   4
   ],
   "shared": false,
-  "path": "/past-papers/2024/q03.png",
+  "path": "/past-papers/2024/q04.png",
   "page": 1,
-  "width": 389,
-  "height": 324,
-  "byteSize": 29819,
+  "width": 402,
+  "height": 331,
+  "byteSize": 30678,
   "altText": null,
-  "anchorText": "3. Which of the following is a solid state storage device?"
+  "anchorText": "4. The figure shows a local area network connected to the Internet."
  },
  {
   "year": 2024,
@@ -435,9 +529,9 @@
   "shared": true,
   "path": "/past-papers/2024/shared-14-15.png",
   "page": 2,
-  "width": 598,
-  "height": 186,
-  "byteSize": 45348,
+  "width": 573,
+  "height": 160,
+  "byteSize": 37347,
   "altText": null,
   "anchorText": " Questions 14 and 15 are based on the following part of a spreadsheet."
  },
@@ -451,9 +545,9 @@
   "shared": true,
   "path": "/past-papers/2024/shared-17-18-19.png",
   "page": 3,
-  "width": 1298,
-  "height": 414,
-  "byteSize": 68737,
+  "width": 675,
+  "height": 683,
+  "byteSize": 84526,
   "altText": null,
   "anchorText": " Questions 17 to 19 are based on the following partly shown database tables that are used to"
  },
@@ -495,9 +589,9 @@
   "shared": false,
   "path": "/past-papers/2024/q36.png",
   "page": 5,
-  "width": 1415,
-  "height": 192,
-  "byteSize": 31930,
+  "width": 465,
+  "height": 261,
+  "byteSize": 20965,
   "altText": null,
   "anchorText": "36. An audio file of a song contains long silence portions before and after the song which have to"
  },
@@ -512,8 +606,8 @@
   "path": "/past-papers/2025/shared-19-20-21.png",
   "page": 3,
   "width": 790,
-  "height": 650,
-  "byteSize": 67241,
+  "height": 679,
+  "byteSize": 69184,
   "altText": null,
   "anchorText": " Questions 19 to 21 are based on the following partly shown database tables that are used to store"
  },

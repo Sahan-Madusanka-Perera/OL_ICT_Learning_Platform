@@ -10,11 +10,11 @@ export function SignUpForm() {
   const [state, action] = useActionState<FormState, FormData>(signUpAction, {});
 
   return (
-    <form action={action} className="mt-5 flex flex-col gap-4">
+    <form action={action} className="flex flex-col gap-5">
       {state.error && !state.field ? (
         <p
           role="alert"
-          className="dither-25 border-2 border-ink px-3 py-2.5 text-[15px] font-semibold"
+          className="rounded-tile bg-wrong-soft px-4 py-3 text-[15px] font-medium text-wrong shadow-[inset_0_0_0_1px_var(--color-wrong)]"
         >
           {state.error}
         </p>
@@ -66,14 +66,12 @@ export function SignUpForm() {
       </Field>
 
       <fieldset className="flex flex-col gap-1.5">
-        <legend className="font-pixel mb-2 text-[16px] uppercase leading-none">
-          Which grade are you in?
-        </legend>
+        <legend className="mb-2 text-[14px] font-medium">Which grade are you in?</legend>
         <div className="grid grid-cols-2 gap-2.5">
           {[10, 11].map((grade) => (
             <label
               key={grade}
-              className="font-pixel flex h-12 cursor-pointer items-center justify-center border border-ink bg-paper text-[16px] uppercase leading-none has-[:checked]:bg-ink has-[:checked]:text-paper"
+              className="flex h-13 cursor-pointer items-center justify-center rounded-tile bg-sunken text-[15px] shadow-[inset_0_0_0_1px_var(--color-line-soft)] transition-colors duration-200 hover:shadow-[inset_0_0_0_1px_var(--color-line)] has-[:checked]:bg-accent has-[:checked]:text-accent-ink has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-focus"
             >
               <input
                 type="radio"

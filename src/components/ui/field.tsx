@@ -8,9 +8,13 @@ import { AlertIcon } from '@/components/ui/icon';
  * A form field with its label, hint and error wired together.
  *
  * The error is `aria-describedby`-linked and announced politely, so a screen
- * reader user hears what went wrong rather than just that something did.
- * A field in error takes a 25% dither ground and a doubled black rule — the
- * error is a change of material, not a change of hue.
+ * reader user hears what went wrong rather than just that something did. It is
+ * also carried three ways at once — a tinted ground, a coloured outline and an
+ * icon beside the words — because an outline alone disappears for anyone who
+ * cannot separate the red from the surface it sits on.
+ *
+ * The input sits inset rather than raised: a field is a hole you put something
+ * into, and the inner shadow is what says so without a label.
  */
 export function Field({
   label,
@@ -41,7 +45,7 @@ export function Field({
 
   return (
     <div className={cn('flex flex-col gap-2', className)}>
-      <label htmlFor={id} className="font-pixel text-[16px] uppercase leading-none">
+      <label htmlFor={id} className="text-[14px] font-medium text-ink">
         {label}
       </label>
 
@@ -51,20 +55,28 @@ export function Field({
         'aria-describedby': describedBy,
         'aria-invalid': error ? true : undefined,
         className: cn(
-          'h-12 w-full border border-ink bg-paper px-3 text-[16px] text-ink',
-          error && 'dither-25 border-2',
+          'h-13 w-full rounded-tile bg-sunken px-4 text-[16px] text-ink',
+          'shadow-[inset_0_0_0_1px_var(--color-line-soft)]',
+          'transition-[box-shadow,background-color] duration-200 ease-[var(--ease-settle)]',
+          'hover:shadow-[inset_0_0_0_1px_var(--color-line)]',
+          'focus:bg-raised focus:shadow-[inset_0_0_0_1px_var(--color-accent-line)]',
+          error &&
+            'bg-wrong-soft shadow-[inset_0_0_0_1px_var(--color-wrong)]',
         ),
       })}
 
       {hint && !error ? (
-        <p id={hintId} className="text-[13px] leading-snug">
+        <p id={hintId} className="text-[13px] leading-snug text-muted">
           {hint}
         </p>
       ) : null}
 
       {error ? (
-        <p id={errorId} className="flex items-start gap-2 text-[13px] font-semibold leading-snug">
-          <AlertIcon size={12} className="mt-0.5" />
+        <p
+          id={errorId}
+          className="flex items-start gap-1.5 text-[13px] font-medium leading-snug text-wrong"
+        >
+          <AlertIcon size={14} className="mt-px shrink-0" />
           {error}
         </p>
       ) : null}

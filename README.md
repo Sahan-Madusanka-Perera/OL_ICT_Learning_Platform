@@ -31,7 +31,7 @@ Demo accounts (created by the seed, password `practice-makes-progress`):
 | `admin@example.lk` | superadmin | Review queue, publishing, analytics |
 
 ```bash
-npm test          # 191 tests — domain logic, auth, content integrity, DB
+npm test          # 292 tests — domain logic, auth, content integrity, DB
 npm run typecheck
 npm run build
 ```
@@ -119,37 +119,57 @@ most likely way a practice app can mislead a student about how ready they are.
 
 ## Design system
 
-Tokens live in `src/app/globals.css`; nothing hard-codes a colour.
+Tokens live in `src/app/globals.css`; nothing hard-codes a colour. Full
+rationale in [`DESIGN.md`](DESIGN.md).
 
-- **Palette** — cool off-white canvas, single deep-teal accent, warm brass reserved for
-  past-paper provenance. Semantic green/amber/red are used *only* for correctness, and
-  correctness is never signalled by colour alone: every verdict carries an icon and a word.
-  All 15 foreground/background pairs clear WCAG AA.
-- **Type** — Archivo for display, Source Sans 3 for interface, both self-hosted via
-  `next/font` so there is no third-party font request. Question text is 17 px minimum.
-- **Icons** — one drawn family in `src/components/ui/icon.tsx`: 20×20 viewBox, 1.6 stroke,
-  `currentColor`. No Unicode glyphs standing in for icons — a `✓` pasted into a button
-  inherits the text font's weight and sits differently everywhere it appears.
-- **Motion** — exactly one authored moment: the answer reveal, where the panel settles and
-  the verdict mark lands a beat later on the same exponential ease-out. Everything else is
-  a colour transition. All of it respects `prefers-reduced-motion`.
-- **Sound** — synthesised square waves, no audio files: a one-bit waveform for a one-bit
-  interface, and zero bytes on mobile data. Off until a student turns it on, because the
-  reader is on a bus. A wrong answer gets exactly the same length and loudness as a right
-  one — only the pitch differs — and nothing is ever *only* a sound, so muting costs no
+- **Palette** — warm paper canvas, near-black ink, a single deep-teal accent
+  rationed to the live thing on a screen. Semantic green/amber/red are used
+  *only* for correctness, and correctness is never signalled by colour alone:
+  every verdict carries an icon and a word as well. Warm brass is reserved for
+  past-paper provenance, deliberately not the accent, so "this came from a real
+  paper" cannot read as "do this next". Dark mode is a first-class theme with
+  its own warm-mixed surfaces, not an inversion.
+- **Type** — Fraunces for display (a variable serif with a real optical-size
+  axis, so a 56px title and a 15px card title are different cuts rather than one
+  drawing scaled), Plus Jakarta Sans for interface and reading, JetBrains Mono
+  for data — and in this subject data is half the syllabus. All three
+  self-hosted via `next/font`, so there is no third-party font request. Question
+  text is 17 px minimum.
+- **Form** — cards are a core inside a shell, with the core's radius equal to
+  the shell's radius minus the shell's padding. Concentric curves read as a made
+  object; drifting ones read as a div. Elevation is ambient and diffused, never
+  a hard drop shadow.
+- **Icons** — one drawn family in `src/components/ui/icon.tsx`: 20×20 viewBox,
+  1.25 stroke optically compensated by size, `currentColor`. No icon package — a
+  set pulled in wholesale brings its own stroke weight and sits next to the type
+  looking borrowed.
+- **Motion** — one curve, `cubic-bezier(0.32, 0.72, 0, 1)`, and exactly two
+  authored moments: the explanation panel settling in after an answer and the
+  verdict mark landing a beat later on the same curve. Everything else is a
+  colour transition. Transform and opacity only, 200–500 ms because the target
+  device is a mid-range Android, and all of it respects
+  `prefers-reduced-motion`.
+- **Meters** — three states that cannot be mistaken for each other: *not
+  measured* is a dashed outline with nothing inside, *early estimate* is a
+  filled span plus a hatched tail standing for the range still open, *settled*
+  is a filled span. A solid bar at 67% after three questions claims a precision
+  the posterior does not have.
+- **Sound** — synthesised square waves, no audio files: a zero-byte signal on
+  mobile data. Off until a student turns it on, because the reader is on a bus.
+  A wrong answer gets exactly the same length and loudness as a right one — only
+  the pitch differs — and nothing is ever *only* a sound, so muting costs no
   information.
-- **BIT** — the one character in the build, in the session title bar. It reports your
-  current run of right or wrong answers, which nothing else on screen shows, and that is
-  the only reason a design system banning decorative pixel art allows it. It never
-  flatters, never celebrates, and is not rendered at all in an exam, where correctness is
+- **BIT** — the one character in the build, in the session title bar. It reports
+  your current run of right or wrong answers, which nothing else on screen
+  shows, and that is the only reason it exists. It never flatters, never
+  celebrates, and is not rendered at all in an exam, where correctness is
   withheld and it would have nothing honest to say.
-- **Browser surfaces** — caret, selection, scrollbars, native control accent and underline
-  offset are all themed from the palette rather than left at browser defaults.
-- **States** — every route has a loading skeleton shaped like its real layout (the target
-  device is a mid-range Android on mobile data), plus error and empty states written in
-  plain language.
-
----
+- **Browser surfaces** — caret, selection, scrollbars, native control accent and
+  underline offset are all themed from the palette rather than left at browser
+  defaults.
+- **States** — every route has a loading skeleton shaped like its real layout
+  (the target device is a mid-range Android on mobile data), plus error and
+  empty states written in plain language.
 
 ## Content status
 
@@ -159,72 +179,125 @@ Tokens live in `src/app/globals.css`; nothing hard-codes a colour.
 | Model questions | **146 published**, covering all 60 syllabus topics, each with an explanation, per-distractor misconceptions and most with an exam tip. Arithmetic answers are re-derived in tests. |
 | Figure questions | **16** of those depend on a drawn figure — logic circuits, a flowchart, network topologies, worksheet segments, relational tables. 13 SVGs, 42 KB in total, every one with real alt text. |
 | Past papers | 16 indexed, 15 held. **2013 is missing** — the file supplied under that name is byte-identical to 2012. |
-| Past-paper questions | **580 of a possible 600 extracted** from all 15 held papers, seeded as drafts. |
-| Past-paper figures | **37 recovered** from the 6 born-digital papers (2020-2025), attached to 50 questions. The 9 scanned years have none. |
+| Past-paper questions | **573 of a possible 600 in the platform**, seeded as drafts. **Eight of the fifteen papers are complete at 40/40**: 2010, 2017 and all six born-digital years. |
+| Born-digital transcriptions | **240 — all six papers from 2020 to 2025, 40 of 40 each**, read off the PDF text layer rather than OCR'd. |
+| Past-paper figures | **37 recovered** from the born-digital papers, attached to 50 questions. The nine scanned years have none. |
+| Picture-only options | **40 images across 10 questions** — toolbar icons, four logic circuits, four rendered database tables — each with alt text written by looking at the rendered image. |
 | Official marking schemes | **10 of 15 years** — 2012, 2014, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2025. |
-| Verified transcriptions | **2025, all 40** — read off the PDF text layer rather than OCR'd, checked question by question against the marking scheme, topics assigned by hand. Includes 12 picture-only answer options. |
-| Answer keys | 392 questions carry an official Department of Examinations answer. The other 188 stay `unverified` and cannot be published. |
+| Verified transcriptions | **2025, all 40** — checked question by question against the marking scheme, topics assigned by hand. |
+| Answer keys | 398 questions carry an official Department of Examinations answer. The rest stay `unverified` and cannot be published. |
 | Third-party answer lists | 2015, 2016 and 2024 have a published answer booklet but **no official scheme**. Recorded separately as a reviewer aid; they can never key a question. |
+
+### Where the remaining 27 questions are
+
+| year | in platform | missing |
+|---|---|---|
+| 2011 | 32 / 40 | 8 |
+| 2014 | 34 / 40 | 6 |
+| 2012, 2015, 2016, 2018 | 37 / 40 each | 3 each |
+| 2019 | 39 / 40 | 1 |
+| everything else | 40 / 40 | — |
+
+All of them are in the nine scanned years, and all of them have survived three
+separate attempts: a psm 6 OCR pass, a psm 4 pass, and a per-question rescue at
+500 dpi across three segmentation modes. The 2011 paper is the worst because
+the file is a photograph of a photocopy. Sourcing cleaner scans of 2011 and
+2014 is now the highest-value content task, ahead of further extraction work.
+
+### Two tiers of transcription, and why
+
+The born-digital papers do not all carry the same claim, and collapsing them
+into one would overstate five of them:
+
+- **`verified`** — exact text, read against the official marking scheme, every
+  topic assigned by hand. 2025 only.
+- **`text_layer`** — exact text, topic assigned by the keyword classifier, not
+  yet checked against a scheme. 2020–2024.
+
+The gap is not theoretical. Checking 2025 by hand found **22 of its 40 keyword
+topics wrong**, 11 of them sitting in the classifier's fallback bucket. So a
+`text_layer` row's topic is triage, and `topicSource` records that. Promoting a
+year is a person's job.
 
 ### What that means for publishing
 
-Extraction is OCR, so every question carries an honest grade — 228 `clean`,
-140 `needs_asset`, 161 `needs_repair`, 51 `incomplete`. **162 are both cleanly
-extracted and officially keyed**, which is the queue a reviewer should start
-with: approving one of those needs no answer research, only a read against
-the PDF.
+Extraction grades, deliberately pessimistic — 236 `clean`, 145 `needs_asset`,
+183 `needs_repair`, 30 `incomplete`. **168 are both cleanly extracted and
+officially keyed**, which is the queue a reviewer should start with: approving
+one of those needs no answer research, only a read against the PDF.
 
-`needs_asset` is the grade that had no remedy until recently. For a large share
-of O/L ICT questions the picture *is* the question — "Consider the following
-logic circuit" is unanswerable without the circuit, and OCR renders one as
-`= A —=)>= CS b t=`. The six papers from 2020 on are born-digital, so their
-figures can be recovered exactly rather than transcribed: 37 of them, now
-attached to 50 questions as `stimuli` rows, 8 of those shared across a question
-group the way the paper shares them. The nine scanned years still have none,
-and that is the larger remaining content gap.
-
-No figure carries alt text. Nothing in the pipeline has looked at a picture, so
-each asset holds an explicit "not yet described" placeholder rather than a
-generated description that would reach a screen reader as fact. Writing those is
-part of reviewing the question.
+No past-paper figure carries alt text. Nothing in the pipeline has looked at
+those pictures, so each asset holds an explicit "not yet described" placeholder
+rather than a generated description that would reach a screen reader as fact.
+Writing those is part of reviewing the question. The 40 **option** images are
+the exception — those were described by looking, because for those ten
+questions the options *are* the pictures and there is nothing to fall back on.
 
 Nothing extracted is seeded as published. An official key proves what the
 *paper's* answer was; it does not prove our transcription is the paper. Both
 have to hold, and only a human can confirm the second.
 
 Five years — 2010, 2011, 2015, 2016, 2024 — have a paper but no official
-marking scheme. Sourcing those is the single highest-value content task left.
-2015, 2016 and 2024 do have a third-party answer booklet, which shortens a
-reviewer's research but is not an authority and never keys a question on its
-own. 2013 is the odd case: an answer list exists, but the paper itself does
-not, so there is nothing to attach it to.
+marking scheme. Sourcing those is the single highest-value answer task left.
+2013 is the odd case: an answer list exists, but the paper itself does not, so
+there is nothing to attach it to.
 
 ### The born-digital papers do not need OCR
 
 2020-2025 carry a real text layer, so `borndigital.py` reads the characters the
-Department typeset instead of guessing at pixels. For 2025 that has been done
-and checked against the marking scheme, all 40 questions. It found three classes
-of error the OCR version could not avoid:
+Department typeset instead of guessing at pixels. All six papers now give up 40
+of 40 questions with their options. It found four classes of error the OCR
+version could not avoid:
 
 - **Every subscript was gone.** `1110 1110₂` had become `1110 11102` and `65₁₀`
   had become `6510` — which does not look broken, it looks like a different
   number. Font size and baseline say exactly which digits are subscript.
-- **Reading order was wrong in three places.** Question 10's A/B/C list had
-  attached itself to question 14; question 18's fourth option had swallowed the
-  first line of question 19's stimulus; question 38's options arrived 3, 4, 1, 2
-  because two of them are typeset one point higher than the others.
-- **22 of the 40 topics were wrong**, 11 of them sitting in the keyword
-  classifier's fallback bucket. Those are now assigned by hand.
+- **Reading order was wrong.** Question 10's A/B/C list had attached itself to
+  question 14; question 18's fourth option had swallowed the first line of
+  question 19's stimulus; question 38's options arrived 3, 4, 1, 2 because two
+  of them are typeset one point higher than the others.
+- **22 of 2025's 40 topics were wrong**, 11 of them in the keyword classifier's
+  fallback bucket. Those are now assigned by hand.
+- **Two papers misnumber an option.** The 2020 paper prints question 4's third
+  option as `(2)`; the 2021 paper prints question 8's third as `(5)`. Both are
+  the Department's own typo and both are plainly visible in the PDF. A strict
+  1,2,3,4 scan used to discard the whole question. They are now transcribed in
+  printed order and carry a `sourceDefect` note, so a reviewer is told what the
+  paper did instead of being shown a silent repair.
 
-Questions 11, 12 and 13 are icon questions — their options are pictures and
-nothing else. All twelve icons are extracted and described, which is what makes
-those three answerable at all on a screen reader.
+Ten questions have options that are pictures and nothing else. Seven are
+toolbar icons; the other three are **not** — 2020 Q35's options are four logic
+circuits and 2021 Q23's are four rendered database tables, drawn as vector art
+with their labels set as page text over the top. Those two used to arrive as
+`["", "Output Output B B A A", "Output", "Output B B"]`, which reads as
+extraction damage when the question is perfectly intact and simply not made of
+words. All 40 option images are now extracted and described.
 
-None of this publishes anything. Two-approver review is still the gate; what has
-changed is that a reviewer no longer has to compare the text against the PDF
-character by character.
+### Recovering the scanned years
 
-Re-run or audit the extraction with [`tools/extract-past-papers`](tools/extract-past-papers/README.md).
+`ocr_all.py` reads every page twice, at two tesseract page-segmentation modes,
+because they fail in different places and the places matter. psm 6 is good at
+prose and flattens a four-column option row into one line; psm 4 keeps that
+structure and occasionally loses a whole page. On the 2011 paper the primary
+pass finds 31 of 40 questions and the alternate finds 36; on 2019 the alternate
+collapses to 7 blocks while the primary gets all 40.
+
+`repair.py` merges them, and may only ever **fill gaps** — a question the
+primary never found, or one whose options it could not read. A question the
+primary read completely is kept, always, even if the alternate disagrees. Two
+OCR passes disagreeing is not evidence about which is right, and a merge that
+"picks the better one" is really a merge that picks at random twice a page.
+That recovered 25 questions.
+
+`rescue.py` then spends real time on whatever is still missing: it works out
+which pages a question can be on from the questions either side of it,
+re-renders only those at 500 dpi, and runs three segmentation modes over each.
+It keeps a result only if the question's own number and four ordered option
+markers are present, which is what makes it safe — a rescue pass that accepts
+its best guess is a machine for inventing questions. That recovered 10 more.
+
+Re-run or audit the whole pipeline with
+[`tools/extract-past-papers`](tools/extract-past-papers/README.md).
 
 ### Model questions and their figures
 

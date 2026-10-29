@@ -4,7 +4,12 @@ import { revalidatePath } from 'next/cache';
 import { z } from 'zod';
 
 import { requireUser, requirePermission, AuthorizationError } from '@/lib/auth/guards';
-import { setAnswerKey, transitionQuestion, ReviewError } from '@/lib/services/review';
+import {
+  setAnswerKey,
+  setExplanation,
+  transitionQuestion,
+  ReviewError,
+} from '@/lib/services/review';
 
 export type ReviewResult = { ok: boolean; message: string };
 
@@ -25,6 +30,31 @@ export async function setAnswerKeyAction(
     revalidatePath('/admin/review');
 
     return { ok: true, message: 'Answer key saved.' };
+  } catch (error) {
+    return { ok: false, message: describe(error) };
+  }
+}
+
+const explanationSchema = z.object({
+  questionId: z.string().uuid(),
+  explanation: z.string().trim().min(1).max(5000),
+});
+
+export async function setExplanationAction(
+  input: z.infer<typeof explanationSchema>,
+): Promise<ReviewResult> {
+  try {
+    const user = await requirePermission('question:edit');
+    const parsed = explanationSchema.parse(input);
+
+    await setExplanation({
+      questionId: parsed.questionId,
+      explanationMd: parsed.explanation,
+      actorId: user.id,
+    });
+    revalidatePath('/admin/review');
+
+    return { ok: true, message: 'Explanation saved.' };
   } catch (error) {
     return { ok: false, message: describe(error) };
   }

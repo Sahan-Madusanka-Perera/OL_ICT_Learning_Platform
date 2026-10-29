@@ -3,11 +3,10 @@ import { requireStaffPage } from '@/lib/auth/guards';
 import { db } from '@/lib/db/client';
 import { questions, syllabusNodes, examPapers, questionStats } from '@/lib/db/schema';
 import { and, eq, desc, isNull, sql } from 'drizzle-orm';
-import { Window, Label } from '@/components/ui/window';
+import { Window, Label, Pill } from '@/components/ui/window';
 import { Button } from '@/components/ui/button';
 import { SourceBadge } from '@/components/ui/source-badge';
 import { assessQuestionHealth } from '@/lib/domain/scoring';
-import { cn } from '@/lib/utils/cn';
 
 export const metadata: Metadata = { title: 'Questions' };
 
@@ -57,54 +56,54 @@ export default async function QuestionsPage({
     .limit(100);
 
   return (
-    <div className="flex flex-col gap-3">
-      <header className="border-y border-ink bg-paper px-3 py-4 sm:border-x sm:px-4">
-        <h1 className="font-pixel text-[24px] uppercase leading-tight">Questions</h1>
-        <p className="mt-2 text-[15px]">{rows.length} shown</p>
+    <div className="flex flex-col gap-4 sm:gap-5">
+      <header className="px-1 pb-3 pt-4 sm:pt-6">
+        <h1 className="page-title">Questions</h1>
+        <p className="mt-3 text-[16px] text-muted tabular">
+          {rows.length === 100 ? 'The 100 most recently edited' : `${rows.length} shown`}
+        </p>
       </header>
 
-      <Window title="Filter">
-        <form className="flex flex-wrap items-center gap-2">
-          <input
-            type="search"
-            name="q"
-            defaultValue={q}
-            aria-label="Search question text"
-            placeholder="Search question text"
-            className="h-10 min-w-[16rem] flex-1 border border-ink bg-paper px-3 text-[16px]"
-          />
-          <select
-            name="status"
-            defaultValue={status}
-            aria-label="Status"
-            className="font-pixel h-10 border border-ink bg-paper px-2 text-[16px] uppercase"
-          >
+      <form className="glass flex flex-wrap items-center gap-2.5 rounded-[24px] p-3 sm:rounded-full sm:p-2">
+        <input
+          type="search"
+          name="q"
+          defaultValue={q}
+          aria-label="Search question text"
+          placeholder="Search question text"
+          className="h-12 min-w-0 flex-[1_1_16rem] rounded-full bg-sunken px-5 text-[16px] placeholder:text-faint focus:bg-raised focus:outline-2 focus:outline-offset-2 focus:outline-focus"
+        />
+        <select
+          name="status"
+          defaultValue={status}
+          aria-label="Status"
+          className="h-12 flex-1 rounded-full bg-sunken px-5 text-[15px] capitalize sm:flex-none"
+        >
             {STATUSES.map((s) => (
               <option key={s} value={s}>
                 {s === 'all' ? 'All statuses' : s.replace(/_/g, ' ')}
-              </option>
-            ))}
-          </select>
-          <Button type="submit" size="md">
-            Filter
-          </Button>
-        </form>
-      </Window>
+            </option>
+          ))}
+        </select>
+        <Button type="submit" size="md">
+          Filter
+        </Button>
+      </form>
 
       {rows.length === 0 ? (
         <Window title="No questions match">
-          <p className="text-[15px] leading-relaxed">
+          <p className="text-[15px] leading-relaxed text-muted">
             {q
               ? `Nothing contains “${q}”. Try a shorter phrase, or clear the search.`
               : 'There are no questions with that status yet.'}
           </p>
         </Window>
       ) : (
-        <Window title="Question bank" note={`${rows.length} rows`} bodyClassName="px-0 py-0 sm:px-0">
+        <Window title="Question bank" count={rows.length} bodyClassName="px-0 pb-2 sm:px-0 sm:pb-3">
           <div className="overflow-x-auto">
             <table className="w-full min-w-[52rem] border-collapse">
               <thead>
-                <tr className="border-b border-ink text-left">
+                <tr className="text-left">
                   <Th>Question</Th>
                   <Th>Topic</Th>
                   <Th>Source</Th>
@@ -124,17 +123,17 @@ export default async function QuestionsPage({
                   return (
                     <tr
                       key={r.id}
-                      className="border-b border-dashed border-ink align-top last:border-b-0"
+                      className="border-t border-line-soft align-top transition-colors duration-150 hover:bg-sunken/60"
                     >
-                      <td className="px-4 py-3">
+                      <td className="py-4 pl-5 pr-4 sm:pl-7">
                         <p className="line-clamp-2 max-w-md text-[14px] leading-relaxed">{r.stem}</p>
-                        <p className="font-pixel mt-1.5 text-[16px] leading-none">{r.publicId}</p>
+                        <p className="mt-1.5 font-mono text-[12px] leading-none text-muted">{r.publicId}</p>
                       </td>
-                      <td className="px-4 py-3 text-[14px]">
-                        <span className="font-pixel text-[16px]">{r.topicCode}</span>{' '}
+                      <td className="px-4 py-4 text-[14px] leading-snug">
+                        <span className="font-mono text-[13px] text-muted">{r.topicCode}</span>{' '}
                         {r.topicTitle}
                       </td>
-                      <td className="px-4 py-3">
+                      <td className="px-4 py-4">
                         <SourceBadge
                           source={{
                             type: r.sourceType,
@@ -152,24 +151,19 @@ export default async function QuestionsPage({
                           }}
                         />
                       </td>
-                      <td className="font-pixel px-4 py-3 text-[16px] uppercase leading-none">
-                        {r.status.replace(/_/g, ' ')}
+                      <td className="whitespace-nowrap px-4 py-4 text-[14px]">
+                        {sentence(r.status)}
                       </td>
-                      <td className="px-4 py-3">
-                        <span
-                          className={cn(
-                            'font-pixel border px-1.5 py-1 text-[16px] uppercase leading-none',
-                            r.confidence === 'unverified'
-                              ? 'dither-25 border-ink border-dashed'
-                              : 'border-ink',
-                          )}
-                        >
-                          {r.confidence === 'unverified'
-                            ? 'unverified'
-                            : r.confidence.replace(/_/g, ' ')}
-                        </span>
+                      <td className="px-4 py-4">
+                        {r.confidence === 'unverified' ? (
+                          <span className="inline-flex whitespace-nowrap rounded-full px-3 py-1.5 text-[12px] font-medium leading-none text-muted outline-1 outline-dashed -outline-offset-1 outline-faint">
+                            Unverified
+                          </span>
+                        ) : (
+                          <Pill tone="glass">{sentence(r.confidence)}</Pill>
+                        )}
                       </td>
-                      <td className="px-4 py-3">
+                      <td className="py-4 pl-4 pr-5 sm:pr-7">
                         <HealthPill health={health} attempts={r.attempts ?? 0} />
                       </td>
                     </tr>
@@ -186,7 +180,7 @@ export default async function QuestionsPage({
 
 function Th({ children }: { children: React.ReactNode }) {
   return (
-    <th className="px-4 py-2.5 text-left">
+    <th className="px-4 pb-3 text-left font-normal first:pl-5 last:pr-5 sm:first:pl-7 sm:last:pr-7">
       <Label as="span">{children}</Label>
     </th>
   );
@@ -195,32 +189,34 @@ function Th({ children }: { children: React.ReactNode }) {
 /**
  * Question health.
  *
- * Four outcomes, four materials: solid chrome for healthy, doubled chrome
- * for suspect, dashed for the two "off-target difficulty" states, and plain
- * text where there is not enough data to say anything at all.
+ * Every outcome is a word first. Healthy is a plain pill, suspect the wrong
+ * tone, the two off-target difficulty states the caution tone with a dashed
+ * edge, and plain text where there is not enough data to say anything at all.
  */
 function HealthPill({ health, attempts }: { health: string; attempts: number }) {
   if (health === 'insufficient_data') {
     return (
-      <span className="font-pixel text-[16px] uppercase leading-none">{attempts} att</span>
+      <span className="whitespace-nowrap text-[13px] text-muted tabular">
+        {attempts} {attempts === 1 ? 'attempt' : 'attempts'}
+      </span>
     );
   }
 
-  const chrome: Record<string, string> = {
-    ok: 'border-ink',
-    suspect: 'border-2 border-ink dither-25',
-    too_easy: 'border-dashed border-ink',
-    too_hard: 'border-dashed border-ink',
-  };
+  const label = sentence(health);
 
-  return (
-    <span
-      className={cn(
-        'font-pixel inline-block whitespace-nowrap border px-1.5 py-1 text-[16px] uppercase leading-none',
-        chrome[health] ?? 'border-ink',
-      )}
-    >
-      {health.replace(/_/g, ' ')}
-    </span>
-  );
+  if (health === 'suspect') return <Pill tone="wrong">{label}</Pill>;
+  if (health === 'too_easy' || health === 'too_hard') {
+    return (
+      <Pill tone="caution" className="outline-1 outline-dashed -outline-offset-1 outline-caution">
+        {label}
+      </Pill>
+    );
+  }
+  return <Pill tone="glass">{label}</Pill>;
+}
+
+/** `in_review` → "In review". */
+function sentence(value: string): string {
+  const text = value.replace(/_/g, ' ');
+  return text.charAt(0).toUpperCase() + text.slice(1);
 }
